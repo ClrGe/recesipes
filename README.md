@@ -20,13 +20,14 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
 ### Stack
 
-Container Docker:
+    Container Docker
 
     Database    : MariaDB
     Serveur     : Apache2
     Back-end    : Laravel-Sail
 
-PHP 8.1
+    PHP 8.1
+
 
 ### Backlog
 
