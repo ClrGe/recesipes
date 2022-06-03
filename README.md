@@ -10,9 +10,9 @@ _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
 Le dossier */documentation* contient :
 
- - Le schéma UML de la base de données.
- - Les maquettes de la plateforme.
- - Le cahier des charges du projet.
+ - 📐 Le schéma UML de la base de données.
+ - 💄 Les maquettes de la plateforme. (visible  aussi sur : https://miro.com/app/board/uXjVOwdAQsA=/)
+ - 📚 Le cahier des charges du projet.
 
 Schéma réalisé sur Draw.io (https://app.diagrams.net/)
 
@@ -60,8 +60,3 @@ Container Docker:
     Database    : MariaDB
     Serveur     : Apache2
     Back-end    : Laravel-Sail
-
-
-
-
-
