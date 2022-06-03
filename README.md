@@ -6,8 +6,6 @@ _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
 🧁*reCESIpies*🧁 propose des recettes de cuisines variées accessibles à tous.
 
-![picture alt](https://gitlab.com/cubes-web-mobile-cknm/recesipes/-/raw/main/logo_cube_web_mobile.png "Logo reCESIpies")
-
 ### Documentation
 
 Le dossier */documentation* contient :
