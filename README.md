@@ -1,4 +1,3 @@
-
 # 🧁reCESIpies🧁
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
@@ -41,14 +40,14 @@ PHP 8.1
 * [ ] Serveur APACHE (vhost, rewrite)
 * [x] Docker avec Laravel-Sail 
 
-##### Documentation du projet :book:
+##### Documentation du projet 📚
 
  * [ ] Presentation
  * [ ] Outils / techno / softwares
  * [x] Base de données
  * [ ] etc
 
-##### Back-end :left_right_arrow: : 
+##### Back-end ⚙️
 
 * [ ] Démarrage projet laravel
 * [x] Organisation / maquette
