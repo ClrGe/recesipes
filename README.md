@@ -32,7 +32,7 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 ### Backlog
 
 
-##### Préparation / Infra 🔧 :
+##### 🔧 Préparation / Infra :
 
 * [x] Repo + backlog
 * [x] Inspiration : références site cuisine ; ajout de contenu (ingrédients etc)
@@ -41,19 +41,19 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 * [ ] Serveur APACHE (vhost, rewrite)
 * [x] Docker avec Laravel-Sail 
 
-##### Documentation du projet 📚
+##### 📚 Documentation du projet :
 
  * [ ] Presentation
  * [ ] Outils / techno / softwares
  * [x] Base de données
 
-##### Back-end ⚙️
+##### ⚙️ Back-end:
 
 * [ ] Démarrage projet laravel
 * [x] Organisation / maquette
 * [ ] Définition routes et API
 
-##### Frontend :nail_care: :
+##### :nail_care: Front-end :
 
 * [ ] Choix techno (framework ?)
 * [x] Wireframe
