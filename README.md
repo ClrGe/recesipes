@@ -50,7 +50,6 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 ##### ⚙️ Back-end:
 
 * [ ] Démarrage projet laravel
-* [x] Organisation / maquette
 * [ ] Définition routes et API
 
 ##### :nail_care: Front-end :
