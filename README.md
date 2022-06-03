@@ -1,5 +1,4 @@
 
-
 # 🧁reCESIpies🧁
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
@@ -20,6 +19,16 @@ Schéma réalisé sur Draw.io (https://app.diagrams.net/)
 
 Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
+### Stack
+
+Container Docker:
+
+    Database    : MariaDB
+    Serveur     : Apache2
+    Back-end    : Laravel-Sail
+
+PHP 8.1
+
 ### Backlog
 
 
@@ -39,26 +48,13 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
  * [x] Base de données
  * [ ] etc
 
-##### API :left_right_arrow: : 
+##### Back-end :left_right_arrow: : 
 
 * [ ] Démarrage projet laravel
 * [x] Organisation / maquette
 * [ ] Définition routes et API
 
-
 ##### Frontend :nail_care: :
 
-* [ ] Choix techno 
+* [ ] Choix techno (framework ?)
 * [x] Wireframe
-
-##### Back-office :left_right_arrow:
-* [ ] Orga
-
-
-### Stack
-
-Container Docker:
-
-    Database    : MariaDB
-    Serveur     : Apache2
-    Back-end    : Laravel-Sail
