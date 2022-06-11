@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <h1>Home Page</h1>
-
+    <h1>Contact Form</h1>
 @endsection
