@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger("role_id");
             $table->string('password');
             $table->rememberToken();
+            $table->timestamp("registration_date");
             $table->timestamps();
         });
     }
