@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
+            $table->text("description");
+            $table->string("alt");
+            $table->string("path");
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }

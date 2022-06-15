@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+            $table->text("comment");
+            $table->bigInteger("recipe_id");
+            $table->bigInteger("user_id");
+            $table->timestamp("date");
             $table->timestamps();
         });
     }
