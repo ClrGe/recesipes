@@ -2,6 +2,8 @@
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
+Dernière édition : 19/06/2022 - Claire
+
 ### Presentation
 
 🧁*reCESIpies*🧁 propose des recettes de cuisines variées accessibles à tous.
@@ -43,11 +45,13 @@ AWS - Instance EC2 T2.micro Ubuntu 22.04
 ##### 🔧 Préparation / Infra :
 
 * [x] Repo + backlog
-* [x] Inspiration : références site cuisine ; ajout de contenu (ingrédients etc)
-* [ ] Versioning : clone local avec branche individuelle ; merge requests 
+* [x] Inspiration       : références site cuisine ; ajout de contenu (ingrédients etc)
+* [ ] Versioning        : clone local avec branche individuelle ; merge requests 
 * [x] Modélisation bdd + Schéma et maquettes
 * [ ] Serveur APACHE (vhost, rewrite)
-* [x] Docker avec Laravel-Sail 
+* [ ] Mise en route EC2
+* [ ] Configuration EC2
+* [x] Docker avec Laravel-Sail
 
 ##### 📚 Documentation du projet :
 
