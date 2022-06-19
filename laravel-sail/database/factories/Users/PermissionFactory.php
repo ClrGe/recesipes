@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Users;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,7 +17,9 @@ class PermissionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'all' => true,
+            'self_editing' => true,
+            'review' => true,
         ];
     }
 }
