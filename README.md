@@ -28,6 +28,14 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
     PHP 8.1
 
+### Hébergement
+
+AWS - Instance EC2 T2.micro Ubuntu 22.04 
+
+    - Mise en route le 19/06
+    - Association à une ElasticIP pour éviter les changements d'adresse au reboot
+    - SSH : Groupe de sécurité avec filtrage IP des membres du groupe
+    - Pour le moment : fermeture des ports 443 et 80 (https, http) 
 
 ### Backlog
 
