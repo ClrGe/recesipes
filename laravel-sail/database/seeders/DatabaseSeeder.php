@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         CompleteUserSeeder::CallSeeder();
-        RecipeSeeder::CallSeeder();
+        //CompleteRecipeSeeder::CallSeeder();
     }
 }

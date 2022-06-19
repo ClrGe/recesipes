@@ -16,4 +16,10 @@ class RecipeDetailsSeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $detailSeeder = new RecipeDetailsSeeder();
+        $detailSeeder->run();
+    }
 }

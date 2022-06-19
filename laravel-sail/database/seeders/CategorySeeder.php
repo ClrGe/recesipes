@@ -16,4 +16,10 @@ class CategorySeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $categorySeeder = new CategorySeeder();
+        $categorySeeder->run();
+    }
 }

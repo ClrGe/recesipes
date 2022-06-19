@@ -16,4 +16,10 @@ class QuantitySeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $quantitySeeder = new QuantitySeeder();
+        $quantitySeeder->run();
+    }
 }

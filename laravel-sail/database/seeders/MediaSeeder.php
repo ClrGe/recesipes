@@ -16,4 +16,10 @@ class MediaSeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $mediaSeeder = new MediaSeeder();
+        $mediaSeeder->run();
+    }
 }

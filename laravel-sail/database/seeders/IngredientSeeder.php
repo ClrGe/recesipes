@@ -16,4 +16,10 @@ class IngredientSeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $ingredientSeeder = new IngredientSeeder();
+        $ingredientSeeder->run();
+    }
 }

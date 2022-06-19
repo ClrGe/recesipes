@@ -16,4 +16,10 @@ class EvaluationSeeder extends Seeder
     {
         //
     }
+
+    public static function CallSeeder()
+    {
+        $evaluationSeeder = new EvaluationSeeder();
+        $evaluationSeeder->run();
+    }
 }

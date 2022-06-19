@@ -14,6 +14,17 @@ class CompleteRecipeSeeder extends Seeder
      */
     public function run()
     {
-        
+        CategorySeeder::CallSeeder();
+        IngredientSeeder::CallSeeder();
+        QuantitySeeder::CallSeeder();
+        MediaSeeder::CallSeeder();
+        RecipeDetailsSeeder::CallSeeder();
+        RecipeSeeder::CallSeeder();
+    }
+
+    public static function CallSeeder()
+    {
+        $fullRecipeSeeder = new CompleteRecipeSeeder();
+        $fullRecipeSeeder->run();
     }
 }

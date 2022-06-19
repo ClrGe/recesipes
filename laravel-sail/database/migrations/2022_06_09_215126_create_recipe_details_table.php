@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('recipe_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("recipe_id");
             $table->integer("cook_duration");
             $table->integer("resting_duration");
             $table->integer("preparation_duration");
