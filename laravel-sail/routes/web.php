@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Authentification\LogController;
+use App\Http\Controllers\Authentification\RegisterController;
+use App\Http\Controllers\Recipes\RecipeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name("home");
+Route::get('/contact', function(){
+    return view('contact');
+})->name('contact.form');
+
+Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.list');
+Route::get('/login', [LogController::class, 'index'])->name('login.form');
+Route::get('/register', [RegisterController::class, 'index'])->name('register.form');
