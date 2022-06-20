@@ -29,11 +29,6 @@ return new class extends Migration
             $table->foreign('media_id')->references('id')->on('media');
         });
 
-        Schema::table('recipe_details', function (Blueprint $table){
-            $table->bigInteger('recipe_id')->unsigned()->nullable()->change();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-        });
-
         Schema::table('evaluations', function (Blueprint $table){
             $table->bigInteger('user_id')->unsigned()->nullable()->change();
             $table->foreign('user_id')->references('id')->on('users');
