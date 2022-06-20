@@ -17,7 +17,9 @@ class MediaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => $this->faker->text(),
+            'alt' => $this->faker->word(),
+            'path' => "Random Path",
         ];
     }
 }

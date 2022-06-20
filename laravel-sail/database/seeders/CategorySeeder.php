@@ -106,6 +106,16 @@ class CategorySeeder extends Seeder
             "type" => "FoodType",
         ]);
 
+        DB::table('categories')->insert([
+            "name" => "Plat",
+            "type" => "FoodType",
+        ]);
+
+        DB::table('categories')->insert([
+            "name" => "Soupe",
+            "type" => "FoodType",
+        ]);
+
 
 
         DB::table('categories')->insert([
