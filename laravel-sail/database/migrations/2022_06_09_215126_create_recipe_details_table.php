@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer("cook_duration");
             $table->integer("resting_duration");
             $table->integer("preparation_duration");
-            $table->smallInteger("likes-total");
+            $table->smallInteger("likes_total");
             $table->tinyInteger('people_number');
             $table->enum("price_range", ['Economique', 'Moyen', 'Luxe']);
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile']);
