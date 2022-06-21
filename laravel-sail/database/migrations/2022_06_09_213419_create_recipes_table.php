@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text("steps");
             $table->text("description");
             $table->bigInteger("category_id");
-            $table->bigInteger("ingredient_id");
+            $table->bigInteger("quantities_id");
             $table->bigInteger("detail_id");
             $table->bigInteger("media_id");
             $table->timestamps();

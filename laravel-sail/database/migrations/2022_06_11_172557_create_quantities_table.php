@@ -17,7 +17,6 @@ return new class extends Migration
         Schema::create('quantities', function (Blueprint $table) {
             $table->id();
             $table->bigInteger("ingredient_id");
-            $table->bigInteger("recipe_id");
             $table->smallInteger("quantity");
             $table->timestamps();
         });
