@@ -1,13 +1,13 @@
 <?php
 
-namespace Database\Factories\UserRecipe;
+namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Evaluation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ShoppingList>
  */
-class EvaluationFactory extends Factory
+class ShoppingListFactory extends Factory
 {
     /**
      * Define the model's default state.
