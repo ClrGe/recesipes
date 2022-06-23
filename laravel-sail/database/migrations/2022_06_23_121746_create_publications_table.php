@@ -14,15 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recipe_details', function (Blueprint $table) {
-            $table->id();
-            $table->integer("cook_duration");
-            $table->integer("resting_duration");
-            $table->integer("preparation_duration");
-            $table->smallInteger("likes_total");
-            $table->tinyInteger('people_number');
-            $table->enum("price_range", ['Economique', 'Moyen', 'Luxe']);
-            $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile']);
+        Schema::create('publications', function (Blueprint $table) {
+            $table->id();            
+            $table->bigInteger("user_id");
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }
@@ -35,7 +30,7 @@ return new class extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('recipe_details');
+        Schema::dropIfExists('publications');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 };

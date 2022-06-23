@@ -16,8 +16,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->enum("type", ['Provenance', 'FoodType']);
+            $table->string("type");
+            $table->string("subtype1")->nullable();
+            $table->string("subtype2")->nullable();            
             $table->timestamps();
         });
     }

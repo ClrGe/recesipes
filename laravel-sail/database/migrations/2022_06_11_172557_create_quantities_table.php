@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger("ingredient_id");
             $table->smallInteger("quantity");
             $table->enum("unit", ['g','Tranches','Cuillère à soupe','mL','unité','Cuillère à café','Tasse',]);
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }

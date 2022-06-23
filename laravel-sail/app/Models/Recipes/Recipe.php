@@ -13,11 +13,12 @@ class Recipe extends Model
         'id',
         'name',
         'category_id',
-        'ingredients_id',
         'description',
-        'detail_id',
-        'steps',
-        'media_id',
-
+        'steps',        
+        'cook_duration',
+        'resting_duration',
+        'preparation_duration',
+        'price_range',
+        'difficulty',
     ];
 }
