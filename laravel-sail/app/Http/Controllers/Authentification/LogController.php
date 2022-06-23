@@ -13,13 +13,19 @@ class LogController extends Controller
         return view('Authentification/login');
     }
 
-    public function LoginUser()
+    public function Login(Request $request)
     {
 
     }
 
-    public function LogoutUser()
+    public function Logout(Request $request)
     {
-        
+//        logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home');
     }
 }
