@@ -26,7 +26,6 @@ class IngredientSeeder extends Seeder
         {
             DB::table('ingredients')->insert([
                 'name' => $ingredient['strIngredient'],
-                'unit' => 'none',
             ]);
         }
     }

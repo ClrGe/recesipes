@@ -19,7 +19,7 @@ class RecipeDetailsSeeder extends Seeder
         DB::table('recipe_details')->delete();
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
-        \App\Models\Recipes\RecipeDetails::factory(10)->create();
+        \App\Models\Recipes\RecipeDetails::factory(20)->create();
     }
 
     public static function CallSeeder()
