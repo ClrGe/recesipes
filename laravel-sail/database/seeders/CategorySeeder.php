@@ -20,108 +20,60 @@ class CategorySeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         DB::table('categories')->insert([
-            "name" => "Française",
-            "type" => "Provenance",
-        ]);
+            "type" => "Entrée",
+        ]);   
 
         DB::table('categories')->insert([
-            "name" => "Americaine",
-            "type" => "Provenance",
-        ]);
+            "type" => "Plat",
+        ]); 
 
         DB::table('categories')->insert([
-            "name" => "Italienne",
-            "type" => "Provenance",
-        ]);
+            "type" => "Dessert",
+        ]); 
 
-        DB::table('categories')->insert([
-            "name" => "Britannique",
-            "type" => "Provenance",
-        ]);
-
-        DB::table('categories')->insert([
-            "name" => "Chinoise",
-            "type" => "Provenance",
-        ]);
-
-        DB::table('categories')->insert([
-            "name" => "Japonaise",
-            "type" => "Provenance",
-        ]);
-
-        DB::table('categories')->insert([
-            "name" => "Vietnamienne",
-            "type" => "Provenance",
-        ]);
-
-        DB::table('categories')->insert([
-            "name" => "Indienne",
-            "type" => "Provenance",
-        ]);
-
-        DB::table('categories')->insert([
-            "name" => "Espagnole",
-            "type" => "Provenance",
-        ]);
-        
-        DB::table('categories')->insert([
-            "name" => "Thaï",
-            "type" => "Provenance",
-        ]);
-        
-        DB::table('categories')->insert([
-            "name" => "Turque",
-            "type" => "Provenance",
-        ]);
-        
-        DB::table('categories')->insert([
-            "name" => "Mexicaine",
-            "type" => "Provenance",
-        ]);
 
 
 
         DB::table('categories')->insert([
-            "name" => "Vegan",
-            "type" => "FoodType",
-        ]);
+            "type" => "Entrée",
+            "subtype1" => "Froid",
+        ]);   
 
         DB::table('categories')->insert([
-            "name" => "Viande",
-            "type" => "FoodType",
-        ]);
+            "type" => "Entrée",
+            "subtype1" => "Chaud",
+        ]);   
 
         DB::table('categories')->insert([
-            "name" => "Dessert",
-            "type" => "FoodType",
-        ]);
+            "type" => "Plat",
+            "subtype1" => "Viande",
+        ]); 
 
         DB::table('categories')->insert([
-            "name" => "Poisson",
-            "type" => "FoodType",
-        ]);
+            "type" => "Plat",
+            "subtype1" => "Poisson",
+        ]); 
 
         DB::table('categories')->insert([
-            "name" => "Entrée",
-            "type" => "FoodType",
-        ]);
+            "type" => "Plat",
+            "subtype1" => "Vegan",
+        ]); 
 
-        DB::table('categories')->insert([
-            "name" => "Plat",
-            "type" => "FoodType",
-        ]);
 
-        DB::table('categories')->insert([
-            "name" => "Soupe",
-            "type" => "FoodType",
-        ]);
 
 
 
         DB::table('categories')->insert([
-            "name" => "Autre",
-            "type" => "FoodType",
-        ]);
+            "type" => "Entrée",
+            "subtype1" => "Chaud",
+            "subtype2" => "Soupe",
+        ]); 
+
+        DB::table('categories')->insert([
+            "type" => "Entrée",
+            "subtype1" => "Froid",
+            "subtype2" => "Fruit de mer",
+        ]); 
 
     }
 

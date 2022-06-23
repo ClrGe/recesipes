@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string("name")->nullable();
+            $table->tinyInteger("guest_number")->default(2);
             $table->text("steps")->nullable();
             $table->text("description")->nullable();
             $table->bigInteger("category_id")->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile'])->nullable();
             $table->smallInteger("cook_duration")->nullable();
             $table->smallInteger("resting_duration")->nullable();
-            $table->smallInteger("prepation_duration")->nullable();
+            $table->smallInteger("preparation_duration")->nullable();
             $table->timestamps();
         });
     }
