@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Recipes\Ingredient;
 
 class QuantitySeeder extends Seeder
 {
@@ -14,6 +16,29 @@ class QuantitySeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table("quantities")->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+        $ingredients = Ingredient::all();
+        $ingredient1 = $ingredients->first()->id;
+        $ingredient2 = $ingredients->last()->id;
+
+        $units = ['g','Tranches','Cuillère à soupe','mL','unité','Cuillère à café','Tasse',];
+
+        for($i = 0; $i <20; $i++)
+        {
+            DB::table("quantities")->insert([
+                "quantity" => rand(1, 500),
+                "ingredient_id" => rand($ingredient1, $ingredient2),
+                "unit" => $units[rand(0, count($units)-1)],
+            ]);
+        }
+    }
+
+    public static function CallSeeder()
+    {
+        $quantitySeeder = new QuantitySeeder();
+        $quantitySeeder->run();
     }
 }

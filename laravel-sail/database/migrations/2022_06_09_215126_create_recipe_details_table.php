@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -15,11 +16,11 @@ return new class extends Migration
     {
         Schema::create('recipe_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("recipe_id");
             $table->integer("cook_duration");
             $table->integer("resting_duration");
             $table->integer("preparation_duration");
-            $table->smallInteger("likes-total");
+            $table->smallInteger("likes_total");
+            $table->tinyInteger('people_number');
             $table->enum("price_range", ['Economique', 'Moyen', 'Luxe']);
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile']);
             $table->timestamps();
@@ -33,6 +34,8 @@ return new class extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('recipe_details');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 };

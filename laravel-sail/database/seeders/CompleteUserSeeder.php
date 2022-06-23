@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class EvaluationSeeder extends Seeder
+class CompleteUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,14 @@ class EvaluationSeeder extends Seeder
      */
     public function run()
     {
-        //
+        PermissionSeeder::CallSeeder();
+        RoleSeeder::CallSeeder();
+        UserSeeder::CallSeeder();
     }
 
     public static function CallSeeder()
     {
-        $evaluationSeeder = new EvaluationSeeder();
-        $evaluationSeeder->run();
+        $fullUserSeeder = new CompleteUserSeeder();
+        $fullUserSeeder->run();
     }
 }

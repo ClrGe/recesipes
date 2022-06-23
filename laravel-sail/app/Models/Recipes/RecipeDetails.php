@@ -11,7 +11,6 @@ class RecipeDetails extends Model
 
     protected $fillable = [
         'id',
-        'recipe_id',
         'cook_duration',
         'resting_duration',
         'preparation_duration',

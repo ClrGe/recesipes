@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('publications', function (Blueprint $table) {
+        Schema::create('shopping_lists', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("user_id");
-            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publications');
+        Schema::dropIfExists('shopping_lists');
     }
 };

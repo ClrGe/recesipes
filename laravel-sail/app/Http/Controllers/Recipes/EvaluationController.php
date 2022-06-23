@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\UserRecipe;
+namespace App\Http\Controllers\Recipes;
 
-use App\Models\UserRecipe\Evaluation;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEvaluationRequest;
 use App\Http\Requests\UpdateEvaluationRequest;
+use App\Models\Recipes\Evaluation;
 
 class EvaluationController extends Controller
 {
