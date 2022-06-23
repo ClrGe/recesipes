@@ -2,7 +2,7 @@
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
-Dernière édition : 19/06/2022 - Claire
+Dernière édition : 23/06/2022 - Claire
 
 ### Presentation
 
@@ -16,19 +16,32 @@ Le dossier */documentation* contient :
  - 💄 Les maquettes de la plateforme. (visible  aussi sur : https://miro.com/app/board/uXjVOwdAQsA=/)
  - 📚 Le cahier des charges du projet.
 
+---
+
 Schéma réalisé sur Draw.io (https://app.diagrams.net/)
+
+---
 
 Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
+---
+
+Maquette Flutter réalisée avec Flutter Flow (https://app.flutterflow.io/project/re-c-e-s-ipes-zonj5z)
+
 ### Stack
 
-    Container Docker
+Web 
 
+    Bootstrap
+    Svelte (Web)
+    Flutter (Mobile)
+    ---
+    ---
+    Docker
     Database    : MariaDB
-    Serveur     : Apache2
-    Back-end    : Laravel-Sail
+    Serveur web : Apache2
+    API         : Laravel-Sail + PHP 8.1
 
-    PHP 8.1
 
 ### Hébergement
 
@@ -46,11 +59,11 @@ AWS - Instance EC2 T2.micro Ubuntu 22.04
 
 * [x] Repo + backlog
 * [x] Inspiration       : références site cuisine ; ajout de contenu (ingrédients etc)
-* [ ] Versioning        : clone local avec branche individuelle ; merge requests 
+* [x] Versioning        : clone local avec branche individuelle ; merge requests 
 * [x] Modélisation bdd + Schéma et maquettes
-* [ ] Serveur APACHE (vhost, rewrite)
-* [ ] Mise en route EC2
-* [ ] Configuration EC2
+* [x] Serveur APACHE (vhost, rewrite)
+* [x] Mise en route EC2
+* [x] Configuration EC2
 * [x] Docker avec Laravel-Sail
 
 ##### 📚 Documentation du projet :
@@ -61,10 +74,15 @@ AWS - Instance EC2 T2.micro Ubuntu 22.04
 
 ##### ⚙️ Back-end:
 
-* [ ] Démarrage projet laravel
-* [ ] Définition routes et API
+* [x] Démarrage projet laravel
+* [x] Définition routes et API
+
 
 ##### :nail_care: Front-end :
 
-* [ ] Choix techno (framework ?)
+* [x] Choix techno (framework ?)
 * [x] Wireframe
+* [x] Maquette web + mobile
+* [x] Front-end statique
+* [ ] Flutter
+* [ ] Intégration avec laravel
