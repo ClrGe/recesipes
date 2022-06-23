@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Authentification\LogController;
+use App\Http\Controllers\Authentification\LoginController;
 use App\Http\Controllers\Authentification\RegisterController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -45,8 +45,13 @@ Route::get('/contact', function(){
 
 
 // routes for Auth
-Route::resource('auth', LogController::class);
-Route::resource('register', RegisterController::class);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
 
 // routes for recipe
 Route::resource('category', CategoryController::class);
@@ -66,5 +71,5 @@ Route::resource('user', UserController::class);
 
 
 //Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.list');
-//Route::get('/login', [LogController::class, 'index'])->name('login.form');
+//Route::get('/login', [LoginController::class, 'index'])->name('login.form');
 //Route::get('/register', [RegisterController::class, 'index'])->name('register.form');

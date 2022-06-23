@@ -10,15 +10,15 @@ header {
     box-sizing: border-box;
     list-style: none;
 }
-
 body {
-    /*display: flex;*/
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     background-color: #fff;
 }
+
 main {
     text-align: center;
     margin: -20px 0 50px;
@@ -232,18 +232,6 @@ input {
     width: 40px;
 }
 
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
 
 .logo {
     display: flex;
@@ -473,19 +461,3 @@ input {
     background-size: 100px 100px;
     background-position: 0 0, 50px 50px;
 }
-
-header {
-    position: sticky;
-    width: 100%;
-}
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-
-
-/*CSS For connect page*/

@@ -1,143 +1,58 @@
 @extends('layouts.app')
-@section('title', "Se connecter")
-
+@section('title', 'auth')
+<link href="{{ asset('css/login.css') }}" rel="stylesheet">
+<script src="{{ asset('js/login.js') }}" defer></script>
 @section('content')
+    <div class="connection">
 
-    <div class="page">
-        <h1>Connexion</h1>
+        <body translate="no">
 
-        <div class="container">
-
-            <form action="" method="POST">
-                @csrf
-
-                <div>
-                    <label for="email">Mail</label>
-                    <input type="text" name="email" id="email" placeholder="recesipes@exemple.com" value="{{ old('email') }}" required>
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <p>Renseignez vos informations pour créer votre compte</p>
+                        <input type="text" placeholder="Nom" />
+                        <input type="text" placeholder="Prénom" />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Mot de passe" />
+                        <input type="password" placeholder="Confirmez votre mot de passe" />
+                        <button>Créer un compte</button>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </form>
                 </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Se connecter</h1>
+                        <p>Renseignez vos identifiants pour accéder à votre compte</p>
 
-                <div>
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" id="password" placeholder="Tartiflette" required>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <a href="#">Mot de passe oublié ?</a>
+                        <button>Se connecter</button>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </form>
                 </div>
-
-                <button type="submit">Confirmer</button>
-
-            </form>
-
-            <div class="no-account">
-                <span>Pas de compte ?</span>
-                <span><a href="">S'inscrire</a></span>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bienvenue</h1>
+                            <button class="ghost" id="signIn">J'ai déjà un compte !</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>ReCESIpes</h1>
+                            <button class="ghost" id="signUp">Je n'ai pas encore de compte !</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-        </div>
+        </body>
     </div>
-
-
-    <style>
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 300;
-            src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-        }
-
-        h1 {
-            position: absolute;
-            top: 5vh;
-            left: auto;
-            right: auto;
-            padding: 0 2vw;
-            background-color: white;
-        }
-
-        .page {
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-
-            font-family: "Open Sans", sans-serif;
-        }
-
-        .container {
-            width: 45vw;
-            height: 80vh;
-            margin: 8vh auto;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-
-            border: 2px solid #666666;
-            border-radius: 10px;
-        }
-
-        .container form {
-            display: flex;
-            flex-direction: column;
-            gap: 4vh;
-
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .container form label {
-            font-weight: bold;
-        }
-
-        .container form input {
-            height: 6vh;
-            border: 2px solid #d1d1d1;
-            border-radius: 5px;
-
-            padding: 0 0.5vw;
-        }
-
-        .container div {
-            display: flex;
-            flex-direction: column;
-            gap: 1vh;
-        }
-
-        .container button {
-            padding: 2vw;
-            width: 50%;
-            margin: auto;
-
-            color: white;
-            background-color: #808080;
-
-            border: none;
-            border-radius: 5px;
-
-            transition-duration: 0.5s;
-        }
-
-        .container button:hover {
-            background-color: #4a5568;
-        }
-
-        .no-account {
-            display: flex;
-            flex-direction: column;
-            gap: 1vh;
-            align-items: center;
-        }
-
-
-    </style>
 @endsection
