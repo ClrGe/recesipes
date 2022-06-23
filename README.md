@@ -1,4 +1,4 @@
-# 🧁reCESIpies🧁
+# 🧁reCESIpes🧁
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
@@ -28,9 +28,8 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
 Maquette Flutter réalisée avec Flutter Flow (https://app.flutterflow.io/project/re-c-e-s-ipes-zonj5z)
 
-### Stack
-
-Web 
+### Stack / Config
+ 
 
     Bootstrap
     Svelte (Web)
@@ -42,6 +41,9 @@ Web
     Serveur web : Apache2
     API         : Laravel-Sail + PHP 8.1
 
+
+PORT back-end   : 8000
+PORT front-end  : 3000
 
 ### Hébergement
 
