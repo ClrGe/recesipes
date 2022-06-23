@@ -28,6 +28,8 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
 Maquette Flutter réalisée avec Flutter Flow (https://app.flutterflow.io/project/re-c-e-s-ipes-zonj5z)
 
+---
+
 ### Stack / Config
  
 
