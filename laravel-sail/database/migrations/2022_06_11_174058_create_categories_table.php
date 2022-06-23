@@ -14,15 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email')->unique();
-            $table->bigInteger("role_id");
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamp("registration_date");
+            $table->string("name");
+            $table->enum("type", ['Provenance', 'FoodType']);
             $table->timestamps();
         });
     }
@@ -35,7 +30,7 @@ return new class extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('categories');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 };
