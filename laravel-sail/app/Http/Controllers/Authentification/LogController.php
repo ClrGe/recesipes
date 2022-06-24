@@ -14,7 +14,7 @@ class LogController extends Controller
         return view('Authentification/login');
     }
 
-    public function LoginUser(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -29,7 +29,7 @@ class LogController extends Controller
         return back()->with('status', 'Mot de passe ou Email incorrectes !');
     }
 
-    public function LogoutUser(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
 
