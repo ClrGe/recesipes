@@ -16,11 +16,10 @@
 
 <body>
     @include('layouts.nav')
-    @include('layouts.notify')
-
-
+{{--    @include('layouts.notify')--}}
+    <div class="container">
         @yield('content')
-
+    </div>
     <div>
         @include('layouts.footer')
     </div>
