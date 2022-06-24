@@ -43,6 +43,10 @@ Route::get('/contact', function(){
     return view('contact');
 })->name('contact.form');
 
+// routes with authentification needed
+Route::middleware(['auth'])->group(function(){
+    Route::get('/logout', [LogController::class, 'logout'])->name('logout');
+});
 
 // routes for Auth
 Route::resource('auth', LogController::class);
@@ -55,7 +59,9 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 Route::resource('recipes', RecipeController::class);
-Route::resource('recipedetails', RecipeDetailsController::class);
+
+Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
+Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
 
 // routes for users
 Route::resource('like', LikeController::class);

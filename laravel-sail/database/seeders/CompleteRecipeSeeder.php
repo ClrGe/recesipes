@@ -16,10 +16,9 @@ class CompleteRecipeSeeder extends Seeder
     {
         CategorySeeder::CallSeeder();
         IngredientSeeder::CallSeeder();
+        RecipeSeeder::CallSeeder();
         QuantitySeeder::CallSeeder();
         MediaSeeder::CallSeeder();
-        RecipeDetailsSeeder::CallSeeder();
-        RecipeSeeder::CallSeeder();
     }
 
     public static function CallSeeder()

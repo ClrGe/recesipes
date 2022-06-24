@@ -14,6 +14,7 @@ class Media extends Model
         'description',
         'alt',
         'path',
+        'recipe_id',
     ];
 
 }

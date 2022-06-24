@@ -22,7 +22,8 @@ return new class extends Migration
             $table->bigInteger("role_id");
             $table->string('password');
             $table->rememberToken();
-            $table->timestamp("registration_date");
+            $table->timestamp("registration_date")->default(now());
+            $table->string("api_token");
             $table->timestamps();
         });
     }

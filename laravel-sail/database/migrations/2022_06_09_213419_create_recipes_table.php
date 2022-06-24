@@ -16,13 +16,16 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->text("steps");
-            $table->text("description");
-            $table->bigInteger("category_id");
-            $table->bigInteger("quantities_id");
-            $table->bigInteger("detail_id");
-            $table->bigInteger("media_id");
+            $table->string("name")->nullable();
+            $table->tinyInteger("guest_number")->default(2);
+            $table->text("steps")->nullable();
+            $table->text("description")->nullable();
+            $table->bigInteger("category_id")->nullable();
+            $table->enum("price_range", ['Economique', 'Moyen', 'Luxe'])->nullable();
+            $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile'])->nullable();
+            $table->smallInteger("cook_duration")->nullable();
+            $table->smallInteger("resting_duration")->nullable();
+            $table->smallInteger("preparation_duration")->nullable();
             $table->timestamps();
         });
     }
