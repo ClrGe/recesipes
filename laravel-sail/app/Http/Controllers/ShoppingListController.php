@@ -15,7 +15,7 @@ class ShoppingListController extends Controller
      */
     public function index()
     {
-        //
+        return view('shoppinglist');
     }
 
     /**
