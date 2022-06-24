@@ -20,7 +20,7 @@
                     </div>
 
                     <div>
-                        <label for="email-confirm">Confirm Mail</label>
+                        <label for="email-confirm">Confirmez Mail</label>
                         <input type="text" name="email-confirm" id="email-confirm" placeholder="recesipes@exemple.com" required>
                     </div>
                 </div>
