@@ -9,6 +9,7 @@ use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\Recipes\RecipeDetailsController;
+use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Users\LikeController;
 use App\Http\Controllers\Users\PermissionController;
 use App\Http\Controllers\Users\RoleController;
@@ -29,14 +30,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name("home");
-
-    //Route::get('/login', [LogController::class, 'index'])->name('login');
-    //Route::post('/login', [LogController::class, 'login'])->name('login');
-    //
-    //Route::get('/logout', [LogController::class, 'logout'])->name('logout');
-    //
-    //Route::get('/register', [RegisterController::class, 'index'])->name('register');
-    //Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 
 Route::get('/contact', function(){
@@ -60,7 +53,6 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 Route::resource('recipes', RecipeController::class);
-Route::resource('recipedetails', RecipeDetailsController::class);
 
 // routes for users
 Route::resource('like', LikeController::class);
@@ -68,8 +60,6 @@ Route::resource('permission', PermissionController::class);
 Route::resource('role', RoleController::class);
 Route::resource('user', UserController::class);
 
+// routes for shopping list
+Route::resource('shoppinglist', ShoppingListController::class);
 
-
-//Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.list');
-//Route::get('/login', [LoginController::class, 'index'])->name('login.form');
-//Route::get('/register', [RegisterController::class, 'index'])->name('register.form');
