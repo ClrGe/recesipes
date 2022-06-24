@@ -12,12 +12,14 @@ class Recipe extends Model
     protected $fillable = [
         'id',
         'name',
+        'guest_number',
         'category_id',
-        'ingredients_id',
         'description',
-        'detail_id',
-        'steps',
-        'media_id',
-
+        'steps',        
+        'cook_duration',
+        'resting_duration',
+        'preparation_duration',
+        'price_range',
+        'difficulty',
     ];
 }

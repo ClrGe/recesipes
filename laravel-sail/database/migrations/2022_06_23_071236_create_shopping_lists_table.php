@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('shopping_lists', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger("recipe_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }

@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Models\Recipes;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Publication extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'type',
-        'subtype1',
-        'subtype2',
+        "user_id",
+        "recipe_id",
+        "publish_date",
     ];
-
 }

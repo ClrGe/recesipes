@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text("description");
             $table->string("alt");
             $table->string("path");
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }

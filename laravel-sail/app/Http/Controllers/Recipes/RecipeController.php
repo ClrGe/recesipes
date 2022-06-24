@@ -6,6 +6,9 @@ use App\Models\Recipes\Recipe;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
+use App\Models\Recipes\Quantity;
+use App\Models\Recipes\RecipeDetails;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -16,7 +19,8 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return view('Recipes/recipesList');
+        $recipesList = Recipe::all();
+        return view('Recipes/recipesList', compact('recipesList'));
     }
 
     /**
@@ -26,7 +30,9 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        //
+        $recipeID = (Recipe::all()->last()->id)+1;
+        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
+        return view('Recipes/recipeCreation');
     }
 
     /**
@@ -36,7 +42,7 @@ class RecipeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRecipeRequest $request)
-    {
+    {    
         //
     }
 
@@ -48,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        //
+        return view('Recipes/recipe', $recipe);
     }
 
     /**
@@ -82,6 +88,8 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
-        //
+        $recipe->delete();
+
+        return redirect()->route('recipes.index')->with('status', 'Recette supprimée');    
     }
 }

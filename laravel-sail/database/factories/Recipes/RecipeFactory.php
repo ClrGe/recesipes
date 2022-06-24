@@ -25,26 +25,20 @@ class RecipeFactory extends Factory
         $category1 = $categories->first()->id;
         $category2 = $categories->last()->id;
 
-        $quantities = Quantity::all();
-        $quantity1 = $quantities->first()->id;
-        $quantity2 = $quantities->last()->id;
-
-        $details = RecipeDetails::all();
-        $detail1 = $details->first()->id;
-        $detail2 = $details->last()->id;
-
-        $medias = Media::all();
-        $media1 = $medias->first()->id;
-        $media2 = $medias->last()->id;
+        $priceRange = ['Economique', 'Moyen', 'Luxe'];
+        $difficulty = ['Facile', 'Moyen', 'Difficile'];
 
         return [
             'name' => $this->faker->word(),
             'category_id' => rand($category1,$category2),
-            'quantities_id' => rand($quantity1,$quantity2),
-            'detail_id' => rand($detail1,$detail2),
             'description' => $this->faker->text(),
             'steps' => $this->faker->text(),
-            'media_id' => rand($media1,$media2),
+            "cook_duration" => rand(1, 90),
+            "preparation_duration" => rand(1, 60),
+            "resting_duration" => rand(1, 300),
+            "guest_number" => rand(1,69),
+            "price_range" => $priceRange[rand(0,2)],
+            "difficulty" => $difficulty[rand(0,2)]
         ];
     }
 }
