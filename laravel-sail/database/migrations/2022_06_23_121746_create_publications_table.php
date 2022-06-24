@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();            
             $table->bigInteger("user_id");
             $table->bigInteger("recipe_id");
+            $table->timestamp("publish_time")->default(now());
             $table->timestamps();
         });
     }
