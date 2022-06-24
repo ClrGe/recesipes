@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Authentification\LogController;
+use App\Http\Controllers\Authentification\LoginController;
 use App\Http\Controllers\Authentification\RegisterController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -9,6 +9,7 @@ use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\Recipes\RecipeDetailsController;
+use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Users\LikeController;
 use App\Http\Controllers\Users\PermissionController;
 use App\Http\Controllers\Users\RoleController;
@@ -30,14 +31,6 @@ Route::get('/', function () {
     return view('home');
 })->name("home");
 
-    //Route::get('/login', [LogController::class, 'index'])->name('login');
-    //Route::post('/login', [LogController::class, 'login'])->name('login');
-    //
-    //Route::get('/logout', [LogController::class, 'logout'])->name('logout');
-    //
-    //Route::get('/register', [RegisterController::class, 'index'])->name('register');
-    //Route::post('/register', [RegisterController::class, 'register'])->name('register');
-
 
 Route::get('/contact', function(){
     return view('contact');
@@ -49,8 +42,13 @@ Route::middleware(['auth'])->group(function(){
 });
 
 // routes for Auth
-Route::resource('auth', LogController::class);
-Route::resource('register', RegisterController::class);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
 
 // routes for recipe
 Route::resource('category', CategoryController::class);
@@ -69,8 +67,6 @@ Route::resource('permission', PermissionController::class);
 Route::resource('role', RoleController::class);
 Route::resource('user', UserController::class);
 
+// routes for shopping list
+Route::resource('shoppinglist', ShoppingListController::class);
 
-
-//Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.list');
-//Route::get('/login', [LogController::class, 'index'])->name('login.form');
-//Route::get('/register', [RegisterController::class, 'index'])->name('register.form');

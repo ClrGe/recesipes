@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 
-class LogController extends Controller
+class LoginController extends Controller
 {
     public function index()
     {
