@@ -63,6 +63,9 @@ Route::get('/randomrecipe', [RecipeController::class, 'randomRecipe'])->name('ra
 Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
 Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
 
+Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
+Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
+
 // routes for users
 Route::resource('like', LikeController::class);
 Route::resource('permission', PermissionController::class);
