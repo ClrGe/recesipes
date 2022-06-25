@@ -62,5 +62,5 @@ Route::resource('user', UserController::class);
 
 
 //Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.list');
-//Route::get('/login', [LogController::class, 'index'])->name('login.form');
+Route::get('/login', [LogController::class, 'index'])->name('login.form');
 //Route::get('/register', [RegisterController::class, 'index'])->name('register.form');

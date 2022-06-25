@@ -2,6 +2,7 @@
 
 namespace App\Models\Recipes;
 
+use App\Models\Publication;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,4 +23,10 @@ class Recipe extends Model
         'price_range',
         'difficulty',
     ];
+
+    public function publications()
+    {
+        return $this->hasOne(Publication::class);
+    }
+    
 }
