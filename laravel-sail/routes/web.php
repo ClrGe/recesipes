@@ -8,7 +8,6 @@ use App\Http\Controllers\Recipes\IngredientController;
 use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
-use App\Http\Controllers\Recipes\RecipeDetailsController;
 use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Users\LikeController;
 use App\Http\Controllers\Users\PermissionController;
@@ -38,7 +37,7 @@ Route::get('/contact', function(){
 
 // routes with authentification needed
 Route::middleware(['auth'])->group(function(){
-    Route::get('/logout', [LogController::class, 'logout'])->name('logout');
+    //Route::get('/logout', [LogController::class, 'logout'])->name('logout');
 });
 
 // routes for Auth
