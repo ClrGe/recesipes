@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Authentification\LogController;
+use App\Http\Controllers\Authentification\LoginController;
 use App\Http\Controllers\Authentification\RegisterController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -45,12 +45,15 @@ Route::get('/contact', function(){
 
 // routes with authentification needed
 Route::middleware(['auth'])->group(function(){
-    Route::get('/logout', [LogController::class, 'logout'])->name('logout');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 // routes for Auth
-Route::resource('auth', LogController::class);
-Route::resource('register', RegisterController::class);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 // routes for recipe
 Route::resource('category', CategoryController::class);
