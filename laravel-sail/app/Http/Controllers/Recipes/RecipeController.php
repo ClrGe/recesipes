@@ -54,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        return view('Recipes/recipe', $recipe);
+        return view('recipes.show', $recipe);
     }
 
     /**

@@ -36,30 +36,29 @@ Route::get('/contact', function(){
     return view('contact');
 })->name('contact.form');
 
-// routes with authentification needed
-Route::middleware(['auth'])->group(function(){
-    Route::get('/logout', [LogController::class, 'logout'])->name('logout');
-});
 
 // routes for Auth
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 
 // routes for recipe
-Route::resource('category', CategoryController::class);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 Route::resource('recipes', RecipeController::class);
 
-Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
-Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
+// waiting log management
+//Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
+//Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
 
 // routes for users
 Route::resource('like', LikeController::class);
