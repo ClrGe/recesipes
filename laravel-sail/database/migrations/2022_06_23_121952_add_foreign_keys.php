@@ -21,16 +21,11 @@ return new class extends Migration
         Schema::table('recipes', function (Blueprint $table){
             $table->bigInteger('category_id')->unsigned()->nullable()->change();
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->bigInteger('user_id')->unsigned()->nullable()->change();
+            $table->foreign('user_id')->references('id')->on('users');
         });
 
         Schema::table('evaluations', function (Blueprint $table){
-            $table->bigInteger('user_id')->unsigned()->nullable()->change();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('recipe_id')->unsigned()->nullable()->change();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-        });
-
-        Schema::table('publications', function (Blueprint $table){
             $table->bigInteger('user_id')->unsigned()->nullable()->change();
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('recipe_id')->unsigned()->nullable()->change();

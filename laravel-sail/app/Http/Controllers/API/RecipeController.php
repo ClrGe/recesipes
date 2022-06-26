@@ -68,39 +68,29 @@ class RecipeController extends Controller
 
     public function favorites()
     {
-        $favRecipes = User::find(5)->likes; // auth()->user()->id
+        $favRecipes = User::find(25)->likes; // auth()->user()->id
         return Response::json($favRecipes);
     }
 
     public function myRecipes()
     {
-        $myRecipes = User::find(5)->myRecipes; // auth()->user()->id
+        $myRecipes = User::find(25)->myRecipes; // auth()->user()->id
         return Response::json($myRecipes); 
     }
 
     public function lastRecipes()
     {
-        $recipePublications = [];
+        $recipes = DB::table("recipes")->orderByDesc("publish_time")->get();
         $lastRecipes = [];
-        $recipes = Recipe::all();
-
-        foreach($recipes as $recipe)
+        for($i = 0; $i<9; $i++)
         {
-            $recipePublication = Recipe::find($recipe->id)->publications;
-            $recipePublications[] = $recipePublication;
-        }
-        $recipePublications = collect($recipePublications)->sortBy("publish_time")->toArray();
-        for($i =0; $i<9; $i++)
-        {
-            if($recipePublications[$i] != null){
-                $lastRecipes[] = $recipes->where("id", "=", $recipePublications[$i]["recipe_id"]);
-            }
+            $lastRecipes[] = $recipes[$i];
         }
 
         return Response::json($lastRecipes);
     }
 
-    public function suggested()
+    public function random()
     {
         $recipes = Recipe::all();
         $recipe = $recipes[rand(0, count($recipes))];

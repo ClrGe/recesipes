@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('recipes/favorites', [RecipeController::class, 'favorites'])->middleware('auth:api')->name('api.recipes.favorites');
 Route::get('recipes/myrecipes', [RecipeController::class, 'myRecipes'])->middleware('auth:api')->name('api.recipes.myrecipes');
 Route::get('recipes/lastrecipes', [RecipeController::class, 'lastRecipes'])->middleware('auth:api')->name('api.recipes.lastrecipes');
-Route::get('recipes/suggested', [RecipeController::class, 'suggested'])->middleware('auth:api')->name('api.recipes.suggested');
+Route::get('recipes/random', [RecipeController::class, 'random'])->middleware('auth:api')->name('api.recipes.random');
 Route::get('recipes/{recipe}', [RecipeController::class, 'show'])->middleware('auth:api')->name('api.recipes.show');
 #endregion
 

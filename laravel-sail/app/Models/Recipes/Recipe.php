@@ -2,7 +2,7 @@
 
 namespace App\Models\Recipes;
 
-use App\Models\Publication;
+use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,11 +22,13 @@ class Recipe extends Model
         'preparation_duration',
         'price_range',
         'difficulty',
+        'user_id',
+        'publish_time',
     ];
 
-    public function publications()
+    public function user()
     {
-        return $this->hasOne(Publication::class);
+        return $this->hasOne(User::class);
     }
     
 }
