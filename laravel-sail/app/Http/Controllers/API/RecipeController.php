@@ -18,7 +18,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        //
+        return Response::json(Recipe::all());
     }
 
     /**

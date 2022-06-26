@@ -25,5 +25,6 @@ Route::get('recipes/myrecipes', [RecipeController::class, 'myRecipes'])->middlew
 Route::get('recipes/lastrecipes', [RecipeController::class, 'lastRecipes'])->middleware('auth:api')->name('api.recipes.lastrecipes');
 Route::get('recipes/random', [RecipeController::class, 'random'])->middleware('auth:api')->name('api.recipes.random');
 Route::get('recipes/{recipe}', [RecipeController::class, 'show'])->middleware('auth:api')->name('api.recipes.show');
+Route::get('recipes', [RecipeController::class, 'index'])->middleware('auth:api')->name('api.recipes.index');
 #endregion
 
