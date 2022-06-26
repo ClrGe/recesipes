@@ -6,9 +6,9 @@ use App\Models\Recipes\Recipe;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
-use App\Models\Recipes\Quantity;
-use App\Models\Recipes\RecipeDetails;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\View;
 
 class RecipeController extends Controller
 {
@@ -20,7 +20,7 @@ class RecipeController extends Controller
     public function index()
     {
         $recipesList = Recipe::all();
-        return view('Recipes/recipesList', compact('recipesList'));
+        return view('recipes.index', compact('recipesList'));
     }
 
     /**
@@ -54,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        return view('recipes.show', $recipe);
+        return view('recipes.show', compact('recipe'));
     }
 
     /**
