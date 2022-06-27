@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\EvaluationController;
 use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
@@ -31,6 +32,13 @@ Route::get('recipes/{recipe}', [RecipeController::class, 'show'])->middleware('a
 Route::get('recipes', [RecipeController::class, 'index'])->middleware('auth:api')->name('api.recipes.index');
 #endregion
 
+#region Category
+Route::get('categories', [CategoryController::class, 'index'])->middleware('auth:api')->name("api.categories.index");
+Route::get('categories/{category}', [CategoryController::class, 'show'])->middleware('auth:api')->name("api.categories.show");
+Route::get('categories/search/{substring}', [CategoryController::class, 'search'])->middleware('auth:api')->name("api.categories.search");
+
+#endregion
+
 #region Quantities
 Route::get('quantities', [QuantityController::class, 'index'])->middleware('auth:api')->name('api.quantities.index');
 Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->middleware('auth:api')->name('api.quantities.show');
@@ -40,7 +48,6 @@ Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->middle
 Route::get('evaluations', [EvaluationController::class, 'index'])->middleware('auth:api')->name('api.evaluations.index');
 Route::get('evaluations/{evaluation}', [EvaluationController::class, 'show'])->middleware('auth:api')->name('api.evaluations.show');
 Route::get('evaluations/recipe/{recipe}', [EvaluationController::class, 'byRecipe'])->middleware('auth:api')->name('api.evaluations.byrecipe');
-
 #endregion
 
 #region Users
