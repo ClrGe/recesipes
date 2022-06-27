@@ -93,7 +93,7 @@ class RecipeController extends Controller
     public function random()
     {
         $recipes = Recipe::all();
-        $recipe = $recipes[rand(0, count($recipes))];
+        $recipe = $recipes[rand(0, count($recipes)-1)];
 
         return Response::json($recipe);
     }
