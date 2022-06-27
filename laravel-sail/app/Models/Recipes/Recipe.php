@@ -30,5 +30,10 @@ class Recipe extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function quantities()
+    {
+        return $this->belongsToMany(Quantity::class);
+    }
     
 }
