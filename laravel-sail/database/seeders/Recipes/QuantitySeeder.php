@@ -24,10 +24,4 @@ class QuantitySeeder extends Seeder
 
         \App\Models\Recipes\Quantity::factory(20)->create();
     }
-
-    public static function CallSeeder()
-    {
-        $quantitySeeder = new QuantitySeeder();
-        $quantitySeeder->run();
-    }
 }

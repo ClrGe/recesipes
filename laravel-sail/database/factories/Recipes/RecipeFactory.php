@@ -32,8 +32,8 @@ class RecipeFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'category_id' => $this->faker->numberBetween($category1,$category2),
-            'description' => $this->faker->text(),
-            'steps' => $this->faker->text(),
+            'description' => $this->faker->realText(),
+            'steps' => $this->faker->realText(),
             "cook_duration" => $this->faker->numberBetween(1, 90),
             "preparation_duration" => $this->faker->numberBetween(1, 60),
             "resting_duration" => $this->faker->numberBetween(1, 300),
@@ -41,7 +41,7 @@ class RecipeFactory extends Factory
             "price_range" => $priceRange[$this->faker->numberBetween(0,2)],
             "difficulty" => $difficulty[$this->faker->numberBetween(0,2)],
             "user_id" => $this->faker->numberBetween($user1, $user2),
-            "publish_time" => $this->faker->dateTimeBetween('-1 week', '+1 week'),
+            "publish_time" => $this->faker->dateTimeBetween('-2 week', 'now'),
         ];
     }
 }

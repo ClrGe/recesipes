@@ -16,7 +16,7 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();        
+        Schema::disableForeignKeyConstraints();
         DB::table('permissions')->delete();
         Schema::enableForeignKeyConstraints();
 
@@ -37,11 +37,5 @@ class PermissionSeeder extends Seeder
             'self_editing' => false,
             'review' => true,
         ]);
-    }
-
-    public static function CallSeeder()
-    {
-        $permissionSeeder = new PermissionSeeder();
-        $permissionSeeder->run();
     }
 }

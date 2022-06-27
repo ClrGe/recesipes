@@ -41,10 +41,4 @@ class RoleSeeder extends Seeder
         ]);
 
     }
-
-    public static function CallSeeder()
-    {
-        $rolesSeeder = new RoleSeeder();
-        $rolesSeeder->run();
-    }
 }

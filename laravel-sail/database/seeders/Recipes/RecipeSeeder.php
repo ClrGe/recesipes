@@ -20,13 +20,7 @@ class RecipeSeeder extends Seeder
         DB::table('recipes')->delete();
         Schema::enableForeignKeyConstraints();
 
-        
-        \App\Models\Recipes\Recipe::factory(20)->create();
-    }
 
-    public static function CallSeeder()
-    {
-        $recipeSeeder = new RecipeSeeder();
-        $recipeSeeder->run();
+        \App\Models\Recipes\Recipe::factory(20)->create();
     }
 }

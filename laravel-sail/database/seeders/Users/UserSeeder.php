@@ -22,10 +22,4 @@ class UserSeeder extends Seeder
 
         \App\Models\Users\User::factory(10)->create();
     }
-
-    public static function CallSeeder()
-    {
-        $userSeeder = new UserSeeder();
-        $userSeeder->run();
-    }
 }

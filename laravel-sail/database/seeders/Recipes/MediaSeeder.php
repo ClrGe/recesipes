@@ -19,13 +19,7 @@ class MediaSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         DB::table('media')->delete();
         Schema::enableForeignKeyConstraints();
-        
-        \App\Models\Recipes\Media::factory(10)->create();
-    }
 
-    public static function CallSeeder()
-    {
-        $mediaSeeder = new MediaSeeder();
-        $mediaSeeder->run();
+        \App\Models\Recipes\Media::factory(10)->create();
     }
 }

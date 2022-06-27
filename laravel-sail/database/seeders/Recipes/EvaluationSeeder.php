@@ -19,13 +19,7 @@ class EvaluationSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         DB::table("evaluations")->delete();
         Schema::enableForeignKeyConstraints();
-        
-        \App\Models\Recipes\Evaluation::factory(10)->create();
-    }
 
-    public static function CallSeeder()
-    {
-        $evaluationSeeder = new EvaluationSeeder();
-        $evaluationSeeder->run();
+        \App\Models\Recipes\Evaluation::factory(10)->create();
     }
 }

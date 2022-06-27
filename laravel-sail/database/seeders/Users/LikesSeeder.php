@@ -24,10 +24,4 @@ class LikesSeeder extends Seeder
 
         \App\Models\Users\Like::factory(20)->create();
     }
-
-    public static function CallSeeder()
-    {
-        $likesSeeder = new LikesSeeder();
-        $likesSeeder->run();
-    }
 }
