@@ -30,9 +30,9 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        $recipeID = (Recipe::all()->last()->id)+1;
-        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
-        return view('Recipes/recipeCreation');
+//        $recipeID = (Recipe::all()->last()->id)+1;
+//        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
+        return view('recipes.create');
     }
 
     /**
@@ -91,5 +91,19 @@ class RecipeController extends Controller
         $recipe->delete();
 
         return redirect()->route('recipes.index')->with('status', 'Recette supprimée');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Recipe  $recipe
+     * @return \Illuminate\Http\Response
+     */
+    public function randomRecipe()
+    {
+        $recipes = Recipe::all();
+        $recipe=$recipes[rand(0, count($recipes)-1)];
+
+        return $this->show($recipe);
     }
 }

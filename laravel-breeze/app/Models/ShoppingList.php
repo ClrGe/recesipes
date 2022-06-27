@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ShoppingList extends Model
+class Publication extends Model
 {
     use HasFactory;
 
-    
     protected $fillable = [
-        'id',
-        'user_id',
-        'recipe_id',
+        "user_id",
+        "recipe_id",
+        "publish_date",
     ];
 }

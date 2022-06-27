@@ -7,10 +7,10 @@
                 <a href="{{ route('home') }}">🏠 Accueil</a>
             </li>
             <li class="nav-item">
-                <a href="#">🥞 Recette au hasard</a>
+                <a href="{{ route('randomrecipe') }}">🥞 Recette au hasard</a>
             </li>
             <li class="nav-item">
-                <a href="#">🍔 Catégories</a>
+                <a href="{{ route('categories') }}">🍔 Catégories</a>
             </li>
             <li class="cart">
                 <a href="#">🛒 Mon panier</a>
