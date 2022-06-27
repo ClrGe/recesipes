@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\QuantityController;
+use App\Http\Controllers\API\RecipeController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,22 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+#region Recipes
+Route::get('recipes/favorites', [RecipeController::class, 'favorites'])->middleware('auth:api')->name('api.recipes.favorites');
+Route::get('recipes/myrecipes', [RecipeController::class, 'myRecipes'])->middleware('auth:api')->name('api.recipes.myrecipes');
+Route::get('recipes/lastrecipes', [RecipeController::class, 'lastRecipes'])->middleware('auth:api')->name('api.recipes.lastrecipes');
+Route::get('recipes/random', [RecipeController::class, 'random'])->middleware('auth:api')->name('api.recipes.random');
+Route::get('recipes/{recipe}', [RecipeController::class, 'show'])->middleware('auth:api')->name('api.recipes.show');
+Route::get('recipes', [RecipeController::class, 'index'])->middleware('auth:api')->name('api.recipes.index');
+#endregion
+
+#region Quantities
+Route::get('quantities', [QuantityController::class, 'index'])->middleware('auth:api')->name('api.quantities.index');
+Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->middleware('auth:api')->name('api.quantities.show');
+#endregion
+#region Users
+Route::get('users', [UserController::class, 'index'])->middleware('auth:api')->name('api.users.index');
+Route::get('users/{user}', [UserController::class, 'show'])->middleware('auth:api')->name('api.users.show');
+#endregion
+
