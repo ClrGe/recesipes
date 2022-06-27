@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\Users\DisplayUserSeeder;
+use Database\Seeders\Recipes\DisplayRecipeSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        CompleteUserSeeder::CallSeeder();
-        CompleteRecipeSeeder::CallSeeder();
+        $this->call([DisplayUserSeeder::class,
+                    DisplayRecipeSeeder::class]);
+
     }
 }

@@ -25,8 +25,8 @@ class MediaFactory extends Factory
         return [
             'description' => $this->faker->text(),
             'alt' => $this->faker->word(),
-            'path' => "Random Path",
-            "recipe_id" => rand($recipe1, $recipe2),
+            'path' => $this->faker->imageUrl(),
+            "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),
         ];
     }
 }

@@ -1,11 +1,12 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Recipes;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class IngredientSeeder extends Seeder
 {
@@ -16,9 +17,9 @@ class IngredientSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::disableForeignKeyConstraints();
         DB::table('ingredients')->delete();
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::enableForeignKeyConstraints();
 
         $response = Http::get('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
         $data = $response->json();
@@ -28,11 +29,5 @@ class IngredientSeeder extends Seeder
                 'name' => $ingredient['strIngredient'],
             ]);
         }
-    }
-
-    public static function CallSeeder()
-    {
-        $ingredientSeeder = new IngredientSeeder();
-        $ingredientSeeder->run();
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Users;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class PermissionSeeder extends Seeder
 {
@@ -15,9 +16,9 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::disableForeignKeyConstraints();
         DB::table('permissions')->delete();
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::enableForeignKeyConstraints();
 
         DB::table('permissions')->insert([
             'all' => true,
@@ -36,11 +37,5 @@ class PermissionSeeder extends Seeder
             'self_editing' => false,
             'review' => true,
         ]);
-    }
-
-    public static function CallSeeder()
-    {
-        $permissionSeeder = new PermissionSeeder();
-        $permissionSeeder->run();
     }
 }
