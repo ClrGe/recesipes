@@ -55,6 +55,8 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 Route::resource('recipes', RecipeController::class);
+Route::get('/randomrecipe', [RecipeController::class, 'randomRecipe'])->name('randomrecipe');
+
 
 // waiting log management
 //Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
