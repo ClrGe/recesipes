@@ -97,4 +97,10 @@ class RecipeController extends Controller
 
         return Response::json($recipe);
     }
+
+    public function search($subString)
+    {
+        $recipes = Recipe::query()->where('name', 'LIKE', "%{$subString}%")->get();
+        return Response::json($recipes);
+    }
 }
