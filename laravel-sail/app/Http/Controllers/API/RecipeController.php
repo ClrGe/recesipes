@@ -68,13 +68,13 @@ class RecipeController extends Controller
 
     public function favorites()
     {
-        $favRecipes = User::find(25)->likes; // auth()->user()->id
+        $favRecipes = User::find(auth()->user()->id)->likes; // auth()->user()->id
         return Response::json($favRecipes);
     }
 
     public function myRecipes()
     {
-        $myRecipes = User::find(25)->myRecipes; // auth()->user()->id
+        $myRecipes = Recipe::all()->where("user_id", "=", auth()->user()->id ); // auth()->user()->id
         return Response::json($myRecipes); 
     }
 

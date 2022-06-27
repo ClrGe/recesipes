@@ -33,7 +33,12 @@ class Recipe extends Model
 
     public function quantities()
     {
-        return $this->belongsToMany(Quantity::class);
+        return $this->belongsTo(Quantity::class);
+    }
+
+    public function evaluations()
+    {
+        return $this->belongsToMany(User::class, "evaluations");
     }
     
 }

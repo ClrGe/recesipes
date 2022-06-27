@@ -17,4 +17,9 @@ class Evaluation extends Model
         'user_id',
         'rating',
     ];
+
+    public function recipe()
+    {
+        return $this->hasOne(Recipe::class);
+    }
 }

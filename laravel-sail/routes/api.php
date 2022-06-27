@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\EvaluationController;
 use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
 use App\Http\Controllers\API\UserController;
@@ -34,6 +35,14 @@ Route::get('recipes', [RecipeController::class, 'index'])->middleware('auth:api'
 Route::get('quantities', [QuantityController::class, 'index'])->middleware('auth:api')->name('api.quantities.index');
 Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->middleware('auth:api')->name('api.quantities.show');
 #endregion
+
+#region Evaluations
+Route::get('evaluations', [EvaluationController::class, 'index'])->middleware('auth:api')->name('api.evaluations.index');
+Route::get('evaluations/{evaluation}', [EvaluationController::class, 'show'])->middleware('auth:api')->name('api.evaluations.show');
+Route::get('evaluations/recipe/{recipe}', [EvaluationController::class, 'byRecipe'])->middleware('auth:api')->name('api.evaluations.byrecipe');
+
+#endregion
+
 #region Users
 Route::get('users', [UserController::class, 'index'])->middleware('auth:api')->name('api.users.index');
 Route::get('users/{user}', [UserController::class, 'show'])->middleware('auth:api')->name('api.users.show');
