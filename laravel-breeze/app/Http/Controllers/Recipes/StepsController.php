@@ -14,7 +14,8 @@ class StepsController extends Controller
      */
     public function index()
     {
-        //
+        $categoryList = Category::all();
+        return view('categories', compact('categoryList'));
     }
 
     /**
