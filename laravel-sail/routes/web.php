@@ -49,12 +49,14 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 #endregion
 
 #region recipes
-Route::resource('category', CategoryController::class);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 Route::resource('recipes', RecipeController::class);
+
+Route::get('/randomrecipe', [RecipeController::class, 'randomRecipe'])->name('randomrecipe');
 
 Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create')->middleware('can:create,recipes');
 Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update')->middleware('can:create,recipes');
