@@ -4,6 +4,7 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\EvaluationController;
 use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
+use App\Http\Controllers\API\SearchController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -56,4 +57,6 @@ Route::get('evaluations/recipe/{recipe}', [EvaluationController::class, 'byRecip
 Route::get('users', [UserController::class, 'index'])->middleware('auth:api')->name('api.users.index');
 Route::get('users/{user}', [UserController::class, 'show'])->middleware('auth:api')->name('api.users.show');
 #endregion
+
+Route::get('search/{substring}', [SearchController::class, 'search'])->name('api.search');
 
