@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
@@ -30,9 +31,9 @@ Route::get('recipes', [RecipeController::class, 'index'])->middleware('auth:api'
 #endregion
 
 #region Quantities
-
+Route::get('quantities', [QuantityController::class, 'index'])->middleware('auth:api')->name('api.quantities.index');
+Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->middleware('auth:api')->name('api.quantities.show');
 #endregion
-Route::get('users', [UserController::class, 'index'])->middleware('auth:api')->name('api.users.index');
 #region Users
 Route::get('users', [UserController::class, 'index'])->middleware('auth:api')->name('api.users.index');
 Route::get('users/{user}', [UserController::class, 'show'])->middleware('auth:api')->name('api.users.show');
