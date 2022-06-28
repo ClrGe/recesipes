@@ -22,6 +22,7 @@ Le dossier */documentation* contient :
  - 📐 Le schéma UML de la base de données.
  - 💄 Les maquettes de la plateforme. (visible  aussi sur : https://miro.com/app/board/uXjVOwdAQsA=/)
  - 📚 Le cahier des charges du projet.
+ - (à venir) Les rapports individuels + documentation produit
 
 ---
 
