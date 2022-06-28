@@ -10,10 +10,10 @@ Dernière édition : 28/06/2022 - Claire
 
 ### Installation
 
-    - - Clonez le dépôt
-    - - Placez-vous dans le dossier laraval-breeze
-    - - Copiez .env.example vers .env en éditant les données selon votre configuration
-    - - Effectuez les migrations avec Artisan puis servez le projet
+    - Cloner le dépôt
+    - Se placer dans le dossier laraval-breeze
+    - Copier .env.example vers .env en éditant les données selon votre configuration
+    - Faire les migrations avec Artisan puis servir le projet
 
 ### Documentation
 
