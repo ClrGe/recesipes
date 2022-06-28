@@ -2,11 +2,18 @@
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
-Dernière édition : 23/06/2022 - Claire
+Dernière édition : 28/06/2022 - Claire
 
 ### Presentation
 
 🧁*reCESIpies*🧁 propose des recettes de cuisines variées accessibles à tous.
+
+### Installation
+
+    - - Clonez le dépôt
+    - - Placez-vous dans le dossier laraval-breeze
+    - - Copiez .env.example vers .env en éditant les données selon votre configuration
+    - - Effectuez les migrations avec Artisan puis servez le projet
 
 ### Documentation
 
