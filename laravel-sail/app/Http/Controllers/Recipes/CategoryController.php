@@ -6,6 +6,7 @@ use App\Models\Recipes\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Support\Facades\Response;
 
 class CategoryController extends Controller
 {
@@ -17,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categoryList = Category::all();
-        return view('categories', compact('categoryList'));
+        return Response::view('categories', compact('categoryList'));
     }
 
     /**

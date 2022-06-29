@@ -6,6 +6,7 @@ use App\Models\Recipes\Recipe;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Response;
 
 class RecipeController extends Controller
@@ -36,7 +37,7 @@ class RecipeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRecipeRequest  $request
+     * @param StoreRecipeRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRecipeRequest $request)
@@ -47,7 +48,7 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
@@ -58,7 +59,7 @@ class RecipeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function edit(Recipe $recipe)
@@ -69,8 +70,8 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRecipeRequest  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param UpdateRecipeRequest $request
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateRecipeRequest $request, Recipe $recipe)
@@ -81,8 +82,8 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @param Recipe $recipe
+     * @return RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
     {
@@ -94,7 +95,6 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
     public function randomRecipe()

@@ -3,9 +3,7 @@
 
 @section('content')
     <body>
-    <h1>Liste des cétégories</h1>
-    <h3>De nouveaux horizons culinaires</h3>
-    <h1>avec reCESIpes</h1>
+    <h1>Liste des catégories</h1>
 
     <div class="carousel">
         <input type="radio" name="position" checked />

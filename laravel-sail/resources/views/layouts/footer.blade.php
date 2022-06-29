@@ -5,7 +5,7 @@
         <div class="footer-all">
 
             <li class="footer-item">
-                <a href="#">Contact</a>
+                <a href="{{ route('contactform') }}">Contact</a>
             </li>
             <li class="footer-item">
                 <a href="#">Informations légales</a>

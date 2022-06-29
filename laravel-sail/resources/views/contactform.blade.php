@@ -10,8 +10,7 @@
 
             <h1>CONTACTEZ NOUS</h1>
 
-            <form action="" method="POST">
-                @csrf
+            <form action="">
 
                 <div class="mail">
                     <div>
@@ -28,7 +27,7 @@
 
                 <div>
                     <label for="subject">Sujet</label>
-                    <input type="text" name="subject" id="subject" placeholder="Problème avec ma recette" required value="{{ old('subject') }}">
+                    <input type="text" name="subject" id="subject" placeholder="Problème avec une recette" required value="{{ old('subject') }}">
                 </div>
 
                 <div>
@@ -36,7 +35,7 @@
                     <textarea name="message" placeholder="Votre message très pertinent !" id="message" cols="30" rows="10" style="resize: none" required ></textarea>
                 </div>
 
-                <button type="submit">CONFIRMER</button>
+                <button type="submit" class="btn btn-outline-primary" href="{{ route('contactform.send-mail') }}">CONFIRMER</button>
 
             </form>
 

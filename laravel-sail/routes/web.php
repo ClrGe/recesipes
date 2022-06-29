@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Authentification\LoginController;
 use App\Http\Controllers\Authentification\RegisterController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
@@ -73,3 +74,8 @@ Route::resource('user', UserController::class);
 Route::resource('shoppinglist', ShoppingListController::class);
 #endregion
 
+
+#region footer
+Route::get('contactform', [ContactFormController::class, 'index'])->name('contactform');
+Route::get('contactform/send-mail', [ContactFormController::class, 'sendMail'])->name('contactform.send-mail');
+#end region
