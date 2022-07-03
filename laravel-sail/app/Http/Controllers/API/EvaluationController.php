@@ -62,7 +62,8 @@ class EvaluationController extends Controller
      */
     public function destroy(Evaluation $evaluation)
     {
-        //
+        $evaluation->delete();
+        Response::json(null);
     }
 
     public function byRecipe(Recipe $recipe)
