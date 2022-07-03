@@ -45,8 +45,8 @@ class QuantityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param Quantity $quantity
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Recipes\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Quantity $quantity)
@@ -57,7 +57,7 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Quantity $quantity
+     * @param  \App\Models\Recipes\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function destroy(Quantity $quantity)
