@@ -62,7 +62,8 @@ class MediaController extends Controller
      */
     public function destroy(Media $media)
     {
-        //
+        $media->delete();
+        return Response::json(null);
     }
 
     public function byRecipe(Recipe $recipe)

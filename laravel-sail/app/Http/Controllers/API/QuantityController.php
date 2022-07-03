@@ -61,6 +61,7 @@ class QuantityController extends Controller
      */
     public function destroy(Quantity $quantity)
     {
-        //
+        $quantity->delete();
+        return Response::json(null);
     }
 }
