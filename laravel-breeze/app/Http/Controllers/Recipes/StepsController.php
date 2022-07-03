@@ -74,6 +74,7 @@ class StepsController extends Controller
      */
     public function destroy()
     {
-        //
+        $user->delete();
+        return Response::json(null);
     }
 }
