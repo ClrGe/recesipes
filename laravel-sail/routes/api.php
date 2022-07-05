@@ -98,18 +98,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 #region DELETE
 
     #region Recipes
-        Route::delete('recipes/{recipe}', [RecipeController::class, 'delete'])->middleware('auth:api')->name('api.recipes.delete');
-        Route::delete('quantities/{quantity}', [QuantityController::class, 'delete'])->middleware('auth:api')->name('api.quantities.delete');
-        Route::delete('evaluations/{evaluation}', [EvaluationController::class, 'delete'])->middleware('auth:api')->name('api.evaluations.delete');
-        Route::delete('medias/{media}', [MediaController::class, 'delete'])->middleware('auth:api')->name('api.medias.delete');
-        Route::delete('categories/{category}', [CategoryController::class, 'delete'])->middleware('auth:api')->name("api.categories.delete");
-        Route::delete('ingredients/{ingredient}', [IngredientController::class, 'delete'])->middleware('auth:api')->name('api/ingredients.delete');
+        Route::delete('recipes/{recipe}', [RecipeController::class, 'destroy'])->middleware('auth:api')->name('api.recipes.destroy');
+        Route::delete('quantities/{quantity}', [QuantityController::class, 'destroy'])->middleware('auth:api')->name('api.quantities.destroy');
+        Route::delete('evaluations/{evaluation}', [EvaluationController::class, 'destroy'])->middleware('auth:api')->name('api.evaluations.destroy');
+        Route::delete('medias/{media}', [MediaController::class, 'destroy'])->middleware('auth:api')->name('api.medias.destroy');
+        Route::delete('categories/{category}', [CategoryController::class, 'destroy'])->middleware('auth:api')->name("api.categories.destroy");
+        Route::delete('ingredients/{ingredient}', [IngredientController::class, 'destroy'])->middleware('auth:api')->name('api/ingredients.destroy');
     #endregion
 
     #region Users
-        Route::delete('users/{user}', [UserController::class, 'delete'])->middleware('auth:api')->name('api.users.delete');
-        Route::delete('roles/{role}', [RoleController::class, 'delete'])->middleware('auth:api')->name('api.roles.delete');
-        Route::delete('permissions/{permission}', [PermissionController::class, 'delete'])->middleware('auth:api')->name('api.permissions.delete');
+        Route::delete('users/{user}', [UserController::class, 'destroy'])->middleware('auth:api')->name('api.users.destroy');
+        Route::delete('roles/{role}', [RoleController::class, 'destroy'])->middleware('auth:api')->name('api.roles.destroy');
+        Route::delete('permissions/{permission}', [PermissionController::class, 'destroy'])->middleware('auth:api')->name('api.permissions.destroy');
     #endregion
 
 #endregion
