@@ -36,7 +36,7 @@
                                 <div>
 
                                     <div>Cuisiner pour <input type="number" min="1" max="69"
-                                                              value={{ $recipe->guest_number }}></div>
+                                            value={{ $recipe->guest_number }}></div>
 
                                 </div>
                                 <div>

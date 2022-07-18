@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipes\Ingredient;
-use App\Models\Recipes\Quantity;
+
 use App\Models\Recipes\Recipe;
-use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -17,18 +15,42 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipes.index', compact('recipes'));
+        return view('recipes', ['recipes' => $recipes]);
+    }
+
+    public function view(Request $request, $id)
+    {
+        $recipe = Recipe::where('id', $id)->first();
+        $quantities = Quantity::all()->where('recipe_id', $id);
+        $ingredients = [];
+        foreach($quantities as $quantity){
+            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
+            $ingredients[] = $ingredient;
+        }
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]);
+    }
+
+    public function random()
+    {
+        $recipe = Recipe::inRandomOrder()->first();
+        return view('recipe', ['recipe' => $recipe]);
+    }
+
+    public function manyrandom()
+    {
+        $recipes = Recipe::all();
+        return view('welcome', ['recipes' => $recipes]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -83,10 +105,18 @@ class RecipeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
+        $quantities = Quantity::all()->where('recipe_id', $recipe->id);
+        $ingredients = [];
+        foreach($quantities as $quantity){
+            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
+            $ingredients[] = $ingredient;
+        }
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]);
+    }
         if($recipe->user_id == null)
         {
             $user = null;
@@ -108,13 +138,11 @@ class RecipeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function edit(Recipe $recipe)
     {
-        $recipeID = (Recipe::all()->last()->id)+1;
-        DB::insert("UPDATE recipes (`id`) SET ($recipeID)");
-        return view('recipes.show', );
+        //
     }
 
     /**
@@ -122,9 +150,9 @@ class RecipeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Recipe $recipe)
     {
         $this->validate($request, array(
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -164,8 +192,8 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Recipe $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @param  \App\Models\Recipe  $recipe
+     * @return \Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
     {
