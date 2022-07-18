@@ -14,11 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->string("type");
-            $table->string("subtype1")->nullable();
-            $table->string("subtype2")->nullable();            
+            $table->text("description");
+            $table->string("alt");
+            $table->string("path");
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }
@@ -30,8 +31,8 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('categories');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('media');
+        Schema::enableForeignKeyConstraints();
     }
 };

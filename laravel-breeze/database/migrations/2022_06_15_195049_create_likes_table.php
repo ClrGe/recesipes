@@ -14,13 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('evaluations', function (Blueprint $table) {
-            $table->id();
-            $table->text("comment");
-            $table->bigInteger("recipe_id");
+        Schema::create('likes', function (Blueprint $table) {
+            $table->id();            
             $table->bigInteger("user_id");
-            $table->timestamp("date");
-            $table->tinyInteger('rating');
+            $table->bigInteger("recipe_id");
             $table->timestamps();
         });
     }
@@ -32,8 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('evaluations');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('likes');
+        Schema::enableForeignKeyConstraints();
     }
 };

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Recipes\Evaluation;
+use App\Models\Recipes\Media;
+use App\Models\Recipes\Quantity;
 use App\Models\Recipes\Recipe;
+use App\Models\Users\Like;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -63,7 +67,28 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
-        //
+        $recipe->delete();
+        $quantities = Quantity::all()->where("recipe_id", "=", $recipe->id);
+        foreach($quantities as $quantity)
+        {
+            $quantity->delete();
+        }
+        $medias = Media::all()->where("recipe_id", "=", $recipe->id);
+        foreach($medias as $media)
+        {
+            $media->delete();
+        }
+        $evaluations = Evaluation::all()->where("recipe_id", "=", $recipe->id);
+        foreach($evaluations as $evaluation)
+        {
+            $evaluation->delete();
+        }
+        $likes = Like::all()->where("recipe_id", "=", $recipe->id);
+        foreach($likes as $like)
+        {
+            $like->delete();
+        }
+        return Response::json(null);
     }
 
     public function favorites()

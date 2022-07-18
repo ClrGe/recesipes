@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipes\Quantity;
+use App\Models\Users\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-class QuantityController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class QuantityController extends Controller
      */
     public function index()
     {
-        return Response::json(Quantity::all());
+        return Response::json(Permission::all());
     }
 
     /**
@@ -33,22 +33,22 @@ class QuantityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show(Quantity $quantity)
+    public function show(Permission $permission)
     {
-        return Response::json($quantity);
+        return Response::json($permission);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quantity $quantity)
+    public function update(Request $request, Permission $permission)
     {
         //
     }
@@ -56,12 +56,12 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quantity $quantity)
+    public function destroy(Permission $permission)
     {
-        $quantity->delete();
+        $permission->delete();
         return Response::json(null);
     }
 }

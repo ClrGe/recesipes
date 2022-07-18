@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipes\Quantity;
+use App\Models\Recipes\Media;
+use App\Models\Recipes\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-class QuantityController extends Controller
+class MediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class QuantityController extends Controller
      */
     public function index()
     {
-        return Response::json(Quantity::all());
+        return Response::json(Media::all());
     }
 
     /**
@@ -33,22 +34,22 @@ class QuantityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function show(Quantity $quantity)
+    public function show(Media $media)
     {
-        return Response::json($quantity);
+        return Response::json($media);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quantity $quantity)
+    public function update(Request $request, Media $media)
     {
         //
     }
@@ -56,12 +57,18 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quantity $quantity)
+    public function destroy(Media $media)
     {
-        $quantity->delete();
+        $media->delete();
         return Response::json(null);
+    }
+
+    public function byRecipe(Recipe $recipe)
+    {
+        $medias = Media::all()->where("recipe_id", "=", $recipe->id);
+        return Response::json($medias);
     }
 }

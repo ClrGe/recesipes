@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipes\Quantity;
+use App\Models\Recipes\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-class QuantityController extends Controller
+class IngredientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class QuantityController extends Controller
      */
     public function index()
     {
-        return Response::json(Quantity::all());
+        return Response::json(Ingredient::all());
     }
 
     /**
@@ -33,22 +33,22 @@ class QuantityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Ingredient  $ingredient
      * @return \Illuminate\Http\Response
      */
-    public function show(Quantity $quantity)
+    public function show(Ingredient $ingredient)
     {
-        return Response::json($quantity);
+        return Response::json($ingredient);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Ingredient  $ingredient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quantity $quantity)
+    public function update(Request $request, Ingredient $ingredient)
     {
         //
     }
@@ -56,12 +56,12 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipes\Quantity  $quantity
+     * @param  \App\Models\Recipes\Ingredient  $ingredient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quantity $quantity)
+    public function destroy(Ingredient $ingredient)
     {
-        $quantity->delete();
+        $ingredient->delete();
         return Response::json(null);
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace Database\Factories\Recipes;
+namespace Database\Factories\Users;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Users\User;
 use App\Models\Recipes\Recipe;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Evaluation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class EvaluationFactory extends Factory
+class LikeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -25,12 +25,10 @@ class EvaluationFactory extends Factory
         $users = User::all();
         $user1 = $users->first()->id;
         $user2 = $users->last()->id;
-        return [
+
+        return[
             "user_id" => $this->faker->numberBetween($user1, $user2),
             "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),
-            "rating" => $this->faker->numberBetween(0, 10),
-            "comment" => $this->faker->text(),
-            "date" => $this->faker->dateTimeBetween('-1 week', '+1 week'),
         ];
     }
 }

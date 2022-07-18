@@ -14,10 +14,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->bigInteger("permissions_id");
+            $table->boolean("review");
+            $table->boolean("self_editing");
+            $table->boolean("all");
             $table->timestamps();
         });
     }
@@ -29,8 +30,8 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('roles');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('permissions');
+        Schema::enableForeignKeyConstraints();
     }
 };

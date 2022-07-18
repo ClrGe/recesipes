@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,10 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shopping_lists', function (Blueprint $table) {
+        Schema::create('quantities', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger("ingredient_id");
+            $table->smallInteger("quantity");
+            $table->enum("unit", ['g','Tranches','Cuillère à soupe','mL','unité','Cuillère à café','Tasse',]);
             $table->bigInteger("recipe_id");
-            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }
@@ -28,6 +31,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_lists');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('quantities');
+        Schema::enableForeignKeyConstraints();
     }
 };

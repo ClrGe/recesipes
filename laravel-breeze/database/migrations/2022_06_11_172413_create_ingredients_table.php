@@ -14,11 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
-            $table->boolean("review");
-            $table->boolean("self_editing");
-            $table->boolean("all");
+            $table->string("name");
             $table->timestamps();
         });
     }
@@ -30,8 +28,8 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('permissions');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('ingredients');
+        Schema::enableForeignKeyConstraints();
     }
 };

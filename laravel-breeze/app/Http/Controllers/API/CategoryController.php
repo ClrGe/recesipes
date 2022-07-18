@@ -62,7 +62,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return Response::json(null);
     }
 
     public function search($subString)
