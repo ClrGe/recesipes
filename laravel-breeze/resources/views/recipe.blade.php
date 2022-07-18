@@ -15,7 +15,7 @@
                             <div class="w-full rounded">
                                 <div>
                                     Recette ajoutée le :
-                                    <b>{{ $recipe->created_at }}</b>
+                                    <b>{{ date('d F Y', strtotime($recipe->created_at)) }} à {{ date('H:i', strtotime($recipe->created_at)) }}</b>
                                 </div>
                                 <div class="image">
                                     <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
@@ -56,13 +56,15 @@
                                 </div>
                                 <div class="liste-ingredients">
                                     <span>Liste des ingrédients</span>
-                                    <?php for ($i = 0; $i < 10; $i++) { ?>
-                                    <div>
-                                        Ingrédient <?php echo $i; ?>
-                                        Quantité : <?php echo $i; ?>
-                                        Mesure : <?php echo $i; ?>
-                                    </div>
-                                    <?php } ?>
+                                    @foreach($ingredients as $ingredient)
+                                        @foreach($quantities as $quantity)
+                                            @if($quantity->ingredient_id == $ingredient->id)
+                                                <div>
+                                                    {{ $quantity->quantity }} {{ $quantity->unit }} de {{ $ingredient->name }}
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

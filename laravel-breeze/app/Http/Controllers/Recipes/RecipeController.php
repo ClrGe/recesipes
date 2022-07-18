@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Recipes\Ingredient;
+use App\Models\Recipes\Quantity;
 use App\Models\Recipes\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -26,7 +27,13 @@ class RecipeController extends Controller
     public function view(Request $request, $id)
     {
         $recipe = Recipe::where('id', $id)->first();
-        return view('recipe', ['recipe' => $recipe]);
+        $quantities = Quantity::all()->where('recipe_id', $id);
+        $ingredients = [];
+        foreach($quantities as $quantity){
+            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
+            $ingredients[] = $ingredient;
+        }
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]);
     }
 
     public function random()
@@ -72,8 +79,14 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        $recipes = Recipe::all();
-        return view('recipe', ['recipe' => $recipe]);    }
+        $quantities = Quantity::all()->where('recipe_id', $recipe->id);
+        $ingredients = [];
+        foreach($quantities as $quantity){
+            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
+            $ingredients[] = $ingredient;
+        }
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]); 
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -111,33 +124,4 @@ class RecipeController extends Controller
         return redirect()->route('recipes.index')->with('status', 'Recette supprimée');
     }
 
-    public function favorites()
-    {
-        $favRecipes = User::find(auth()->user()->id)->likes; // auth()->user()->id
-        return Response::json($favRecipes);
-    }
-
-    public function myRecipes()
-    {
-        $myRecipes = Recipe::all()->where("user_id", "=", auth()->user()->id ); // auth()->user()->id
-        return Response::json($myRecipes); 
-    }
-
-    public function lastRecipes()
-    {
-        $recipes = DB::table("recipes")->orderByDesc("publish_time")->get();
-        $lastRecipes = [];
-        for($i = 0; $i<9; $i++)
-        {
-            $lastRecipes[] = $recipes[$i];
-        }
-
-        return Response::json($lastRecipes);
-    }
-
-    public function search($subString)
-    {
-        $recipes = Recipe::query()->where('name', 'LIKE', "%{$subString}%")->get();
-        return Response::json($recipes);
-    }
 }

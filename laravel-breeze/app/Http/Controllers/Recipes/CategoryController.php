@@ -23,12 +23,12 @@ class CategoryController extends Controller
 
     }
 
-
     public function view(Request $request, $id)
     {
         $category = Category::where('id', $id)->first();
         return view('category', ['category' => $category]);
     }
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -48,7 +48,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return Response::json($category);
+
     }
 
     /**
@@ -72,19 +72,5 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
-    }
-
-    public function search($subString)
-    {
-        $categoriesByType = Category::query()->where('type', 'LIKE', "%{$subString}%")->whereNull('subtype1')->get();
-        $categoriesBySubtype1 = Category::query()->where('subtype1', 'LIKE', "%{$subString}%")->whereNull('subtype2')->get();
-        $categoriesBySubtype2 = Category::query()->where('subtype2', 'LIKE', "%{$subString}%")->get();
-
-        $categories = new Collection();
-        $categories = $categories->merge($categoriesByType);
-        $categories = $categories->merge($categoriesBySubtype1);
-        $categories = $categories->merge($categoriesBySubtype2);
-
-        return Response::json($categories);
     }
 }

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-use App\Models\Ingredient;
+use App\Models\Recipes\Ingredient;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class IngredientController extends Controller
 {
