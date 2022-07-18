@@ -15,7 +15,10 @@
                             <div class="w-full rounded">
                                 <div>
                                     Recette ajoutée le :
-                                    <b>{{ date('d F Y', strtotime($recipe->created_at)) }} à {{ date('H:i', strtotime($recipe->created_at)) }}</b>
+                                    <?php 
+                                          setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
+                                    ?>
+                                    <b>{{ strftime('%d %B %Y', strtotime($recipe->created_at)) }} à {{ date('H:i', strtotime($recipe->created_at)) }}</b>
                                 </div>
                                 <div class="image">
                                     <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
