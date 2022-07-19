@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\Controller;
+
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
@@ -8,7 +10,6 @@ use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 
-use App\Http\Controllers\ShoppingListController;
 use Illuminate\Support\Facades\Route;
 
 /*
