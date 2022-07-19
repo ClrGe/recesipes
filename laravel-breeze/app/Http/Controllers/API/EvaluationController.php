@@ -66,7 +66,7 @@ class EvaluationController extends Controller
         Schema::disableForeignKeyConstraints();
         $evaluation->delete();
         Schema::enableForeignKeyConstraints();
-        Response::json(null);
+        return back();
     }
 
     public function byRecipe(Recipe $recipe)

@@ -66,7 +66,7 @@ class CategoryController extends Controller
         Schema::disableForeignKeyConstraints();
         $category->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 
     public function search($subString)

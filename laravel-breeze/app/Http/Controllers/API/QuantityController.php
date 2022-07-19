@@ -65,6 +65,6 @@ class QuantityController extends Controller
         Schema::disableForeignKeyConstraints();
         $quantity->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 }

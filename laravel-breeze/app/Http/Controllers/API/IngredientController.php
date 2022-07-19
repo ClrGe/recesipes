@@ -65,6 +65,6 @@ class IngredientController extends Controller
         Schema::disableForeignKeyConstraints();
         $ingredient->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 }

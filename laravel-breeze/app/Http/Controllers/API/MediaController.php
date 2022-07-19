@@ -66,7 +66,7 @@ class MediaController extends Controller
         Schema::disableForeignKeyConstraints();
         $media->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 
     public function byRecipe(Recipe $recipe)

@@ -65,6 +65,6 @@ class PermissionController extends Controller
         Schema::disableForeignKeyConstraints();
         $permission->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 }

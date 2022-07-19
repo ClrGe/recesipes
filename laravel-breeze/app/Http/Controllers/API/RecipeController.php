@@ -91,7 +91,7 @@ class RecipeController extends Controller
             $like->delete();
         }
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 
     public function favorites()
