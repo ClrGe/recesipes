@@ -27,8 +27,9 @@ return new class extends Migration
             $table->enum("price_range", ['Eco +', 'Moyen', 'PIB Suisse'])->nullable();
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile'])->nullable();
 
-            $table->smallInteger("preparation_duration")->nullable();
             $table->bigInteger("user_id")->nullable();
+
+            $table->smallInteger("preparation_duration")->nullable();
             $table->smallInteger("resting_duration")->nullable();
             $table->smallInteger("cook_duration")->nullable();
 
@@ -50,6 +51,5 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('recipes');
         Schema::enableForeignKeyConstraints();
-
     }
 };

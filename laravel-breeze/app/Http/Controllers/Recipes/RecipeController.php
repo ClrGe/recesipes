@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Recipes\Ingredient;
+use App\Models\Recipes\Quantity;
 use App\Models\Recipes\Recipe;
+use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -26,25 +28,41 @@ class RecipeController extends Controller
     public function view(Request $request, $id)
     {
         $recipe = Recipe::where('id', $id)->first();
+        if($recipe->user_id == null)
+        {
+            $user = null;
+        }
+        else
+        {
+            $user = User::where('id', $recipe->user_id)->first();
+        }
         $quantities = Quantity::all()->where('recipe_id', $id);
         $ingredients = [];
         foreach($quantities as $quantity){
             $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
             $ingredients[] = $ingredient;
         }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]);
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
     }
 
     public function random()
     {
         $recipe = Recipe::inRandomOrder()->first();
+        if($recipe->user_id == null)
+        {
+            $user = null;
+        }
+        else
+        {
+            $user = User::where('id', $recipe->user_id)->first();
+        }
         $quantities = Quantity::all()->where('recipe_id', $recipe->id);
         $ingredients = [];
         foreach($quantities as $quantity){
             $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
             $ingredients[] = $ingredient;
         }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]); 
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
     }
 
     public function manyrandom()
@@ -115,6 +133,14 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
+        if($recipe->user_id == null)
+        {
+            $user = null;
+        }
+        else
+        {
+            $user = User::where('id', $recipe->user_id)->first();
+        }
         $quantities = Quantity::all()->where('recipe_id', $recipe->id);
         $ingredients = [];
         foreach($quantities as $quantity){
