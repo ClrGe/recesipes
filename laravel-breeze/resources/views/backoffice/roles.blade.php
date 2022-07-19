@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Utilisateurs') }}
+            {{ __('Roles') }}
         </h2>
     </x-slot>
     <div class="py-12" style="background-color: #22577A;">
@@ -17,22 +17,12 @@
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Prenom
+                                Titre
                             </div>
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Nom
-                            </div>
-                        </td>
-                        <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Mail
-                            </div>
-                        </td>
-                        <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Role
+                                Permissions
                             </div>
                         </td>
                         <td>
@@ -41,49 +31,56 @@
                             </div>
                         </td>
                     </tr>
-                    @foreach ($users as $user)
+                    @foreach ($roles as $role)
                         <tr>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->id }}
+                                        {{ $role->id }}
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->first_name }}
+                                        {{ $role->title }}
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->last_name }}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->email }}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        @foreach($roles as $role)
-                                            @if($role->id == $user->role_id)
-                                                {{ $role->title }}
+                                        @foreach($permissions as $permission)
+                                            @if($role->permissions_id == $permission->id)
+                                               <ul class="permList">
+                                                    <li>
+                                                        <div class="permDiv">
+                                                            <b>Review</b>
+                                                            <input type="checkbox" {{$permission->review ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="permDiv">
+                                                            <b>SelfEdit</b>
+                                                            <input type="checkbox" {{$permission->self_editing ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="permDiv">
+                                                            <b>All</b>
+                                                            <input type="checkbox" {{$permission->all ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
+                                                        </div>
+                                                    </li>
+                                               </ul>     
                                             @endif
                                         @endforeach
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        <a href="/">✏</a>
-                                        @if($user->id != Auth::user()->id)
-                                            <form action="{{ route('api.users.destroy', [$user->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            <form action="{{ route('api.roles.destroy', [$role->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit">
                                                     ❌
                                                 </button>
                                             </form>
-                                        @endif
+                                        
                                     </div>
                                 </td>
                         </tr>
@@ -93,3 +90,21 @@
         </div>
     </div>
 </x-app-layout>
+
+<style>
+    .permDiv{
+       display: flex;
+       justify-content: space-between; 
+       width: 30%;
+       margin-left: 35%;
+    }
+
+    .permList{
+        margin: -20px 0 -15px 0;
+    }
+
+    input[type="checkbox"]:disabled {
+        color: #ccc;
+    }
+
+</style>

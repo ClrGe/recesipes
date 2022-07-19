@@ -61,7 +61,12 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::get('/categories/{name}', [CategoryController::class, 'view']);
 
 // BackOffice
-Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index')->middleware(['role:Administrator']);
-Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users')->middleware(['role:Administrator']);
+Route::middleware(['role:Administrator'])->group(function () {
+    Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index');
+    Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users');
+    Route::get('/backoffice/roles', [BackOfficeController::class, 'roles'])->name('backoffice.roles');
+    Route::get('/backoffice/recipes', [BackOfficeController::class, 'recipes'])->name('backoffice.recipes');
+});
+
 
 require __DIR__.'/auth.php';

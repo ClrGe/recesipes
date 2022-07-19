@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Utilisateurs') }}
+            {{ __('Recettes') }}
         </h2>
     </x-slot>
     <div class="py-12" style="background-color: #22577A;">
@@ -17,22 +17,22 @@
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Prenom
+                                Titre
                             </div>
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Nom
+                                Categorie
                             </div>
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Mail
+                                Ingredients
                             </div>
                         </td>
                         <td>
                             <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                Role
+                                Participants
                             </div>
                         </td>
                         <td>
@@ -41,49 +41,55 @@
                             </div>
                         </td>
                     </tr>
-                    @foreach ($users as $user)
+                    @foreach ($recipes as $recipe)
                         <tr>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->id }}
+                                        {{ $recipe->id }}
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->first_name }}
+                                        {{ $recipe->name }}
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->last_name }}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        {{ $user->email }}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        @foreach($roles as $role)
-                                            @if($role->id == $user->role_id)
-                                                {{ $role->title }}
+                                        @foreach($categories as $category)
+                                            @if($category->id == $recipe->category_id)
+                                                @if($category->subtype2 == null)
+                                                    @if($category->subtype1 == null)
+                                                        {{ $category->type }}
+                                                    @else
+                                                        {{ $category->subtype1 }}
+                                                    @endif
+                                                @else
+                                                    {{ $category->subtype2 }}
+                                                @endif
                                             @endif
                                         @endforeach
                                     </div>
                                 </td>
                                 <td>
+                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">                            
+                                        {{ count($quantities->where("recipe_id", $recipe->id)) }} Ingredients       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                                        {{ $recipe->guest_number }}
+                                    </div>
+                                </td>
+                                <td>
                                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
                                         <a href="/">✏</a>
-                                        @if($user->id != Auth::user()->id)
-                                            <form action="{{ route('api.users.destroy', [$user->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            <form action="{{ route('api.recipes.destroy', [$recipe->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit">
                                                     ❌
                                                 </button>
                                             </form>
-                                        @endif
                                     </div>
                                 </td>
                         </tr>
