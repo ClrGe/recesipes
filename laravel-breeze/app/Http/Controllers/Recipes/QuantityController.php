@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\Quantity;
+use App\Models\Recipes\Quantity;
 use Illuminate\Http\Request;
 
 class QuantityController extends Controller
@@ -43,7 +42,7 @@ class QuantityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Quantity  $quantity
+     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function show(Quantity $quantity)
@@ -54,7 +53,7 @@ class QuantityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Quantity  $quantity
+     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function edit(Quantity $quantity)
@@ -66,7 +65,7 @@ class QuantityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Quantity  $quantity
+     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Quantity $quantity)
@@ -77,7 +76,7 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Quantity  $quantity
+     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
      * @return \Illuminate\Http\Response
      */
     public function destroy(Quantity $quantity)

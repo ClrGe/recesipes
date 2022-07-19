@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-use App\Models\Media;
+use App\Models\Recipes\Media;
+use App\Models\Recipes\Quantity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class MediaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -42,18 +44,18 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\Users\Users\Users\Users\Media  $media
      * @return \Illuminate\Http\Response
      */
     public function show(Media $media)
     {
-        return Response::json($quantity);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\Users\Users\Users\Users\Media  $media
      * @return \Illuminate\Http\Response
      */
     public function edit(Media $media)
@@ -65,7 +67,7 @@ class MediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\Users\Users\Users\Users\Media  $media
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Media $media)
@@ -76,7 +78,7 @@ class MediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Media  $media
+     * @param  \App\Models\Users\Users\Users\Users\Media  $media
      * @return \Illuminate\Http\Response
      */
     public function destroy(Media $media)

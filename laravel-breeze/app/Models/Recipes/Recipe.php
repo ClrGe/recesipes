@@ -16,7 +16,7 @@ class Recipe extends Model
         'guest_number',
         'category_id',
         'description',
-        'steps',        
+        'steps',
         'cook_duration',
         'resting_duration',
         'preparation_duration',
@@ -36,9 +36,9 @@ class Recipe extends Model
         return $this->belongsTo(Quantity::class);
     }
 
-    public function evaluations()
+    public function evaluations(): BelongsToMany
     {
         return $this->belongsToMany(User::class, "evaluations");
     }
-    
+
 }

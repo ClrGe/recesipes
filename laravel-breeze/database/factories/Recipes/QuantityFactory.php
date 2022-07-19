@@ -3,10 +3,10 @@
 namespace Database\Factories\Recipes;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Recipes\Ingredient;
-use App\Models\Recipes\Recipe;
+use App\Models\Users\Users\Users\Users\Recipes\Ingredient;
+use App\Models\Users\Users\Users\Users\Recipes\Recipe;
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Quantity>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Users\Users\Users\Users\Quantity>
  */
 class QuantityFactory extends Factory
 {

@@ -1,7 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page" />
+    <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.styleci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Console/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Exceptions/Handler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/EvaluationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/QuantityController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/RecipeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/SearchController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Authentification/LoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Authentification/RegisterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/EvaluationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/IngredientController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/MediaController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/QuantityController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/RecipeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/ShoppingListController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Users/LikeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Users/PermissionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Users/RoleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Users/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/Authenticate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/EnsureTokenIsValid.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/EnsureUserHasRole.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreCategoryRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreEvaluationRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreIngredientRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreMediaRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StorePermissionRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreQuantityRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreRecipeDetailsRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreRecipeRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreRoleRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreShoppingListRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/StoreUserRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateCategoryRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateEvaluationRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateIngredientRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateMediaRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdatePermissionRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateQuantityRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateRecipeDetailsRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateRecipeRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateRoleRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateShoppingListRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Requests/UpdateUserRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Evaluation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Ingredient.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Media.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Quantity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Recipe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/ShoppingList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Users/Like.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Users/Permission.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Users/Role.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Users/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/CategoryPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/EvaluationPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/IngredientPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/MediaPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/PermissionPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/RecipePolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/RolePolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Policies/ShoppingListPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Providers/AppServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Providers/AuthServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Providers/EventServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Providers/RouteServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/bootstrap/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/broadcasting.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/cors.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/filesystems.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/hashing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/logging.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/sanctum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/config/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Recipes/EvaluationFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Recipes/MediaFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Recipes/QuantityFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Recipes/RecipeFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/ShoppingListFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Users/LikeFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/factories/Users/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_09_213419_create_recipes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_09_215051_create_evaluations_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_172413_create_ingredients_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_172557_create_quantities_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_173818_create_media_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174058_create_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174349_create_roles_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174407_create_permissions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_15_195049_create_likes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_15_195127_create_traces_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_23_071236_create_shopping_lists_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_23_121952_add_foreign_keys.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/CategorySeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/CompleteRecipeSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/EvaluationSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/IngredientSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/MediaSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/QuantitySeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Recipes/RecipeSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/ShoppingListSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Users/CompleteUserSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Users/LikesSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Users/PermissionSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Users/RoleSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/seeders/Users/UserSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/lang/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/lang/en/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/mix-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Authentification/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Authentification/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/BackOffice/logs.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/BackOffice/permissionsManagement.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/BackOffice/usersManagement.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/myRecipes.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/recipe.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/recipeCreation.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/recipeDetails.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/recipesList.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/contact.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/layouts/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/layouts/nav.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/layouts/notify.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/shoppinglist.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/channels.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/testing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/tests/CreatesApplication.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/webpack.mix.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +211,13 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -135,6 +341,11 @@
       <path value="$PROJECT_DIR$/laravel-sail/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/laravel-sail/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/laravel-sail/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/cache" />
     </include_path>
   </component>
   <component name="ProjectId" id="2AnVCoWqzfV4j80qezktYKqFvu4" />
@@ -143,18 +354,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/recesipes",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/recesipes&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -171,6 +382,7 @@
       <workItem from="1655802779258" duration="1709000" />
       <workItem from="1655880584467" duration="5101000" />
       <workItem from="1655966303559" duration="6320000" />
+      <workItem from="1657900601864" duration="1276000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page">
       <created>1655974335756</created>

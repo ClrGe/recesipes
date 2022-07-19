@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipes\Recipe;
-use App\Models\Users\User;
+use App\Models\Users\Users\Users\Users\Recipes\Recipe;
+use App\Models\Users\Users\Users\Users\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +35,7 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
@@ -47,7 +47,7 @@ class RecipeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Recipe $recipe)
@@ -58,7 +58,7 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
@@ -75,7 +75,7 @@ class RecipeController extends Controller
     public function myRecipes()
     {
         $myRecipes = Recipe::all()->where("user_id", "=", auth()->user()->id ); // auth()->user()->id
-        return Response::json($myRecipes); 
+        return Response::json($myRecipes);
     }
 
     public function lastRecipes()
