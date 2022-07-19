@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
-use App\Models\Publication;
-use Illuminate\Http\Request;
+use App\Models\Users\Permission;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePermissionRequest;
+use App\Http\Requests\UpdatePermissionRequest;
 
-class PublicationController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,10 +32,10 @@ class PublicationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePermissionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePermissionRequest $request)
     {
         //
     }
@@ -41,10 +43,10 @@ class PublicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publication  $publication
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $publication)
+    public function show(Permission $permission)
     {
         //
     }
@@ -52,10 +54,10 @@ class PublicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publication  $publication
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $publication)
+    public function edit(Permission $permission)
     {
         //
     }
@@ -63,11 +65,11 @@ class PublicationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publication  $publication
+     * @param  \App\Http\Requests\UpdatePermissionRequest  $request
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $publication)
+    public function update(UpdatePermissionRequest $request, Permission $permission)
     {
         //
     }
@@ -75,10 +77,10 @@ class PublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publication  $publication
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $publication)
+    public function destroy(Permission $permission)
     {
         //
     }

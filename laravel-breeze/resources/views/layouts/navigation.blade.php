@@ -46,7 +46,7 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
 
-                <div>{{ Auth::user()->name }}</div>
+                <div>{{ Auth::user()->first_name }}</div>
 
 
                 <x-dropdown align="right" width="48">
@@ -77,6 +77,11 @@
                         <x-dropdown-link :href="route('recipes')">
                             {{ __('Mes recettes') }}
                         </x-dropdown-link>
+                        @admin
+                            <x-dropdown-link :href="route('backoffice.index')">
+                                {{ __('BackOffice') }}
+                            </x-dropdown-link>
+                        @endadmin
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();

@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\Controller;
 
 use App\Http\Controllers\Recipes\CategoryController;
@@ -37,7 +39,7 @@ Route::resource('shoppinglist', ShoppingListController::class);
 */
 
 // Homepage
-Route::get('/', [RecipeController::Class, 'manyrandom'])->name('welcome');;
+Route::get('/', [RecipeController::class, 'manyrandom'])->name('welcome');;
 
 // Contact form
 Route::get('/contact', function(){ return view('contact');})->name('contact.form');
@@ -49,13 +51,17 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 
-Route::get('/recipes', [RecipeController::Class, 'index'])->name('recipes');
-Route::get('/recipes/{name}', [RecipeController::Class, 'view'])->name('recipes/{name}');
-Route::get('/random', [RecipeController::Class, 'random'])->name('random');
+Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes');
+Route::get('/recipes/{name}', [RecipeController::class, 'view'])->name('recipes/{name}');
+Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
 // Categories
 Route::resource('categories', CategoryController::class);
-Route::get('/categories', [CategoryController::Class, 'index'])->name('categories');
-Route::get('/categories/{name}', [CategoryController::Class, 'view']);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/categories/{name}', [CategoryController::class, 'view']);
+
+// BackOffice
+Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index')->middleware(['role:Administrator']);
+
 
 require __DIR__.'/auth.php';
