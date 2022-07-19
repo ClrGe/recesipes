@@ -62,6 +62,6 @@ Route::get('/categories/{name}', [CategoryController::class, 'view']);
 
 // BackOffice
 Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index')->middleware(['role:Administrator']);
-
+Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users')->middleware(['role:Administrator']);
 
 require __DIR__.'/auth.php';

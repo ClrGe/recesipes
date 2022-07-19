@@ -65,6 +65,6 @@ class RoleController extends Controller
         Schema::disableForeignKeyConstraints();
         $role->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 }

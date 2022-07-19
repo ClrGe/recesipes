@@ -84,6 +84,6 @@ class UserController extends Controller
         }
         $user->delete();
         Schema::enableForeignKeyConstraints();
-        return Response::json(null);
+        return back();
     }
 }
