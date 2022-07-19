@@ -38,7 +38,13 @@ class RecipeController extends Controller
     public function random()
     {
         $recipe = Recipe::inRandomOrder()->first();
-        return view('recipe', ['recipe' => $recipe]);
+        $quantities = Quantity::all()->where('recipe_id', $recipe->id);
+        $ingredients = [];
+        foreach($quantities as $quantity){
+            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
+            $ingredients[] = $ingredient;
+        }
+        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities]); 
     }
 
     public function manyrandom()
