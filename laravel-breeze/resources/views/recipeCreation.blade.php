@@ -122,12 +122,6 @@
                             </div>
 
 
-
-
-
-
-
-
                             <div class="mb-8">
                                 <label class="text-xl text-gray-600">Étapes <span
                                         class="text-red-500">*</span></label></br>
@@ -265,8 +259,4 @@
 
     </div>
 
-    </div>
-    </div>
-    </div>
-    </div>
 </x-app-layout>

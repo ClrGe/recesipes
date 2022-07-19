@@ -58,4 +58,7 @@ Route::resource('categories', CategoryController::class);
 Route::get('/categories', [CategoryController::Class, 'index'])->name('categories');
 Route::get('/categories/{name}', [CategoryController::Class, 'view']);
 
+
+Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
+
 require __DIR__.'/auth.php';
