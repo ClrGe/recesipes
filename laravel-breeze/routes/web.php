@@ -6,8 +6,9 @@ use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
 use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
-use App\Http\Controllers\Recipes\RecipeController;
+use App\Http\Controllers\RecipeController;
 
+use App\Http\Controllers\Recipes\ShoppingListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::get('/shopping', function () {
     return view('shopping');
 })->middleware(['auth'])->name('shopping');
 
+Route::resource('recipes', RecipeController::class);
+
 Route::resource('shoppinglist', ShoppingListController::class);
 
 /*
@@ -43,15 +46,14 @@ Route::get('/', [RecipeController::Class, 'manyrandom'])->name('welcome');;
 Route::get('/contact', function(){ return view('contact');})->name('contact.form');
 
 // Recipes
-Route::resource('recipes', RecipeController::class);
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 
-Route::get('/recipes', [RecipeController::Class, 'index'])->name('recipes');
-Route::get('/recipes/{name}', [RecipeController::Class, 'view'])->name('recipes/{name}');
-Route::get('/random', [RecipeController::Class, 'random'])->name('random');
+//Route::get('/recipes', [RecipeController::Class, 'index'])->name('recipes');
+//Route::get('/recipes/{name}', [RecipeController::Class, 'view'])->name('recipes/{name}');
+//Route::get('/random', [RecipeController::Class, 'random'])->name('random');
 
 // Categories
 Route::resource('categories', CategoryController::class);

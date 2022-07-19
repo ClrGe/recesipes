@@ -16,18 +16,29 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
+
             $table->string("name")->nullable();
-            $table->tinyInteger("guest_number")->default(2);
-            $table->text("steps")->nullable();
             $table->text("description")->nullable();
-            $table->bigInteger("category_id")->nullable();
-            $table->enum("price_range", ['Economique', 'Moyen', 'Luxe'])->nullable();
+
+            $table->tinyInteger("guest_number")->default(2);
+
+            $table->string("image")->nullable();
+
+            $table->enum("price_range", ['Eco +', 'Moyen', 'PIB Suisse'])->nullable();
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile'])->nullable();
-            $table->smallInteger("cook_duration")->nullable();
-            $table->smallInteger("resting_duration")->nullable();
+
             $table->smallInteger("preparation_duration")->nullable();
-            $table->bigInteger("user_id");
+            $table->smallInteger("resting_duration")->nullable();
+            $table->smallInteger("cook_duration")->nullable();
+
             $table->timestamp("publish_time");
+
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users");
+
+            $table->unsignedBigInteger("category_id")->nullable();
+            $table->foreign("category_id")->references("id")->on("categories");
+
             $table->timestamps();
         });
     }
@@ -39,8 +50,6 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('recipes');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 };
