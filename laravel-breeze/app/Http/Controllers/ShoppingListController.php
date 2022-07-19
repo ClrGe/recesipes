@@ -42,7 +42,7 @@ class ShoppingListController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\ShoppingList  $shoppingList
+     * @param ShoppingList $shoppingList
      * @return \Illuminate\Http\Response
      */
     public function show(ShoppingList $shoppingList)
@@ -53,7 +53,7 @@ class ShoppingListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\ShoppingList  $shoppingList
+     * @param ShoppingList $shoppingList
      * @return \Illuminate\Http\Response
      */
     public function edit(ShoppingList $shoppingList)
@@ -64,8 +64,8 @@ class ShoppingListController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateShoppingListRequest  $request
-     * @param  \App\Models\Users\Users\Users\Users\ShoppingList  $shoppingList
+     * @param \App\Http\Requests\UpdateShoppingListRequest $request
+     * @param ShoppingList $shoppingList
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateShoppingListRequest $request, ShoppingList $shoppingList)
@@ -76,7 +76,7 @@ class ShoppingListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Users\Users\Users\ShoppingList  $shoppingList
+     * @param ShoppingList $shoppingList
      * @return \Illuminate\Http\Response
      */
     public function destroy(ShoppingList $shoppingList)

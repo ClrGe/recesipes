@@ -5,7 +5,7 @@ namespace Database\Factories\Users;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Users\Users\Users\Users\Role>
+ * @extends Factory
  */
 class RoleFactory extends Factory
 {

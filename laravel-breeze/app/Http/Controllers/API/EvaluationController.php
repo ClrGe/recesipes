@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Users\Users\Users\Users\Recipes\Evaluation;
-use App\Models\Users\Users\Users\Users\Recipes\Recipe;
+
+use App\Models\Recipes\Evaluation;
+use App\Models\Recipes\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -13,7 +14,7 @@ class EvaluationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -34,8 +35,8 @@ class EvaluationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Evaluation  $evaluation
-     * @return \Illuminate\Http\Response
+     * @param Evaluation $evaluation
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function show(Evaluation $evaluation)
     {
@@ -45,8 +46,8 @@ class EvaluationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Evaluation  $evaluation
+     * @param \Illuminate\Http\Request $request
+     * @param Evaluation $evaluation
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Evaluation $evaluation)
@@ -57,7 +58,7 @@ class EvaluationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Evaluation  $evaluation
+     * @param Evaluation $evaluation
      * @return \Illuminate\Http\Response
      */
     public function destroy(Evaluation $evaluation)

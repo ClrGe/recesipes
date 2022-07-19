@@ -2,8 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\Users\Users\Users\Users\Media;
-use App\Models\Users\Users\Users\Users\User;
+
+use App\Models\Recipes\Media;
+use App\Models\Users\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class MediaPolicy
@@ -13,7 +14,7 @@ class MediaPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
+     * @param User $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function viewAny(User $user)
@@ -24,8 +25,8 @@ class MediaPolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @param  \App\Models\Users\Users\Users\Users\Media  $media
+     * @param User $user
+     * @param Media $media
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function view(User $user, Media $media)
@@ -36,8 +37,8 @@ class MediaPolicy
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return void
      */
     public function create(User $user)
     {
@@ -47,8 +48,8 @@ class MediaPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @param  \App\Models\Users\Users\Users\Users\Media  $media
+     * @param User $user
+     * @param Media $media
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user, Media $media)
@@ -59,8 +60,8 @@ class MediaPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @param  \App\Models\Users\Users\Users\Users\Media  $media
+     * @param User $user
+     * @param Media $media
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user, Media $media)
@@ -71,8 +72,8 @@ class MediaPolicy
     /**
      * Determine whether the user can restore the model.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @param  \App\Models\Users\Users\Users\Users\Media  $media
+     * @param User $user
+     * @param Media $media
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function restore(User $user, Media $media)
@@ -83,8 +84,8 @@ class MediaPolicy
     /**
      * Determine whether the user can permanently delete the model.
      *
-     * @param  \App\Models\Users\Users\Users\Users\User  $user
-     * @param  \App\Models\Users\Users\Users\Users\Media  $media
+     * @param User $user
+     * @param Media $media
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function forceDelete(User $user, Media $media)

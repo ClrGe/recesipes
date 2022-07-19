@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Users\Users\Users\Users\Recipes\Recipe;
-use App\Models\Users\Users\Users\Users\Users\User;
+use App\Models\Recipes\Recipe;
+use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +14,7 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -35,8 +35,8 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @param Recipe $recipe
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
@@ -46,8 +46,8 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
+     * @param \Illuminate\Http\Request $request
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Recipe $recipe)
@@ -58,7 +58,7 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipe  $recipe
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)

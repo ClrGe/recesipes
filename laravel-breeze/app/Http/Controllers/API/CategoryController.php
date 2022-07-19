@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Users\Users\Users\Users\Recipes\Category;
+use App\Models\Recipes\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Category  $category
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -45,8 +45,8 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -57,7 +57,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Recipes\Category  $category
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)

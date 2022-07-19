@@ -42,7 +42,7 @@ class QuantityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
+     * @param Quantity $quantity
      * @return \Illuminate\Http\Response
      */
     public function show(Quantity $quantity)
@@ -53,7 +53,7 @@ class QuantityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
+     * @param Quantity $quantity
      * @return \Illuminate\Http\Response
      */
     public function edit(Quantity $quantity)
@@ -64,8 +64,8 @@ class QuantityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
+     * @param \Illuminate\Http\Request $request
+     * @param Quantity $quantity
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Quantity $quantity)
@@ -76,7 +76,7 @@ class QuantityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Users\Users\Users\Quantity  $quantity
+     * @param Quantity $quantity
      * @return \Illuminate\Http\Response
      */
     public function destroy(Quantity $quantity)
