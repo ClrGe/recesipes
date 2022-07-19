@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Users\Users\Users\Users\Model>
+ * @extends Factory
  */
 class LikeFactory extends Factory
 {

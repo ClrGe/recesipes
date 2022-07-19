@@ -77,7 +77,7 @@ class UserController extends Controller
             {
                 return back()->with('status', 'Les mots de passe doivent être identiques !');
             }
-            
+
             $user->update(["first_name" => $firstName, "last_name" => $lastName, "email" => $email, 'password' => Hash::make($newPW)]);
         }
         else
