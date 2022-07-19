@@ -81,5 +81,13 @@ Route::middleware(['role:Administrator'])->group(function () {
 
 
 Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
+// BackOffice
+Route::middleware(['role:Administrator'])->group(function () {
+    Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index');
+    Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users');
+    Route::get('/backoffice/roles', [BackOfficeController::class, 'roles'])->name('backoffice.roles');
+    Route::get('/backoffice/recipes', [BackOfficeController::class, 'recipes'])->name('backoffice.recipes');
+});
+
 
 require __DIR__.'/auth.php';
