@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Users\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class PermissionController extends Controller
 {
@@ -61,7 +62,9 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
+        Schema::disableForeignKeyConstraints();
         $permission->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 }

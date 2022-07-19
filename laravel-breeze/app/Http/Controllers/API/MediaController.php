@@ -7,6 +7,7 @@ use App\Models\Recipes\Media;
 use App\Models\Recipes\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class MediaController extends Controller
 {
@@ -62,7 +63,9 @@ class MediaController extends Controller
      */
     public function destroy(Media $media)
     {
+        Schema::disableForeignKeyConstraints();
         $media->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 

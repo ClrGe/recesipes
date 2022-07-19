@@ -7,6 +7,7 @@ use App\Models\Recipes\Evaluation;
 use App\Models\Recipes\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class EvaluationController extends Controller
 {
@@ -62,7 +63,9 @@ class EvaluationController extends Controller
      */
     public function destroy(Evaluation $evaluation)
     {
+        Schema::disableForeignKeyConstraints();
         $evaluation->delete();
+        Schema::enableForeignKeyConstraints();
         Response::json(null);
     }
 

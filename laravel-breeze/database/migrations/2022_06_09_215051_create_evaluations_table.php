@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->text("comment");
             $table->bigInteger("recipe_id");
-            $table->bigInteger("user_id");
+            $table->bigInteger("user_id")->nullable();
             $table->timestamp("date");
             $table->tinyInteger('rating');
             $table->timestamps();

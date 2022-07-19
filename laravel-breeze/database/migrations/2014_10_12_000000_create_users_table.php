@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->bigInteger("role_id");
+            $table->bigInteger("role_id")->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamp("registration_date")->default(now());

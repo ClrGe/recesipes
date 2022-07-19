@@ -12,6 +12,7 @@ use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class RecipeController extends Controller
 {
@@ -67,6 +68,7 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
+        Schema::disableForeignKeyConstraints();
         $recipe->delete();
         $quantities = Quantity::all()->where("recipe_id", "=", $recipe->id);
         foreach($quantities as $quantity)
@@ -88,6 +90,7 @@ class RecipeController extends Controller
         {
             $like->delete();
         }
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 

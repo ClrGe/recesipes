@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Recipes\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class IngredientController extends Controller
 {
@@ -61,7 +62,9 @@ class IngredientController extends Controller
      */
     public function destroy(Ingredient $ingredient)
     {
+        Schema::disableForeignKeyConstraints();
         $ingredient->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 }

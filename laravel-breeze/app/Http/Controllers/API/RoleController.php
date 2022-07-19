@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Users\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class RoleController extends Controller
 {
@@ -61,7 +62,9 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+        Schema::disableForeignKeyConstraints();
         $role->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Recipes\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class CategoryController extends Controller
 {
@@ -62,7 +63,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        Schema::disableForeignKeyConstraints();
         $category->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->smallInteger("cook_duration")->nullable();
             $table->smallInteger("resting_duration")->nullable();
             $table->smallInteger("preparation_duration")->nullable();
-            $table->bigInteger("user_id");
+            $table->bigInteger("user_id")->nullable();
             $table->timestamp("publish_time");
             $table->timestamps();
         });

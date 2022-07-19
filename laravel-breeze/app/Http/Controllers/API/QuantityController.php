@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Recipes\Quantity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class QuantityController extends Controller
 {
@@ -61,7 +62,9 @@ class QuantityController extends Controller
      */
     public function destroy(Quantity $quantity)
     {
+        Schema::disableForeignKeyConstraints();
         $quantity->delete();
+        Schema::enableForeignKeyConstraints();
         return Response::json(null);
     }
 }
