@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Recipes;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Recipes\Recipe;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -20,13 +20,8 @@ class RecipeSeeder extends Seeder
         DB::table('recipes')->delete();
         Schema::enableForeignKeyConstraints();
 
-        
-        \App\Models\Recipes\Recipe::factory(20)->create();
+
+        Recipe::factory(20)->create();
     }
 
-    public static function CallSeeder()
-    {
-        $recipeSeeder = new RecipeSeeder();
-        $recipeSeeder->run();
-    }
 }

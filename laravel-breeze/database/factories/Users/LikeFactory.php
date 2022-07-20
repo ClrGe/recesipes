@@ -2,12 +2,13 @@
 
 namespace Database\Factories\Users;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Users\User;
 use App\Models\Recipes\Recipe;
+use App\Models\Users\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends Factory
  */
 class LikeFactory extends Factory
 {

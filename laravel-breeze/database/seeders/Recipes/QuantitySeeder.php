@@ -2,11 +2,9 @@
 
 namespace Database\Seeders\Recipes;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Recipes\Quantity;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Recipes\Ingredient;
-use App\Models\Recipes\Recipe;
 use Illuminate\Support\Facades\Schema;
 
 class QuantitySeeder extends Seeder
@@ -22,12 +20,8 @@ class QuantitySeeder extends Seeder
         DB::table("quantities")->delete();
         Schema::enableForeignKeyConstraints();
 
-        \App\Models\Recipes\Quantity::factory(20)->create();
+        Quantity::factory(20)->create();
     }
 
-    public static function CallSeeder()
-    {
-        $quantitySeeder = new QuantitySeeder();
-        $quantitySeeder->run();
-    }
+
 }

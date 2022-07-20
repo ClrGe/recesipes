@@ -3,7 +3,6 @@
 namespace Database\Seeders\Recipes;
 
 use Database\Seeders\Users\LikesSeeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CompleteRecipeSeeder extends Seeder
@@ -15,18 +14,14 @@ class CompleteRecipeSeeder extends Seeder
      */
     public function run()
     {
-        CategorySeeder::CallSeeder();
-        IngredientSeeder::CallSeeder();
-        RecipeSeeder::CallSeeder();
-        QuantitySeeder::CallSeeder();
-        MediaSeeder::CallSeeder();
-        EvaluationSeeder::CallSeeder();
-        LikesSeeder::CallSeeder();
+        $this->call([CategorySeeder::class,
+            IngredientSeeder::class,
+            RecipeSeeder::class,
+            QuantitySeeder::class,
+            MediaSeeder::class,
+            EvaluationSeeder::class,
+            LikesSeeder::class]);
     }
 
-    public static function CallSeeder()
-    {
-        $fullRecipeSeeder = new CompleteRecipeSeeder();
-        $fullRecipeSeeder->run();
-    }
+
 }

@@ -2,12 +2,13 @@
 
 namespace Database\Factories\Recipes;
 
+
 use App\Models\Recipes\Category;
 use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Recipe>
+ * @extends
  */
 class RecipeFactory extends Factory
 {

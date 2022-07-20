@@ -2,11 +2,9 @@
 
 namespace Database\Seeders\Users;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Users\Like;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Recipes\Recipe;
-use App\Models\Users\User;
 use Illuminate\Support\Facades\Schema;
 
 class LikesSeeder extends Seeder
@@ -22,12 +20,6 @@ class LikesSeeder extends Seeder
         DB::table('likes')->delete();
         Schema::enableForeignKeyConstraints();
 
-        \App\Models\Users\Like::factory(20)->create();
-    }
-
-    public static function CallSeeder()
-    {
-        $likesSeeder = new LikesSeeder();
-        $likesSeeder->run();
+        Like::factory(20)->create();
     }
 }

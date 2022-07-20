@@ -16,7 +16,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $categoryList = Category::all();
+        return view('categories', compact('categoryList'));
     }
 
     /**
@@ -43,7 +44,7 @@ class PermissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function show(Permission $permission)
@@ -54,7 +55,7 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function edit(Permission $permission)
@@ -66,7 +67,7 @@ class PermissionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdatePermissionRequest  $request
-     * @param  \App\Models\Permission  $permission
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePermissionRequest $request, Permission $permission)
@@ -77,7 +78,7 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  \App\Models\Users\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function destroy(Permission $permission)

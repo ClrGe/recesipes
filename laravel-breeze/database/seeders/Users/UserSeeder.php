@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Users;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Users\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -20,12 +20,8 @@ class UserSeeder extends Seeder
         DB::table('users')->delete();
         Schema::enableForeignKeyConstraints();
 
-        \App\Models\Users\User::factory(10)->create();
+        User::factory(10)->create();
     }
 
-    public static function CallSeeder()
-    {
-        $userSeeder = new UserSeeder();
-        $userSeeder->run();
-    }
+
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
+
 use App\Models\Recipes\Ingredient;
 use App\Models\Recipes\Quantity;
-use App\Models\Recipes\Recipe;
 use Illuminate\Support\Facades\Response;
-
+use App\Models\Recipes\Recipe;
 
 class SearchController extends Controller
 {
