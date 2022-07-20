@@ -53,20 +53,31 @@
                                                         <li>
                                                             <div class="permDiv">
                                                                 <b>Review</b>
-                                                                
-                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'review', $permission->review)}}
+                                                                @if($role->title == "Administrator")
+                                                                    {{ Form::checkbox('permission'.$permission->id.'[]', 'review', $permission->review, array('disabled') )}}
+                                                                @else
+                                                                    {{ Form::checkbox('permission'.$permission->id.'[]', 'review', $permission->review)}}
+                                                                @endif
                                                             </div>
                                                         </li>
                                                         <li>
                                                             <div class="permDiv">
                                                                 <b>SelfEdit</b>
+                                                                @if($role->title == "Administrator")
+                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'selfEdit', $permission->self_editing, array('disabled') )}}
+                                                                @else
                                                                 {{ Form::checkbox('permission'.$permission->id.'[]', 'selfEdit', $permission->self_editing) }}
+                                                                @endif
                                                             </div>
                                                         </li>
                                                         <li>
                                                             <div class="permDiv">
                                                                 <b>All</b>
+                                                                @if($role->title == "Administrator")
+                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'all', $permission->all, array('disabled') )}}
+                                                                @else
                                                                 {{ Form::checkbox('permission'.$permission->id.'[]', 'all', $permission->all) }}
+                                                                @endif
                                                             </div>
                                                         </li>
                                                 </ul>
