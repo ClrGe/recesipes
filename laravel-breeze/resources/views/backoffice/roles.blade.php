@@ -1,83 +1,91 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Roles') }}
+            <a href="{{ route('backoffice.index') }}">⬅</a> {{ __('Roles') }}
         </h2>
     </x-slot>
     <div class="py-12" style="background-color: #22577A;">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <table style="text-align: center ;width:100%">
-                    <tr style="font-size: 150%;">
+                <table>
+                    <tr style="font-size: 150%;" class="border-b border-gray-200">
                         <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                            <div class="p-6 bg-white capitalize">
                                 ID
                             </div>
                         </td>
                         <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                            <div class="p-6 bg-white capitalize">
                                 Titre
                             </div>
                         </td>
                         <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                            <div class="p-6 bg-white capitalize">
                                 Permissions
                             </div>
                         </td>
                         <td>
-                            <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                            <div class="p-6 bg-white capitalize">
                                 Gestion
                             </div>
                         </td>
                     </tr>
                     @foreach ($roles as $role)
-                        <tr>
+                        <tr class="border-b border-gray-200">
                                 <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                                    <div class="p-6 bg-white capitalize">
                                         {{ $role->id }}
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                                    <div class="p-6 bg-white capitalize">
                                         {{ $role->title }}
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                                        @foreach($permissions as $permission)
-                                            @if($role->permissions_id == $permission->id)
-                                               <ul class="permList">
-                                                    <li>
-                                                        <div class="permDiv">
-                                                            <b>Review</b>
-                                                            <input type="checkbox" {{$permission->review ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="permDiv">
-                                                            <b>SelfEdit</b>
-                                                            <input type="checkbox" {{$permission->self_editing ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="permDiv">
-                                                            <b>All</b>
-                                                            <input type="checkbox" {{$permission->all ? 'checked' : ''}} {{$role->title == "Administrator" ? 'disabled' : ''}} />
-                                                        </div>
-                                                    </li>
-                                               </ul>     
-                                            @endif
-                                        @endforeach
+                                    <div class="p-6 bg-white capitalize">
+                                        <form id="{{'permForm'.$role->id}}" method="POST" action="{{ route('backoffice.saveperm') }}" enctype="multipart/form-data">
+                                            @csrf
+                                            @foreach($permissions as $permission)
+                                                @if($role->permissions_id == $permission->id)
+                                                <ul class="permList">
+                                                        <li>
+                                                            <div class="permDiv">
+                                                                <b>Review</b>
+                                                                
+                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'review', $permission->review)}}
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="permDiv">
+                                                                <b>SelfEdit</b>
+                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'selfEdit', $permission->self_editing) }}
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="permDiv">
+                                                                <b>All</b>
+                                                                {{ Form::checkbox('permission'.$permission->id.'[]', 'all', $permission->all) }}
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                                <input type="hidden" value="{{ $permission->id }}" name="permID"/>     
+                                                @endif
+                                            @endforeach
+                                        </form>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="p-6 bg-white border-b border-gray-200 capitalize">
+                                    <div class="p-6 bg-white capitalize">
+                                            <button type="submit" form="{{'permForm'.$role->id}}">
+                                                ✔ Valider
+                                            </button>
                                             <form action="{{ route('api.roles.destroy', [$role->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit">
-                                                    ❌
+                                                    ❌ Supprimer
                                                 </button>
                                             </form>
                                         
@@ -85,6 +93,18 @@
                                 </td>
                         </tr>
                     @endforeach
+                    <tr class="border-b border-gray-200">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="p-6 bg-white capitalize">                                
+                                <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" href="{{ route('backoffice.roles') }}">
+                                    Cancel
+                                </a>                                      
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -105,6 +125,11 @@
 
     input[type="checkbox"]:disabled {
         color: #ccc;
+    }
+
+    table{
+        text-align: center ;
+        width:100%;
     }
 
 </style>

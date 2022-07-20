@@ -87,6 +87,9 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users');
     Route::get('/backoffice/roles', [BackOfficeController::class, 'roles'])->name('backoffice.roles');
     Route::get('/backoffice/recipes', [BackOfficeController::class, 'recipes'])->name('backoffice.recipes');
+
+    Route::post('/backoffice/savepermission', [BackOfficeController::class, 'savePermission'])->name('backoffice.saveperm');
+    Route::post('/backoffice/saverole', [BackOfficeController::class, 'saveRole'])->name('backoffice.saverole');
 });
 
 
