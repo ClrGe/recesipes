@@ -1,0 +1,1 @@
+<?php /**PATH C:\CESI\CUBES\Cubes_Web_Mobile\Git\recesipes\laravel-sail\resources\views/layouts/footer.blade.php ENDPATH**/ ?>
