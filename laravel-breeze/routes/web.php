@@ -69,4 +69,7 @@ Route::middleware(['role:Administrator'])->group(function () {
 });
 
 
+
+Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
+
 require __DIR__.'/auth.php';
