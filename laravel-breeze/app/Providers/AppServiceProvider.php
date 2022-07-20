@@ -28,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('admin', function () {    
             if(auth()->user()){
                 $role = Role::where("id", auth()->user()->role_id)->first();
+                if($role == null)
+                {
+                    return 0;
+                }
                 if($role->title == "Administrator")
                 {
                     return 1;
