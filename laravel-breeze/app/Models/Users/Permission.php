@@ -12,7 +12,7 @@ class Permission extends Model
     protected $fillable = [
         'id',
         'review',
-        'self-editing',
+        'self_editing',
         'all',
     ];
 }
