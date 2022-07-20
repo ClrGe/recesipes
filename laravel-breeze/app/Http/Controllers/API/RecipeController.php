@@ -19,7 +19,7 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -40,8 +40,8 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @param Recipe $recipe
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
@@ -51,8 +51,8 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param \Illuminate\Http\Request $request
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Recipe $recipe)
@@ -63,7 +63,7 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
@@ -103,7 +103,7 @@ class RecipeController extends Controller
     public function myRecipes()
     {
         $myRecipes = Recipe::all()->where("user_id", "=", auth()->user()->id ); // auth()->user()->id
-        return Response::json($myRecipes); 
+        return Response::json($myRecipes);
     }
 
     public function lastRecipes()

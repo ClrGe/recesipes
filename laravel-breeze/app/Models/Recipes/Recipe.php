@@ -5,6 +5,7 @@ namespace App\Models\Recipes;
 use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Recipe extends Model
 {
@@ -16,7 +17,7 @@ class Recipe extends Model
         'guest_number',
         'category_id',
         'description',
-        'steps',        
+        'steps',
         'cook_duration',
         'resting_duration',
         'preparation_duration',
@@ -36,9 +37,9 @@ class Recipe extends Model
         return $this->belongsTo(Quantity::class);
     }
 
-    public function evaluations()
+    public function evaluations(): BelongsToMany
     {
         return $this->belongsToMany(User::class, "evaluations");
     }
-    
+
 }

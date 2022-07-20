@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/create', function () {
-    return view('recipeCreation');
-})->middleware(['auth'])->name('create');
+Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
 Route::get('/shopping', function () {
     return view('shopping');
@@ -47,8 +45,6 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 
-Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes');
-Route::get('/recipes/{name}', [RecipeController::class, 'view'])->name('recipes/{name}');
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
 // Categories
@@ -76,5 +72,8 @@ Route::get('/dashboard', function () {
 Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
+
+
+Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
 
 require __DIR__.'/auth.php';

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders\Recipes;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
@@ -31,9 +30,4 @@ class IngredientSeeder extends Seeder
         }
     }
 
-    public static function CallSeeder()
-    {
-        $ingredientSeeder = new IngredientSeeder();
-        $ingredientSeeder->run();
-    }
 }

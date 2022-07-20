@@ -2,7 +2,6 @@
 
 namespace App\Models\Users;
 
-use App\Models\Recipes\Recipe;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,9 +45,4 @@ class User extends Authenticatable
      */
     protected $casts = [
     ];
-
-    public function likes()
-    {
-        return $this->belongsToMany(Recipe::class, table:"likes");
-    }
 }

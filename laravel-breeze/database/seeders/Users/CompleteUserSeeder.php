@@ -2,7 +2,6 @@
 
 namespace Database\Seeders\Users;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CompleteUserSeeder extends Seeder
@@ -14,14 +13,10 @@ class CompleteUserSeeder extends Seeder
      */
     public function run()
     {
-        PermissionSeeder::CallSeeder();
-        RoleSeeder::CallSeeder();
-        UserSeeder::CallSeeder();
+        $this->call([PermissionSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class]);
     }
 
-    public static function CallSeeder()
-    {
-        $fullUserSeeder = new CompleteUserSeeder();
-        $fullUserSeeder->run();
-    }
+
 }

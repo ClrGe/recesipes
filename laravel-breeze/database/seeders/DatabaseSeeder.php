@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Database\Seeders\Users\CompleteUserSeeder;
+
 use Database\Seeders\Recipes\CompleteRecipeSeeder;
+use Database\Seeders\Users\CompleteUserSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        CompleteUserSeeder::CallSeeder();
-        CompleteRecipeSeeder::CallSeeder();
+        $this->call([CompleteUserSeeder::class,
+            CompleteRecipeSeeder::class]);
+
     }
 }

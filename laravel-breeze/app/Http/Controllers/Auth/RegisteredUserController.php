@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Str;
 
-class RegisteredUserController extends Controller
+class
+RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.

@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::if('admin', function () {    
+        Blade::if('admin', function () {
             if(auth()->user()){
                 $role = Role::where("id", auth()->user()->role_id)->first();
                 if($role == null)
@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
                 {
                     return 1;
                 }
-            }    
+            }
             return 0;
         });
     }

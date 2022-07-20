@@ -14,6 +14,6 @@ class ShoppingListSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //TODO
     }
 }

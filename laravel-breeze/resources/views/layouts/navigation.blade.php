@@ -22,7 +22,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('recipes')" :active="request()->routeIs('recipes')">
+                    <x-nav-link :href="route('recipes.index')" :active="request()->routeIs('recipes.index')">
                         {{ __('Toutes les recettes') }}
                     </x-nav-link>
                 </div>
@@ -71,10 +71,10 @@
                         <x-dropdown-link :href="route('dashboard')">
                             {{ __('Paramètres') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('create')">
+                        <x-dropdown-link :href="route('recipes.create')">
                             {{ __('Ajouter une recette') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('recipes')">
+                        <x-dropdown-link :href="route('recipes.index')">
                             {{ __('Mes recettes') }}
                         </x-dropdown-link>
                         @admin
