@@ -14,16 +14,11 @@ class Recipe extends Model
     protected $fillable = [
         'name',
         'description',
-
         'category_id',
-
         'image',
-
         'guest_number',
-
         'price_range',
         'difficulty',
-
         'preparation_duration',
         'resting_duration',
         'cook_duration',
@@ -44,12 +39,6 @@ class Recipe extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
-//    public function medias() : BelongsToMany
-//    {
-//        return $this->belongsToMany(Media::class)
-//            ->withPivot('alt', 'path');
-//    }
 
     public function steps() : BelongsToMany
     {
