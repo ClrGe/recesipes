@@ -26,15 +26,15 @@
                         </fieldset>
                         <fieldset>
                             <legend><b>Ancien mot de passe</b></legend>
-                            <input type="text" name="oldPW" value="" class="border-transparent focus:border-transparent focus:ring-0">
+                            <input type="password" name="oldPW" value="" class="border-transparent focus:border-transparent focus:ring-0">
                         </fieldset>
                         <fieldset>
                             <legend><b>Nouveau mot de passe</b></legend>
-                            <input type="text" name="newPW" value="" class="border-transparent focus:border-transparent focus:ring-0">
+                            <input type="password" name="newPW" value="" class="border-transparent focus:border-transparent focus:ring-0">
                         </fieldset>
                         <fieldset>
                             <legend><b>Confirmer mot de passe</b></legend>
-                            <input type="text" name="newPWConf" value="" class="border-transparent focus:border-transparent focus:ring-0">
+                            <input type="password" name="newPWConf" value="" class="border-transparent focus:border-transparent focus:ring-0">
                         </fieldset>
                     </form>
                 </div>
@@ -96,7 +96,7 @@ legend{
      margin: 0 5%;
 }
 
-input[type=text]:focus{
+input[type=text]:focus,input[type=password]:focus{
     border-bottom: 2px solid #ffa56d;
 } 
 </style>
