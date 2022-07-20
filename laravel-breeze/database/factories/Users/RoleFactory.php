@@ -2,6 +2,7 @@
 
 namespace Database\Factories\Users;
 
+use App\Models\Users\Permission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,16 @@ class RoleFactory extends Factory
      */
     public function definition()
     {
+        $title = ["Administrator", "Editeur", "Utilisateur"];
+        $permAdmin = Permission::all()->firstwhere('all','=' ,1);
+        $permEditor = Permission::all()->where('all', '=', 0)->where('self_editing', '=', 1)->first();
+        $permUser = Permission::all()->firstwhere('self_editing', '=', 0);
+
+
         return [
-            "title" => "Administrator",
-            "permissions_id" => 1,
+            "title" => $title[$this->faker->numberBetween(0, count($title)-1)],
+            "permissions_id" => $permAdmin->id,
+            //TODO
 
         ];
     }

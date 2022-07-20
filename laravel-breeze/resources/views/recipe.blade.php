@@ -15,11 +15,11 @@
                             <div class="w-full rounded">
                                 <div>
                                     Recette ajoutée le :
-                                    <?php 
-                                          setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
+                                    <?php
+                                          setlocale(LC_TIME, 'fr_FR.utf8','fra');
                                     ?>
                                     <b>{{ strftime('%d %B %Y', strtotime($recipe->created_at)) }} à {{ date('H:i', strtotime($recipe->created_at)) }}</b>
-                                    <b> par 
+                                    <b> par
                                         @if($user == null)
                                             Anonyme
                                         @else
@@ -85,6 +85,5 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
+
 </x-app-layout>

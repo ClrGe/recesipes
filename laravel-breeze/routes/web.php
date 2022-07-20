@@ -21,9 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/create', function () {
-    return view('recipeCreation');
-})->middleware(['auth'])->name('create');
+Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
 Route::get('/shopping', function () {
     return view('shopping');
@@ -50,8 +48,6 @@ Route::resource('ingredient', IngredientController::class);
 Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 
-Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes');
-Route::get('/recipes/{name}', [RecipeController::class, 'view'])->name('recipes/{name}');
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
 // Categories

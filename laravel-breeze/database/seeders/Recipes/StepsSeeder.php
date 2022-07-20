@@ -21,6 +21,7 @@ class StepsSeeder extends Seeder
         DB::table("steps")->delete();
         Schema::enableForeignKeyConstraints();
 
-        Steps::factory(20)->create();    }
+        Steps::factory(20)->create();
+    }
 
 }

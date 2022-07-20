@@ -17,53 +17,14 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipes', ['recipes' => $recipes]);
+        return view('recipes.index', ['recipes' => $recipes]);
     }
 
-    public function view(Request $request, $id)
-    {
-        $recipe = Recipe::where('id', $id)->first();
-        if($recipe->user_id == null)
-        {
-            $user = null;
-        }
-        else
-        {
-            $user = User::where('id', $recipe->user_id)->first();
-        }
-        $quantities = Quantity::all()->where('recipe_id', $id);
-        $ingredients = [];
-        foreach($quantities as $quantity){
-            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
-            $ingredients[] = $ingredient;
-        }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
-    }
-
-    public function random()
-    {
-        $recipe = Recipe::inRandomOrder()->first();
-        if($recipe->user_id == null)
-        {
-            $user = null;
-        }
-        else
-        {
-            $user = User::where('id', $recipe->user_id)->first();
-        }
-        $quantities = Quantity::all()->where('recipe_id', $recipe->id);
-        $ingredients = [];
-        foreach($quantities as $quantity){
-            $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
-            $ingredients[] = $ingredient;
-        }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
-    }
 
     public function manyrandom()
     {
@@ -74,13 +35,13 @@ class RecipeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
         $recipeID = (Recipe::all()->last()->id)+1;
         DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
-        return view('Recipes/recipeCreation');
+        return view('recipes.create');
     }
 
     /**
@@ -98,7 +59,7 @@ class RecipeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
@@ -146,7 +107,7 @@ class RecipeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
     {
@@ -155,4 +116,9 @@ class RecipeController extends Controller
         return redirect()->route('recipes.index')->with('status', 'Recette supprimée');
     }
 
+    public function random()
+    {
+        $recipe = Recipe::inRandomOrder()->first();
+        return redirect()->route('recipes.show', ["recipe"=>$recipe]);
+    }
 }
