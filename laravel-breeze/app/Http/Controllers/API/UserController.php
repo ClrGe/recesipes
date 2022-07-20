@@ -10,7 +10,7 @@ use App\Models\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -55,7 +55,37 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $firstName = $request->all()["first_name"];
+        $lastName = $request->all()["last_name"];
+        $email = $request->all()["email"];
+        if($request->all()["oldPW"] != null)
+        {
+            $oldPW = $request->all()["oldPW"];
+            if(!Hash::check($oldPW, $user->password))
+            {
+                return back()->with('status', 'Mot de passe incorrecte !');
+            }
+            if($request->all()["newPW"] == null || $request->all()["newPWConf"] == null)
+            {
+                return back()->with('status', 'Veuillez saisir un mot de passe valide !');
+            }
+
+            $newPW = $request->all()["newPW"];
+            $newPWConf = $request->all()["newPWConf"];
+
+            if($newPW != $newPWConf)
+            {
+                return back()->with('status', 'Les mots de passe doivent être identiques !');
+            }
+            
+            $user->update(["first_name" => $firstName, "last_name" => $lastName, "email" => $email, 'password' => Hash::make($newPW)]);
+        }
+        else
+        {
+            $user->update(["first_name" => $firstName, "last_name" => $lastName, "email" => $email]);
+        }
+
+        return back()->with('status', 'Profil modifié !');
     }
 
     /**

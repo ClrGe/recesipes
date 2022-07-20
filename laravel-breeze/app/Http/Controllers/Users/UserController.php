@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Models\Users\User;
+use App\Models\Users\Role;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Controllers\Controller;
@@ -28,18 +29,20 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        //
+        $role = Role::where("id", $user->role_id)->first();
+        return view('user', ["user" => $user, "role" => $role]);
     }
 
     public function edit(User $user)
     {
-        //
+        $role = Role::where("id", $user->role_id)->first();
+        return view('userEdit', ["user" => $user, "role" => $role]);
     }
 
     //Create custom request
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        
     }
 
     public function destroy(User $user)

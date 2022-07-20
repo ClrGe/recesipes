@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackOfficeController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Recipes\ShoppingListController;
 
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -9,7 +9,7 @@ use App\Http\Controllers\Recipes\IngredientController;
 use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
-
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 | Authenticated Routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/create', function () {
     return view('recipeCreation');
@@ -70,6 +66,15 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::post('/backoffice/savepermission', [BackOfficeController::class, 'savePermission'])->name('backoffice.saveperm');
     Route::post('/backoffice/saverole', [BackOfficeController::class, 'saveRole'])->name('backoffice.saverole');
 });
+
+// DashBord
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
 
 require __DIR__.'/auth.php';
