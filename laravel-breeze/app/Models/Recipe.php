@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,16 +15,11 @@ class Recipe extends Model
     protected $fillable = [
         'name',
         'description',
-
         'category_id',
-
         'image',
-
         'guest_number',
-
         'price_range',
         'difficulty',
-
         'preparation_duration',
         'resting_duration',
         'cook_duration',

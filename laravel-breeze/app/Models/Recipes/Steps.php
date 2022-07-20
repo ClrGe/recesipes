@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Recipes;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ShoppingList extends Model
+class Steps extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        "user_id",
-        "recipe_id",
-        "publish_date",
+        'id',
+        'step',
+        'recipe_id',
+        'created_at',
+        'updated_at',
     ];
 }
