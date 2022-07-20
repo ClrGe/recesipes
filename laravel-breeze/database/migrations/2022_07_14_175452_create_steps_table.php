@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
-            $table->string("text");
+            $table->text("step");
             $table->unsignedBigInteger('recipe_id');
             $table->timestamps();
         });
