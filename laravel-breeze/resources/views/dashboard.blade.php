@@ -37,7 +37,7 @@
                                         <aside
                                             class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2"
                                             style="height: 90.5vh" x-show="asideOpen">
-                                            <a href="#"
+                                            <a href="route('recipes.create')"
                                                 class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                                                 <span class="text-2xl"><i class="bx bx-fork"></i></span>
                                                 <span>Nouvelle Recette</span>

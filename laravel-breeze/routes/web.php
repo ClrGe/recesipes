@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/create', function () {
-    return view('recipeCreation');
-})->middleware(['auth'])->name('create');
+Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
 Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
