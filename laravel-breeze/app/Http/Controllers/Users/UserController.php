@@ -42,7 +42,7 @@ class UserController extends Controller
     //Create custom request
     public function update(UpdateUserRequest $request, User $user)
     {
-        
+
     }
 
     public function destroy(User $user)
