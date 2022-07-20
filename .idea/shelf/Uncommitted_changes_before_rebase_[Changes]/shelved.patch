@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/laravel-sail/routes/web.php b/laravel-sail/routes/web.php
---- a/laravel-sail/routes/web.php	(revision 40a422171ee528d2fae28dec333a1fa92ef5daef)
-+++ b/laravel-sail/routes/web.php	(date 1655648095719)
+--- a/laravel-sail/routes/web.php	
++++ b/laravel-sail/routes/web.php	
 @@ -23,6 +23,12 @@
      return view('contact');
  })->name('contact.form');
@@ -28,8 +28,8 @@ Index: laravel-sail/.env.example
 ===================================================================
 diff --git a/laravel-sail/.env.example b/laravel-sail/.env.example
 deleted file mode 100644
---- a/laravel-sail/.env.example	(revision 40a422171ee528d2fae28dec333a1fa92ef5daef)
-+++ /dev/null	(revision 40a422171ee528d2fae28dec333a1fa92ef5daef)
+--- a/laravel-sail/.env.example	
++++ /dev/null	
 @@ -1,52 +0,0 @@
 -APP_NAME=Laravel
 -APP_ENV=local

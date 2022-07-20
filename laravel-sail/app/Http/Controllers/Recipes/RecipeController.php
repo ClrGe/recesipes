@@ -6,9 +6,9 @@ use App\Models\Recipes\Recipe;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
-use App\Models\Recipes\Quantity;
-use App\Models\Recipes\RecipeDetails;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\View;
 
 class RecipeController extends Controller
 {
@@ -20,7 +20,7 @@ class RecipeController extends Controller
     public function index()
     {
         $recipesList = Recipe::all();
-        return view('Recipes/recipesList', compact('recipesList'));
+        return view('recipes.index', compact('recipesList'));
     }
 
     /**
@@ -30,9 +30,9 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        $recipeID = (Recipe::all()->last()->id)+1;
-        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
-        return view('Recipes/recipeCreation');
+//        $recipeID = (Recipe::all()->last()->id)+1;
+//        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
+        return view('recipes.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        return view('Recipes/recipe', $recipe);
+        return view('recipes.show', compact('recipe'));
     }
 
     /**
@@ -91,5 +91,19 @@ class RecipeController extends Controller
         $recipe->delete();
 
         return redirect()->route('recipes.index')->with('status', 'Recette supprimée');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Recipe  $recipe
+     * @return \Illuminate\Http\Response
+     */
+    public function randomRecipe()
+    {
+        $recipes = Recipe::all();
+        $recipe=$recipes[rand(0, count($recipes)-1)];
+
+        return $this->show($recipe);
     }
 }

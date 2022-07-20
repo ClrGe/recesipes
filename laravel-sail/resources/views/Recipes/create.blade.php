@@ -155,204 +155,204 @@
         }
     </script>
 
-    <style>
+{{--    <style>--}}
 
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 300;
-            src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-        }
+{{--        @font-face {--}}
+{{--            font-family: 'Open Sans';--}}
+{{--            font-style: normal;--}}
+{{--            font-weight: 300;--}}
+{{--            src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');--}}
+{{--        }--}}
+{{--        @font-face {--}}
+{{--            font-family: 'Open Sans';--}}
+{{--            font-style: normal;--}}
+{{--            font-weight: 400;--}}
+{{--            src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');--}}
+{{--        }--}}
+{{--        @font-face {--}}
+{{--            font-family: 'Open Sans';--}}
+{{--            font-style: normal;--}}
+{{--            font-weight: 600;--}}
+{{--            src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');--}}
+{{--        }--}}
 
-        * {
-            margin: 0;
-            padding: 0;
-            border: none;
+{{--        * {--}}
+{{--            margin: 0;--}}
+{{--            padding: 0;--}}
+{{--            border: none;--}}
 
-            font-family: "Open Sans", sans-serif;
-        }
+{{--            font-family: "Open Sans", sans-serif;--}}
+{{--        }--}}
 
-        h1{
-            width: calc(100% - 10px);
-            padding: 10px;
-            background: rgb(255,180,141);
-            background: linear-gradient(45deg, rgba(255,180,141,1) 0%, rgba(255,154,128,1) 100%);
-        }
+{{--        h1{--}}
+{{--            width: calc(100% - 10px);--}}
+{{--            padding: 10px;--}}
+{{--            background: rgb(255,180,141);--}}
+{{--            background: linear-gradient(45deg, rgba(255,180,141,1) 0%, rgba(255,154,128,1) 100%);--}}
+{{--        }--}}
 
-        .background {
-            border: 1px solid #ccc;
-            box-shadow: -3px 3px 11px -2px #858585;
-        }
+{{--        .background {--}}
+{{--            border: 1px solid #ccc;--}}
+{{--            box-shadow: -3px 3px 11px -2px #858585;--}}
+{{--        }--}}
 
-        .create-recipe {
-            width: 60vw;
+{{--        .create-recipe {--}}
+{{--            width: 60vw;--}}
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2em;
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            align-items: center;--}}
+{{--            gap: 2em;--}}
 
-            margin: 20px auto;
-        }
+{{--            margin: 20px auto;--}}
+{{--        }--}}
 
-        .head {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5em;
+{{--        .head {--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            align-items: center;--}}
+{{--            gap: 0.5em;--}}
 
-            width: 95%;
-        }
+{{--            width: 95%;--}}
+{{--        }--}}
 
-        .head input {
-            text-align: start;
-        }
-
-
-
-        .title {
-            width: 100%;
-            height: 2em;
-            /*border: 1px solid black;*/
-            border: 1px solid #ccc;
-            border-radius: 0.5em;
-            padding: 0.5em;
-        }
-
-        .description {
-            width: 100%;
-            height: 10em;
-            /*border: 1px solid black;*/
-            border-radius: 0.5em;
-            padding: 0.5em;
-        }
-
-        .row {
-            width: calc(95% + 1em);
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 2em;
-
-        }
-
-        .image {
-            width: 40vw;
-            /*height: 20vw;*/
-            /*background-color: #ccc;*/
-        }
-
-        .image img {
-            width: 100%;
-
-            background-size: contain;
-        }
-
-        .informations {
-            width: 50vw;
-            /*height: 20vw;*/
-            /*background-color: #ccc;*/
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-
-        .information-row {
-            padding: 20px 120px 20px 20px;
-
-            font-size: 20px ;
-            font-weight: 900;
+{{--        .head input {--}}
+{{--            text-align: start;--}}
+{{--        }--}}
 
 
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.5em;
-        }
 
-        input, select{
-            padding: 10px 0;
-            border: solid  1px #ccc;
-            border-radius: 5px;
-            text-align: center;
-        }
+{{--        .title {--}}
+{{--            width: 100%;--}}
+{{--            height: 2em;--}}
+{{--            /*border: 1px solid black;*/--}}
+{{--            border: 1px solid #ccc;--}}
+{{--            border-radius: 0.5em;--}}
+{{--            padding: 0.5em;--}}
+{{--        }--}}
 
-        .sub-information {
-            width: 40%;
+{{--        .description {--}}
+{{--            width: 100%;--}}
+{{--            height: 10em;--}}
+{{--            /*border: 1px solid black;*/--}}
+{{--            border-radius: 0.5em;--}}
+{{--            padding: 0.5em;--}}
+{{--        }--}}
 
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.5em;
-        }
+{{--        .row {--}}
+{{--            width: calc(95% + 1em);--}}
 
-        .sub-information input, select {
-            width: 100%;
-            border-radius: 5px;
-            display: flex;
-            text-align: center;
-        }
+{{--            display: flex;--}}
+{{--            flex-direction: row;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 2em;--}}
 
-        .category{
-            width: calc(95% + 1em) ;
+{{--        }--}}
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2vh;
-        }
+{{--        .image {--}}
+{{--            width: 40vw;--}}
+{{--            /*height: 20vw;*/--}}
+{{--            /*background-color: #ccc;*/--}}
+{{--        }--}}
 
-        .ingredients {
-            width: calc(95% + 1em) ;
+{{--        .image img {--}}
+{{--            width: 100%;--}}
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2vh;
-        }
+{{--            background-size: contain;--}}
+{{--        }--}}
 
-        .ingredients-list{
-            width: 100%;
+{{--        .informations {--}}
+{{--            width: 50vw;--}}
+{{--            /*height: 20vw;*/--}}
+{{--            /*background-color: #ccc;*/--}}
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 1em;
-        }
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            justify-content: space-evenly;--}}
+{{--        }--}}
 
-        .ingredient{
-            width: 100%;
+{{--        .information-row {--}}
+{{--            padding: 20px 120px 20px 20px;--}}
 
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 2em;
-        }
+{{--            font-size: 20px ;--}}
+{{--            font-weight: 900;--}}
 
-        .no_delete button{
-            display: none;
-        }
 
-        .add-ingredients{
-            width: 30%;
-            padding: 20px;
-        }
+{{--            display: flex;--}}
+{{--            flex-direction: row;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 0.5em;--}}
+{{--        }--}}
 
-    </style>
+{{--        input, select{--}}
+{{--            padding: 10px 0;--}}
+{{--            border: solid  1px #ccc;--}}
+{{--            border-radius: 5px;--}}
+{{--            text-align: center;--}}
+{{--        }--}}
+
+{{--        .sub-information {--}}
+{{--            width: 40%;--}}
+
+{{--            display: flex;--}}
+{{--            flex-direction: row;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 0.5em;--}}
+{{--        }--}}
+
+{{--        .sub-information input, select {--}}
+{{--            width: 100%;--}}
+{{--            border-radius: 5px;--}}
+{{--            display: flex;--}}
+{{--            text-align: center;--}}
+{{--        }--}}
+
+{{--        .category{--}}
+{{--            width: calc(95% + 1em) ;--}}
+
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            align-items: center;--}}
+{{--            gap: 2vh;--}}
+{{--        }--}}
+
+{{--        .ingredients {--}}
+{{--            width: calc(95% + 1em) ;--}}
+
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            align-items: center;--}}
+{{--            gap: 2vh;--}}
+{{--        }--}}
+
+{{--        .ingredients-list{--}}
+{{--            width: 100%;--}}
+
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 1em;--}}
+{{--        }--}}
+
+{{--        .ingredient{--}}
+{{--            width: 100%;--}}
+
+{{--            display: flex;--}}
+{{--            flex-direction: row;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 2em;--}}
+{{--        }--}}
+
+{{--        .no_delete button{--}}
+{{--            display: none;--}}
+{{--        }--}}
+
+{{--        .add-ingredients{--}}
+{{--            width: 30%;--}}
+{{--            padding: 20px;--}}
+{{--        }--}}
+
+{{--    </style>--}}
 @endsection
