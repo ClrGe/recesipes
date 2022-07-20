@@ -15,12 +15,8 @@ return new class extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
-
             $table->string("text");
-
             $table->unsignedBigInteger('recipe_id');
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-
             $table->timestamps();
         });
     }

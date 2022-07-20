@@ -27,14 +27,13 @@ class RecipeFactory extends Factory
         $user1 = $users->first()->id;
         $user2 = $users->last()->id;
 
-        $priceRange = ['Economique', 'Moyen', 'Luxe'];
+        $priceRange = ['Eco +', 'Moyen', 'PIB Suisse'];
         $difficulty = ['Facile', 'Moyen', 'Difficile'];
 
         return [
             'name' => $this->faker->word(),
             'category_id' => $this->faker->numberBetween($category1,$category2),
             'description' => $this->faker->text(),
-            'steps' => $this->faker->text(),
             "cook_duration" => $this->faker->numberBetween(1, 90),
             "preparation_duration" => $this->faker->numberBetween(1, 60),
             "resting_duration" => $this->faker->numberBetween(1, 300),

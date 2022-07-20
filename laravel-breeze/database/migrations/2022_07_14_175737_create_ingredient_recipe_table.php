@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recipe_step', function (Blueprint $table) {
-            $table->bigInteger('recipe_id')->unsigned();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-
-            $table->bigInteger('step_id')->unsigned();
-            $table->foreign('step_id')->references('id')->on('steps');
+        Schema::create('ingredient_recipe', function (Blueprint $table) {
+            $table-> unsignedBigInteger('ingredient_id');
+            $table-> unsignedBigInteger('recipe_id');
+            $table->integer('amount');
+            $table->string('unit');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recipe_step');
+        Schema::dropIfExists('ingredient_recipe');
     }
 };

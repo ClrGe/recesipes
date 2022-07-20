@@ -16,9 +16,7 @@ return new class extends Migration
     {
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
-
             $table->string("name");
-
             $table->timestamps();
         });
     }
@@ -30,12 +28,8 @@ return new class extends Migration
      */
     public function down()
     {
-<<<<<<<< HEAD:laravel-breeze/database/migrations/2022_06_11_172413_create_ingredients_table.php
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('ingredients');
         Schema::enableForeignKeyConstraints();
-========
-        Schema::dropIfExists('ingredients');
->>>>>>>> origin/noah:laravel-breeze/database/migrations/2022_07_14_175427_create_ingredients_table.php
     }
 };

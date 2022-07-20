@@ -73,16 +73,13 @@ class RecipeController extends Controller
             $recipe->image = $path;
             $recipe->save();
 
-//            dd($path);
         }
         else {
             $recipe->image = 'recesipes/storage/app/public/images/default.jpg';
             $recipe->save();
 
-//            dd('no image');
         }
 
-        dd($recipe);
 //        return redirect()->route('recipes.index');
     }
 
@@ -97,7 +94,6 @@ class RecipeController extends Controller
         $recipe = Recipe::find($recipe->id);
         $media = Media::where('recipe_id', $recipe->id)->get();
 
-//        dd($media);
         return view('recipes.show', compact('recipe', 'media'));
     }
 

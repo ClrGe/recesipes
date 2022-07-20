@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_recipe', function (Blueprint $table) {
-            $table-> unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-
-            $table-> unsignedBigInteger('recipe_id');
-            $table->foreign('recipe_id')->references('id')->on('recipes');
-
+        Schema::create('shopping_list', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger("recipe_id");
+            $table->bigInteger("user_id");
+            $table->timestamps();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_recipe');
+        Schema::dropIfExists('shopping_list');
     }
 };

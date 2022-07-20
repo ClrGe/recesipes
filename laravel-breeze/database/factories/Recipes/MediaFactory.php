@@ -24,7 +24,6 @@ class MediaFactory extends Factory
         $recipe2 = $recipes->last()->id;
 
         return [
-            'description' => $this->faker->text(),
             'alt' => $this->faker->word(),
             'path' => "Random Path",
             "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),
