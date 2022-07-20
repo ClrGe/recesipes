@@ -18,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+Route::get('/create', function () {
+    return view('recipeCreation');
+})->middleware(['auth'])->name('create');
 
 Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
@@ -91,6 +92,15 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::post('/backoffice/savepermission', [BackOfficeController::class, 'savePermission'])->name('backoffice.saveperm');
     Route::post('/backoffice/saverole', [BackOfficeController::class, 'saveRole'])->name('backoffice.saverole');
 });
+
+// DashBord
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
 
 require __DIR__.'/auth.php';
