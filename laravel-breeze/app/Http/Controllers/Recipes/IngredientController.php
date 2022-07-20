@@ -7,8 +7,6 @@ use App\Models\Recipes\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Support\Facades\DB;
-
 class IngredientController extends Controller
 {
     /**
