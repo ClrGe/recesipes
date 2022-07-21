@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ShoppingList;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ShoppingListSeeder extends Seeder
 {
@@ -14,6 +16,10 @@ class ShoppingListSeeder extends Seeder
      */
     public function run()
     {
-        //TODO
+        Schema::disableForeignKeyConstraints();
+        DB::table('shopping_lists')->delete();
+        Schema::enableForeignKeyConstraints();
+
+        ShoppingList::factory(20)->create();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users\Role;
 use App\Models\Users\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -11,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
-use PhpParser\Node\Scalar\String_;
 
 class
 RegisteredUserController extends Controller
@@ -43,13 +43,16 @@ RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $userRole = Role::where("title", "Utilisateur")->first();
         $user = User::create([
-            'last_name' => $request->last_name,
             'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role_id' => $userRole->id,
             'api_token' => Str::random(80),
         ]);
+
 
         event(new Registered($user));
 

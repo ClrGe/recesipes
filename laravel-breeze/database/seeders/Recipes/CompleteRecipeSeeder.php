@@ -2,6 +2,8 @@
 
 namespace Database\Seeders\Recipes;
 
+use App\Models\ShoppingList;
+use Database\Seeders\ShoppingListSeeder;
 use Database\Seeders\Users\LikesSeeder;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +23,9 @@ class CompleteRecipeSeeder extends Seeder
             QuantitySeeder::class,
             MediaSeeder::class,
             EvaluationSeeder::class,
-            LikesSeeder::class]);
+            LikesSeeder::class,
+            ShoppingListSeeder::class,
+        ]);
     }
 
 

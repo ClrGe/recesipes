@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShoppingList;
+
 class ShoppingListController extends Controller
 {
     /**

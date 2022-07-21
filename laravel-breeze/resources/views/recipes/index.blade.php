@@ -19,7 +19,7 @@
                                             <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
                                         </div>
                                         <div class="font-semibold text-xl text-gray-800 leading-tight h-10">
-                                           {{ $recipe->name }}
+                                            {{ $recipe->name }}
                                         </div>
                                         <div>
                                             <b>Temps de préparation :</b>

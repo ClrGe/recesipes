@@ -2,44 +2,21 @@
 
 use App\Http\Controllers\Admin\BackOfficeController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
 use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
-
-use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Authenticated Routes
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
-
-Route::get('/update', function () {
-    return view('recipes.update');
-})->middleware(['auth'])->name('update');
-
-Route::get('/shopping', function () {
-    return view('shopping');
-})->middleware(['auth'])->name('shopping');
-
+/**
+ * Shopping List
+ **/
 Route::resource('shoppinglist', ShoppingListController::class);
 
-/*
-|--------------------------------------------------------------------------
-| Unauthenticated Routes
-|--------------------------------------------------------------------------
-*/
 
 /**
  * Homepage
@@ -84,7 +61,19 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users');
     Route::get('/backoffice/roles', [BackOfficeController::class, 'roles'])->name('backoffice.roles');
     Route::get('/backoffice/recipes', [BackOfficeController::class, 'recipes'])->name('backoffice.recipes');
+
+    Route::post('/backoffice/savepermission', [BackOfficeController::class, 'savePermission'])->name('backoffice.saveperm');
+    Route::post('/backoffice/saverole', [BackOfficeController::class, 'saveRole'])->name('backoffice.saverole');
 });
+
+
+/**
+ * DashBord
+ **/
+Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
+
+Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
 
 /**
