@@ -30,7 +30,7 @@
                                     </div>
 
                                     @auth
-                                        <div class="farRight">
+                                        <div class="farRight" role="group">
     {{--                                        @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)--}}
     {{--                                            <form action="{{ route('api.likes.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">--}}
     {{--                                                @csrf--}}

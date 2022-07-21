@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
@@ -85,6 +82,15 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::get('/backoffice/roles', [BackOfficeController::class, 'roles'])->name('backoffice.roles');
     Route::get('/backoffice/recipes', [BackOfficeController::class, 'recipes'])->name('backoffice.recipes');
 });
+
+/**
+ * DashBord
+ **/
+
+Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
+
+Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
 
 /**

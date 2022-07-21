@@ -152,7 +152,7 @@
                                                             class="text-red-500">*</span></label></br>
                                                     <textarea name="content" class="border-2 border-gray-500">
 
-                            </textarea>
+                                                    </textarea>
                                                 </div>
 
                                                 <div class="flex p-1">
