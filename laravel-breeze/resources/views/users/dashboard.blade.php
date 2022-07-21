@@ -90,7 +90,7 @@
                                                         <div class="Photo p-6 bg-white border-b border-gray-200 capitalize">
                                                             <img height="500" width="500" src="https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png" class="simpleBorder">
                                                         </div>
-                                                        <div class="p-6 bg-white border-b border-gray-200 capitalize buttonDiv">
+                                                        <div class="p-6 bg-white border-b border-gray-200 buttonDiv">
                                                             <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full">Modifier le profil</a>
                                                         </div>
                                                     </div>
@@ -105,6 +105,13 @@
                                                 <section id="myRecipesDiv" class="tabItem">
                                                     <div class="container">
                                                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                                                            @if($myRecipes->isEmpty())
+                                                                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
+                                                                    <div class="p-6 bg-white border-b border-gray-200 flexHorizontal">
+                                                                        <label><b>Vous n'avez créé aucune recette pour l'instant !</b></label>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
                                                             @foreach ($myRecipes as $myRecipe)
                                                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
                                                                 <a href="{{ route('recipes.show', $myRecipe) }}">
@@ -132,6 +139,13 @@
                                                 <section id="myFavDiv" class="tabItem">
                                                     <div class="container">
                                                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                                                            @if($favRecipes->isEmpty())
+                                                                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
+                                                                    <div class="p-6 bg-white border-b border-gray-200 flexHorizontal">
+                                                                        <label><b>Vous n'avez aimé aucune recette pour l'instant !</b></label>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
                                                             @foreach ($favRecipes as $favRecipe)
                                                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="width: 200%;">
                                                                 <a href="{{ route('recipes.show', $myRecipe) }}">
