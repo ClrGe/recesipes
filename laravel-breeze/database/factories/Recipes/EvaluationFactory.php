@@ -29,8 +29,8 @@ class EvaluationFactory extends Factory
             "user_id" => $this->faker->numberBetween($user1, $user2),
             "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),
             "rating" => $this->faker->numberBetween(0, 10),
-            "comment" => $this->faker->text(),
-            "date" => $this->faker->dateTimeBetween('-1 week', '+1 week'),
+            "comment" => $this->faker->realText(),
+            "date" => $this->faker->dateTimeBetween('-2 week', 'now'),
         ];
     }
 }
