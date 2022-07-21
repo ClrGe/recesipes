@@ -9,6 +9,7 @@ use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 
 use App\Http\Controllers\ShoppingListController;
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,6 +67,11 @@ Route::get('/random', [RecipeController::class, 'random'])->name('random');
 Route::resource('categories', CategoryController::class);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('/categories/{name}', [CategoryController::class, 'view']);
+
+/**
+ * Users
+ **/
+Route::resource('users', UserController::class);
 
 /**
 * BackOffice
