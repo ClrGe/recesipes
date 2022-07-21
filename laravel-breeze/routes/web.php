@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\Admin\BackOfficeController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -87,7 +87,9 @@ Route::middleware(['role:Administrator'])->group(function () {
 });
 
 
-
-Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
+/**
+ * Download PDF
+ **/
+Route::get('/recipes/{recipe}/download', [RecipeController::class, 'download'])->name('recipes.download');
 
 require __DIR__.'/auth.php';

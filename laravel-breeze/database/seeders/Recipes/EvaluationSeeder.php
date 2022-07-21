@@ -20,7 +20,7 @@ class EvaluationSeeder extends Seeder
         DB::table("evaluations")->delete();
         Schema::enableForeignKeyConstraints();
 
-        Evaluation::factory(10)->create();
+        Evaluation::factory(20)->create();
     }
 
 
