@@ -14,6 +14,7 @@ class Quantity extends Model
         'ingredient_id',
         'recipe_id',
         'quantity',
+        'unit',
     ];
 
 }

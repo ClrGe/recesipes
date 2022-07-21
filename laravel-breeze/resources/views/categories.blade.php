@@ -11,7 +11,16 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <a href="é">
                     <div class="p-6 bg-white border-b border-gray-200 capitalize">
-                        ➡️ {{ $category->name }}
+                        ➡️ 
+                        @if($category->subtype2 == null)
+                            @if($category->subtype1 == null)
+                                {{ $category->type }}
+                            @else
+                                {{ $category->subtype1 }}
+                            @endif
+                        @else
+                            {{ $category->subtype2 }}
+                        @endif
                     </div>
                 </a>
             </div>

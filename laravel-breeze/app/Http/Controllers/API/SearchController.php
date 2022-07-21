@@ -5,9 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Recipes\Ingredient;
 use App\Models\Recipes\Quantity;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 use App\Models\Recipes\Recipe;
+use Illuminate\Support\Facades\Response;
+
 
 class SearchController extends Controller
 {

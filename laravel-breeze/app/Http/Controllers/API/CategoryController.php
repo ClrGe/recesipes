@@ -7,6 +7,7 @@ use App\Models\Recipes\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Schema;
 
 class CategoryController extends Controller
 {
@@ -34,7 +35,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipes\Category  $category
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -45,8 +46,8 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -57,12 +58,15 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipes\Category  $category
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
-        //
+        Schema::disableForeignKeyConstraints();
+        $category->delete();
+        Schema::enableForeignKeyConstraints();
+        return back();
     }
 
     public function search($subString)
