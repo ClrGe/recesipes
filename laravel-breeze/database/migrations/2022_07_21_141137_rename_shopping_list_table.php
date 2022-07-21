@@ -13,13 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shopping_list', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger("recipe_id");
-            $table->bigInteger("user_id");
-            $table->timestamp("publish_date");
-            $table->timestamps();
-        });
+        Schema::rename("shopping_list", "shopping_lists");
     }
 
     /**
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_list');
+        schema::rename("shopping_lists", "shopping_list");
     }
 };

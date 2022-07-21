@@ -58,7 +58,7 @@
 
                                             <button onclick="changeTab('cart')" id="cartButton" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-yellow-500">
                                                 <span class="text-2xl"><i class='bx bx-cart' ></i></span>
-                                                <span>Panier</span>
+                                                <span>Liste de course</span>
                                             </button>
 
                                         </aside>
@@ -170,7 +170,48 @@
                                                 <!-- Cart -->
                                                 <section id="cartDiv" class="tabItem">
                                                     <div class="container">
-                                                    <label>cart</label>
+                                                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 shoppingList">
+                                                            @if($shoppingList->isEmpty())
+                                                                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
+                                                                    <div class="p-6 bg-white border-b border-gray-200 flexHorizontal">
+                                                                        <label><b>Votre liste de course est vide !</b></label>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                            @foreach($shoppingList as $shopList)
+                                                                @foreach($recipes as $recipe)
+                                                                    @if($shopList->recipe_id == $recipe->id)
+                                                                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
+                                                                            <div class="p-6 bg-white border-b border-gray-200 flexHorizontal">
+                                                                                <fieldset>
+                                                                                    <legend>
+                                                                                        <b>{{ $recipe->name }}</b>
+                                                                                    </legend>
+                                                                                    <div>
+                                                                                        Pour {{ $recipe->guest_number }} personne{{ $recipe->guest_number > 1 ? 's' : '' }} <br>
+                                                                                        <b>Ingredients :</b>
+                                                                                        @foreach($ingredients as $ingredient)
+                                                                                            @foreach($quantities as $quantity)
+                                                                                                @if($quantity->recipe_id == $recipe->id)
+                                                                                                    @if($quantity->ingredient_id == $ingredient->id)
+                                                                                                        <div>
+                                                                                                            - <label  class="quantity">{{ $quantity->quantity }}</label> <label class="unit">{{ $quantity->unit }}</label> de <label class="ingredient">{{ $ingredient->name }}</label>
+                                                                                                        </div>
+                                                                                                    @endif
+                                                                                                @endif
+                                                                                            @endforeach
+                                                                                        @endforeach
+                                                                                    </div>
+                                                                                    <div  class="shoppingIMG">
+                                                                                        <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" height="100" width="100">
+                                                                                    </div>
+                                                                                 </fieldset>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach 
+                                                            @endforeach
+                                                        </div>
                                                     </div>
                                                 </section>                                                
                                             </div>
@@ -207,6 +248,8 @@
 
                                     document.getElementById("profilButton").click();
 
+                                    
+
 
                                 </script>
                             </div>
@@ -242,6 +285,9 @@
 }
 
 fieldset{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     border: 1px solid black;
     padding-left: 2%;
     padding-bottom: 2%;
@@ -276,6 +322,30 @@ display: none;
     flex-direction: row;
     justify-content: space-evenly;
 
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+legend{
+    padding: 0 1%;
+}
+
+.shoppingList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shoppingIMG{
+    margin-right: 5%;
 }
 </style>
 

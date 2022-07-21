@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Like as ModelsLike;
-use App\Models\Users\Like;
+use App\Models\ShoppingList;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Schema;
 
-class LikeController extends Controller
+class ShoppingListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,20 +27,20 @@ class LikeController extends Controller
      */
     public function store(Request $request)
     {
-        $likeToAdd = [];
-        $likeToAdd["user_id"] = $request["userID"];
-        $likeToAdd["recipe_id"] = $request["recipeID"];
-        Like::create($likeToAdd);
+        $shoppingList = [];
+        $shoppingList["user_id"] = $request["userID"];
+        $shoppingList["recipe_id"] = $request["recipeID"];
+        ShoppingList::create($shoppingList);
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Like  $like
+     * @param  \App\Models\ShoppingList  $shoppingList
      * @return \Illuminate\Http\Response
      */
-    public function show(Like $like)
+    public function show(ShoppingList $shoppingList)
     {
         //
     }
@@ -51,10 +49,10 @@ class LikeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Like  $like
+     * @param  \App\Models\ShoppingList  $shoppingList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Like $like)
+    public function update(Request $request, ShoppingList $shoppingList)
     {
         //
     }
@@ -62,13 +60,13 @@ class LikeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Like  $like
+     * @param  \App\Models\ShoppingList  $shoppingList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Like $like)
+    public function destroy(ShoppingList $shoppingList)
     {
         Schema::disableForeignKeyConstraints();
-        $like->delete();
+        $shoppingList->delete();
         Schema::enableForeignKeyConstraints();
         return back();
     }

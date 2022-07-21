@@ -56,7 +56,7 @@ return new class extends Migration
             $table->foreign('recipe_id')->references('id')->on('recipes');
         });
 
-        Schema::table('shopping_list', function (Blueprint $table) {
+        Schema::table('shopping_lists', function (Blueprint $table) {
             $table->bigInteger('user_id')->unsigned()->change();
             $table->foreign('user_id')->references('id')->on('users');
 

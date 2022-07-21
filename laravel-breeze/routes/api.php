@@ -10,6 +10,7 @@ use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
 use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\SearchController;
+use App\Http\Controllers\API\ShoppingListController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -113,6 +114,7 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
     Route::delete('roles/{role}', [RoleController::class, 'destroy'])->name('api.roles.destroy');
     Route::delete('permissions/{permission}', [PermissionController::class, 'destroy'])->name('api.permissions.destroy');
     Route::delete('likes/{like}', [LikeController::class, 'destroy'])->name('api.likes.destroy');
+    Route::delete('shoppinglists/{shoppinglist}', [ShoppingListController::class, 'destroy'])->name('api.shoppinglists.destroy');
 #endregion
 
 #endregion
@@ -127,6 +129,7 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
 
 #region POST
     Route::post('likes', [LikeController::class, 'store'])->name('api.likes.store');
+    Route::post('shoppinglists', [ShoppingListController::class, 'store'])->name('api.shoppinglists.store');
 #endregion
 });
 

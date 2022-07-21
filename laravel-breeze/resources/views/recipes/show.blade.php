@@ -33,6 +33,22 @@
                                             <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Je n'aime plus</button>
                                         </form>
                                     @endif
+                                    @if(App\Models\ShoppingList::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
+                                        <form action="{{ route('api.shoppinglists.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>   
+                                            <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>   
+                                            <button type="submit" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Courses +</button>
+                                        </form>
+                                    @else
+                                    <form action="{{ route('api.shoppinglists.destroy', [App\Models\ShoppingList::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            @method ('delete')
+                                            @csrf
+                                            <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>   
+                                            <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>   
+                                            <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Course -</button>
+                                        </form>
+                                    @endif                                
                                 </div>
                                 @endauth
                                 <div>
