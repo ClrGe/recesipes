@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
 Route::get('/shopping', function () {
     return view('shopping');
@@ -65,9 +64,7 @@ Route::middleware(['role:Administrator'])->group(function () {
 
 // DashBord
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);

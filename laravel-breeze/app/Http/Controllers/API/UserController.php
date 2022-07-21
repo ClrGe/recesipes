@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
-use App\Models\Recipes\Evaluation;
-use App\Models\Recipes\Recipe;
-use App\Models\Users\Like;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Schema;
+use App\Models\Users\Like;
+use App\Models\Recipes\Recipe;
+use App\Models\Recipes\Evaluation;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Response;
 
 class UserController extends Controller
 {
@@ -85,7 +86,7 @@ class UserController extends Controller
             $user->update(["first_name" => $firstName, "last_name" => $lastName, "email" => $email]);
         }
 
-        return back()->with('status', 'Profil modifié !');
+        return redirect()->route('dashboard', ["user" => Auth::user()])->with('status', 'Profil modifié !');
     }
 
     /**

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Users\Permission;
+use App\Models\Users\Like;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 
-class PermissionController extends Controller
+use Illuminate\Support\Facades\Schema;
+
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        return Response::json(Permission::all());
+        //
     }
 
     /**
@@ -33,22 +34,22 @@ class PermissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Users\Permission  $permission
+     * @param  \App\Models\Users\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function show(Permission $permission)
+    public function show(Like $like)
     {
-        return Response::json($permission);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Users\Permission  $permission
+     * @param  \App\Models\Users\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, Like $like)
     {
         //
     }
@@ -56,12 +57,14 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Users\Permission  $permission
+     * @param  \App\Models\Users\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy(Like $like)
     {
-        $permission->delete();
-        return Response::json(null);
+        Schema::disableForeignKeyConstraints();
+        $like->delete();
+        Schema::enableForeignKeyConstraints();
+        return back();
     }
 }

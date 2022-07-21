@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\EvaluationController;
 use App\Http\Controllers\API\IngredientController;
+use App\Http\Controllers\API\LikeController;
 use App\Http\Controllers\API\MediaController;
 use App\Http\Controllers\API\PermissionController;
 use App\Http\Controllers\API\QuantityController;
@@ -111,6 +112,7 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
     Route::delete('users/{user}', [UserController::class, 'destroy'])->name('api.users.destroy');
     Route::delete('roles/{role}', [RoleController::class, 'destroy'])->name('api.roles.destroy');
     Route::delete('permissions/{permission}', [PermissionController::class, 'destroy'])->name('api.permissions.destroy');
+    Route::delete('likes/{like}', [LikeController::class, 'destroy'])->name('api.likes.destroy');
 #endregion
 
 #endregion

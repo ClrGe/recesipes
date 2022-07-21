@@ -43,7 +43,7 @@
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200 capitalize buttonDiv">
                     <button type="submit" form="userForm" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full editButton">Valider</button>
-                    <a href="{{ route('users.show', [Auth::user()->id]) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full editButton">Annuler</a>
+                    <a href="{{ route('dashboard', [Auth::user()->id]) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full editButton">Annuler</a>
                 </div>
             </div>
         </div>
