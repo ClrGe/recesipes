@@ -190,13 +190,11 @@ class RecipeController extends Controller
         return view('welcome', ['recipes' => $recipes]);
     }
 
-    public function download(Recipe $recipe, Steps $steps, Media $media)
+    public function download(Recipe $recipe, Media $media)
     {
         $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
         $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
 
-//        dd($mediaRecipe);
-//        dd($stepsRecipe[0]['step']);
         $pdf = PDF::loadView('recipes.pdf', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
 
         return $pdf->download(Str::slug($recipe->name).'.pdf');
