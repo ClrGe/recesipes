@@ -13,7 +13,6 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="details">
                         <div class="container flex ">
-
                             <div class="w-full rounded">
                                 <div class="flex content-button place-content-between">
                                     <div>
@@ -32,29 +31,42 @@
                                     </div>
 
                                     @auth
-                                        <div class="farRight" role="group">
-    {{--                                        @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)--}}
-    {{--                                            <form action="{{ route('api.likes.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">--}}
-    {{--                                                @csrf--}}
-    {{--                                                <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>--}}
-    {{--                                                <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>--}}
-    {{--                                                <button type="submit" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">J'aime</button>--}}
-    {{--                                            </form>--}}
-    {{--                                        @else--}}
-{{--                                                <form action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}" method="POST">--}}
-{{--                                                    @method ('delete')--}}
-{{--                                                    @csrf--}}
-{{--                                                    <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>--}}
-{{--                                                    <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>--}}
-{{--                                                    <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Je n'aime plus</button>--}}
-{{--                                                </form>--}}
-    {{--                                        @endif--}}
-                                               <a href="{{ route('recipes.download', $recipe) }}">
-                                                   <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
-                                                       <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-                                                       <span>PDF</span>
-                                                   </button>
-                                               </a>
+                                        <div class="farRight" >
+                                            @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
+                                                <form action="{{ route('api.likes.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>
+                                                    <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>
+                                                    <button type="submit" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">J'aime</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                                    @method ('delete')
+                                                    @csrf
+                                                    <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Je n'aime plus</button>
+                                                </form>
+                                            @endif
+                                            @if(App\Models\ShoppingList::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
+                                                <form action="{{ route('api.shoppinglists.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>
+                                                    <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>
+                                                    <button type="submit" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Courses +</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('api.shoppinglists.destroy', [App\Models\ShoppingList::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                                    @method ('delete')
+                                                    @csrf
+                                                    <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Course -</button>
+                                                </form>
+                                            @endif
+
+                                            <a href="{{ route('recipes.download', $recipe) }}">
+                                               <button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
+                                                   <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                                                   <span>PDF</span>
+                                               </button>
+                                           </a>
 
                                         </div>
                                     @endauth
@@ -112,9 +124,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactFormMail;
 use App\Models\Recipes\Ingredient;
 use App\Models\Recipes\Media;
 use App\Models\Recipes\Quantity;
@@ -10,10 +11,16 @@ use App\Models\Recipes\Recipe;
 use App\Models\Recipes\Steps;
 use App\Models\Users\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class RecipeController extends Controller
@@ -21,7 +28,7 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function index()
     {
@@ -32,7 +39,7 @@ class RecipeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -42,8 +49,8 @@ class RecipeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -85,7 +92,7 @@ class RecipeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function show(Recipe $recipe)
     {
@@ -110,7 +117,7 @@ class RecipeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function edit(Recipe $recipe)
     {
@@ -122,9 +129,9 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @return RedirectResponse|Response
      */
     public function update(Request $request)
     {
@@ -167,7 +174,7 @@ class RecipeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Recipe $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @return RedirectResponse|Response
      */
     public function destroy(Recipe $recipe)
     {
@@ -192,9 +199,24 @@ class RecipeController extends Controller
     {
         $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
         $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
+        if ($mediaRecipe)
 
         $pdf = PDF::loadView('recipes.pdf', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
 
         return $pdf->download(Str::slug($recipe->name).'.pdf');
+    }
+
+    public function sendMail(Request $request)
+    {
+        $mailData = [
+            'subject'=>$request->sujet,
+            'message'=>$request->message,
+            'email'=>$request->email,
+        ];
+
+        Mail::to('lrecesipes@gmail.com')
+            ->send(new ContactFormMail($mailData));
+
+        return Response::redirectToRoute('contact.form')->with('status', 'Email send!');
     }
 }

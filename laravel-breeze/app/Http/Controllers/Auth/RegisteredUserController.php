@@ -43,13 +43,16 @@ RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $userRole = Role::where("title", "Utilisateur")->first();
         $user = User::create([
-            'last_name' => $request->last_name,
             'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role_id' => $userRole->id,
             'api_token' => Str::random(80),
         ]);
+
 
         event(new Registered($user));
 

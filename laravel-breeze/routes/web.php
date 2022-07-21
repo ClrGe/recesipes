@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\BackOfficeController;
 use App\Http\Controllers\ContactFormController;
-use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
@@ -10,29 +9,14 @@ use App\Http\Controllers\Recipes\IngredientController;
 use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
-use App\Http\Controllers\ShoppingListController;
-use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Authenticated Routes
-|--------------------------------------------------------------------------
-*/
-
-
-Route::get('/shopping', function () {
-    return view('shopping');
-})->middleware(['auth'])->name('shopping');
-
+/**
+ * Shopping List
+ **/
 Route::resource('shoppinglist', ShoppingListController::class);
 
-/*
-|--------------------------------------------------------------------------
-| Unauthenticated Routes
-|--------------------------------------------------------------------------
-*/
 
 /**
  * Homepage
@@ -82,17 +66,10 @@ Route::middleware(['role:Administrator'])->group(function () {
     Route::post('/backoffice/saverole', [BackOfficeController::class, 'saveRole'])->name('backoffice.saverole');
 });
 
-// DashBord
-
-Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
-
-Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
-Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
 /**
  * DashBord
  **/
-
 Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);

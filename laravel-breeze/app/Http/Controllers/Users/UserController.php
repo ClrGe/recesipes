@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Users;
 
 use App\Models\Users\Role;
 use App\Models\Users\User;
-use App\Models\Users\Role;
 use App\Models\Recipes\Recipe;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -28,11 +27,11 @@ class UserController extends Controller
         $quantities = Quantity::all();
         $ingredients = Ingredient::all();
         return view('users.dashboard', [
-            "user" => $user, 
-            "role" => $role, 
-            "myRecipes" => $myRecipes, 
-            "favRecipes" => $favRecipes, 
-            "shoppingList" => $shoppingList, 
+            "user" => $user,
+            "role" => $role,
+            "myRecipes" => $myRecipes,
+            "favRecipes" => $favRecipes,
+            "shoppingList" => $shoppingList,
             "recipes" => $recipes,
             "quantities" => $quantities,
             "ingredients" => $ingredients,
@@ -66,7 +65,7 @@ class UserController extends Controller
     //Create custom request
     public function update(UpdateUserRequest $request, User $user)
     {
-        
+
     }
 
     public function destroy(User $user)
