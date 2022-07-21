@@ -20,7 +20,7 @@ class CategorySeeder extends Seeder
         DB::table('categories')->delete();
         Schema::enableForeignKeyConstraints();
 
-        Category::factory(10)->create();
+        Category::factory(20)->create();
 
     }
 

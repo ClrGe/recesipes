@@ -20,7 +20,7 @@ class MediaSeeder extends Seeder
         DB::table('media')->delete();
         Schema::enableForeignKeyConstraints();
 
-        Media::factory(10)->create();
+        Media::factory(20)->create();
     }
 
 }

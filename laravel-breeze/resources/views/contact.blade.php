@@ -9,21 +9,19 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="page">
-
-
-                        <div class="container">
+                        <form action="{{route('contact.form')}}" method="POST">
+                            @csrf
+                            <div class="container">
 
                             <!-- Email Address -->
                             <div>
                                 <x-label for="email" :value="__('Email')" />
-
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email"
-                                    :value="old('email')" required autofocus />
-                            </div>
-                            <div>
-                                <x-label for="email" :value="__('Confirmation Email')" />
 
                                 <x-input id="email" class="block mt-1 w-full" type="email" name="email"
                                     :value="old('email')" required autofocus />
@@ -43,7 +41,7 @@
                                         class="form-label inline-block mb-2 text-gray-700">Message</label>
                                     <textarea
                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                        id="exampleFormControlTextarea1" rows="10"></textarea>
+                                        id="exampleFormControlTextarea1" rows="10" name="message"></textarea>
                                 </div>
                             </div>
                             <div class="flex p-1">
@@ -52,6 +50,8 @@
                             </div>
 
                         </div>
+                        </form>
+
                     </div>
                 </div>
 </x-app-layout>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\ContactFormMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 
@@ -14,11 +16,17 @@ class ContactFormController extends Controller
         return Response::view('contactform');
     }
 
-    public function sendMail()
+    public function sendMail(Request $request)
     {
-        Mail::to('colasmaxime@hotmail.com')
-            ->send(new ContactForm());
+        $mailData = [
+            'subject'=>$request->sujet,
+            'message'=>$request->message,
+            'email'=>$request->email,
+        ];
 
-        return Response::redirectToRoute('contactform')->with('status', 'Email send!');
+        Mail::to('lrecesipes@gmail.com')
+            ->send(new ContactFormMail($mailData));
+
+        return Response::redirectToRoute('contact.form')->with('status', 'Email send!');
     }
 }
