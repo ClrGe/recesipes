@@ -78,7 +78,7 @@
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white capitalize">
-                                        @if($user->id != Auth::user()->id)
+                                        @if($roles->where("title", "Administrator")->first()->id != $user->role_id)
                                             <button type="submit" form="{{'roleForm'.$user->id}}">
                                                 ✔ Valider
                                             </button>
