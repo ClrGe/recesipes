@@ -17,7 +17,7 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -28,7 +28,7 @@ class RecipeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -83,7 +83,7 @@ class RecipeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
@@ -101,20 +101,20 @@ class RecipeController extends Controller
             $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
             $ingredients[] = $ingredient;
         }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
+        return view('recipes.show', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Recipe $recipe)
     {
         $recipeID = (Recipe::all()->last()->id)+1;
         DB::insert("UPDATE recipes (`id`) SET ($recipeID)");
-        return view('Recipes/recipeUpdate');
+        return view('recipes.show', );
     }
 
     /**
@@ -122,9 +122,9 @@ class RecipeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request)
     {
         $this->validate($request, array(
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -158,13 +158,14 @@ class RecipeController extends Controller
             $recipe->image = 'recesipes/storage/app/public/images/default.jpg';
             $recipe->save();
         }
+        return redirect()->route('recipes.show', ["recipe"=>$recipe]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\Response
+     * @param Recipe $recipe
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
     {
@@ -177,5 +178,11 @@ class RecipeController extends Controller
     {
         $recipe = Recipe::inRandomOrder()->first();
         return redirect()->route('recipes.show', ["recipe"=>$recipe]);
+    }
+
+    public function manyrandom()
+    {
+        $recipes = Recipe::all();
+        return view('welcome', ['recipes' => $recipes]);
     }
 }

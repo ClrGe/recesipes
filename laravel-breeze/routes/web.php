@@ -39,13 +39,19 @@ Route::resource('shoppinglist', ShoppingListController::class);
 |--------------------------------------------------------------------------
 */
 
-// Homepage
-Route::get('/', [RecipeController::class, 'manyrandom'])->name('welcome');;
+/**
+ * Homepage
+ **/
+Route::get('/', [RecipeController::class, 'manyrandom'])->name('welcome');
 
-// Contact form
+/**
+ * Contact form
+ **/
 Route::get('/contact', function(){ return view('contact');})->name('contact.form');
 
-// Recipes
+/**
+ * Recipes
+ **/
 Route::resource('recipes', RecipeController::class);
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
@@ -54,7 +60,9 @@ Route::resource('quantity', QuantityController::class);
 
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
-// Categories
+/**
+ * Categories
+ **/
 Route::resource('categories', CategoryController::class);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('/categories/{name}', [CategoryController::class, 'view']);
