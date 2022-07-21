@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
 use App\Models\Recipes\Ingredient;
+use App\Models\Recipes\Media;
 use App\Models\Recipes\Quantity;
 use App\Models\Recipes\Recipe;
+use App\Models\Recipes\Steps;
 use App\Models\Users\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class RecipeController extends Controller
 {
@@ -184,5 +188,15 @@ class RecipeController extends Controller
     {
         $recipes = Recipe::all();
         return view('welcome', ['recipes' => $recipes]);
+    }
+
+    public function download(Recipe $recipe, Media $media)
+    {
+        $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
+        $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
+
+        $pdf = PDF::loadView('recipes.pdf', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
+
+        return $pdf->download(Str::slug($recipe->name).'.pdf');
     }
 }

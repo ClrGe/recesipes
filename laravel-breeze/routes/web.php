@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\Admin\BackOfficeController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 
 use App\Http\Controllers\ShoppingListController;
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +50,8 @@ Route::get('/', [RecipeController::class, 'manyrandom'])->name('welcome');
  * Contact form
  **/
 Route::get('/contact', function(){ return view('contact');})->name('contact.form');
+Route::post('/contact', [ContactFormController::class, 'sendMail'])->name('contact.form');
+
 
 /**
  * Recipes
@@ -68,6 +72,11 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::get('/categories/{name}', [CategoryController::class, 'view']);
 
 /**
+ * Users
+ **/
+Route::resource('users', UserController::class);
+
+/**
 * BackOffice
 **/
 Route::middleware(['role:Administrator'])->group(function () {
@@ -78,7 +87,9 @@ Route::middleware(['role:Administrator'])->group(function () {
 });
 
 
-
-Route::get('/send-email', [App\Http\Controllers\TestMailController::class, 'sendEmail']);
+/**
+ * Download PDF
+ **/
+Route::get('/recipes/{recipe}/download', [RecipeController::class, 'download'])->name('recipes.download');
 
 require __DIR__.'/auth.php';
