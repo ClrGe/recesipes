@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackOfficeController;
-use App\Http\Controllers\Recipes\ShoppingListController;
+use App\Http\Controllers\ShoppingListController;
 
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;

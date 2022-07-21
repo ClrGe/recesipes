@@ -77,7 +77,7 @@ class RecipeController extends Controller
             $ingredient = Ingredient::where('id', $quantity->ingredient_id)->first();
             $ingredients[] = $ingredient;
         }
-        return view('recipe', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
+        return view('recipes.show', ['recipe' => $recipe, 'ingredients' => $ingredients, 'quantities' => $quantities, 'user' => $user]);
     }
 
     /**
