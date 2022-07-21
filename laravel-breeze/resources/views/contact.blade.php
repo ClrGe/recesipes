@@ -48,7 +48,6 @@
                                 <button role="submit" class="p-3 bg-blue-500 text-white hover:bg-blue-400"
                                     required>Envoyer</button>
                             </div>
-
                         </div>
                         </form>
 
