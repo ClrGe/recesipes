@@ -2,11 +2,13 @@
 
 namespace Database\Factories\Users;
 
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Users\Role;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory
  */
 class UserFactory extends Factory
 {
@@ -17,12 +19,18 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $roles = Role::all();
+        $role1 = $roles->first()->id;
+        $role2 = $roles->last()->id;
         return [
-            'name' => $this->faker->name(),
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'role_id' => $this->faker->numberBetween($role1,$role2),
+            'password' => Str::random(10), // password
             'remember_token' => Str::random(10),
+            'registration_date' => now(),
+            'api_token' => Str::random(80),
         ];
     }
 
@@ -31,12 +39,12 @@ class UserFactory extends Factory
      *
      * @return static
      */
-    public function unverified()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
-    }
+    // public function unverified()
+    // {
+    //     return $this->state(function (array $attributes) {
+    //         return [
+    //             'email_verified_at' => null,
+    //         ];
+    //     });
+    // }
 }

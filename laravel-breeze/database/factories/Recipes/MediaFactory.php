@@ -2,11 +2,12 @@
 
 namespace Database\Factories\Recipes;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Recipes\Recipe;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Media>
+ * @extends Factory
  */
 class MediaFactory extends Factory
 {
@@ -23,7 +24,6 @@ class MediaFactory extends Factory
         $recipe2 = $recipes->last()->id;
 
         return [
-            'description' => $this->faker->text(),
             'alt' => $this->faker->word(),
             'path' => "Random Path",
             "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),

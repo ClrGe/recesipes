@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Quantity;
+use App\Models\Recipes\Quantity;
 use Illuminate\Http\Request;
 
 class QuantityController extends Controller
@@ -73,7 +73,6 @@ class QuantityController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
