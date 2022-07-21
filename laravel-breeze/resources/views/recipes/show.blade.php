@@ -77,6 +77,43 @@
                                     @endforeach
                                 </div>
                             </div>
+
+                            <div class="commentaires">
+                                @foreach($evaluations as $evaluation)
+                                    @if($evaluation->recipe_id == $recipe->id)
+                                        <div class="commentaire">
+                                            <div class="commentaire-header">
+                                                <div class="commentaire-header-left">
+                                                    <div class="commentaire-header-left-avatar">
+                                                        <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
+                                                    </div>
+                                                    <div class="commentaire-header-left-name">
+                                                        <b>{{ $user->first_name }} {{ $user->last_name }}</b>
+                                                    </div>
+                                                </div>
+                                                <div class="commentaire-header-right">
+                                                    <div class="commentaire-header-right-date">
+                                                        <?php
+                                                              setlocale(LC_TIME, 'fr_FR.utf8','fra');
+                                                        ?>
+                                                        {{ strftime('%d %B %Y', strtotime($evaluation->created_at)) }} à {{ date('H:i', strtotime($evaluation->created_at)) }}
+                                                    </div>
+                                                    <div class="commentaire-header-right-stars">
+                                                        @for($i = 0; $i < $evaluation->rating; $i++)
+                                                            <i class="fas fa-star"></i>
+                                                        @endfor
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="commentaire-body">
+                                                <div class="commentaire-body-text">
+                                                    {{ $evaluation->comment }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 
