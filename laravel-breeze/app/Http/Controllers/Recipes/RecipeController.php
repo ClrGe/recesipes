@@ -36,8 +36,6 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        $recipeID = (Recipe::all()->last()->id)+1;
-        DB::insert("INSERT INTO recipes (`id`) VALUES ($recipeID)");
         return view('recipes.create');
     }
 

@@ -38,44 +38,44 @@
 </x-app-layout>
 
 <style>
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
+.container {
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
     "Info Photo";
-    }
+}
 
-    .Info {
-        grid-area: Info;
-        display: flex;
-        flex-direction: column;
-    }
-    .Photo {
-        grid-area: Photo;
-    }
+.Info {
+    grid-area: Info;
+    display: flex;
+    flex-direction: column;
+}
+.Photo {
+    grid-area: Photo;
+}
 
-    fieldset{
-        border: 1px solid black;
-        padding-left: 2%;
-        padding-bottom: 2%;
-        width: 50%;
-        margin-top: 5%;
-        margin-left: 5%;
-    }
-    legend{
-        padding: 0 1%;
-    }
-    .buttonDiv{
-        width: 200%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+fieldset{
+    border: 1px solid black;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+legend{
+    padding: 0 1%;
+}
+.buttonDiv{
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
-    .simpleBorder{
-        border: 1px solid black;
-    }
+.simpleBorder{
+    border: 1px solid black;
+}
 </style>
