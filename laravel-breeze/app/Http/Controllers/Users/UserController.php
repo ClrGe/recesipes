@@ -30,13 +30,13 @@ class UserController extends Controller
     public function show(User $user)
     {
         $role = Role::where("id", $user->role_id)->first();
-        return view('user', ["user" => $user, "role" => $role]);
+        return view('users.show', ["user" => $user, "role" => $role]);
     }
 
     public function edit(User $user)
     {
         $role = Role::where("id", $user->role_id)->first();
-        return view('userEdit', ["user" => $user, "role" => $role]);
+        return view('users.edit', ["user" => $user, "role" => $role]);
     }
 
     //Create custom request
