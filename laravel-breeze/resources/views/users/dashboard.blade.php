@@ -141,7 +141,7 @@
                                                                         <b>|</b> 
                                                                         {{ $favRecipe->guest_number }} personne{{ $favRecipe->guest_number > 1 ? 's' : '' }} 
                                                                         <b>|</b> 
-                                                                        <form method="POST" action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', 3)->where('user_id', $user->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}">
+                                                                        <form method="POST" action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', $favRecipe->id)->where('user_id', $user->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}">
                                                                             @method('delete')
                                                                             @csrf
                                                                             <button type="submit">❌ Supprimer</button>

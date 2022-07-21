@@ -28,7 +28,11 @@ class LikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $likeToAdd = [];
+        $likeToAdd["user_id"] = $request["userID"];
+        $likeToAdd["recipe_id"] = $request["recipeID"];
+        Like::create($likeToAdd);
+        return back();
     }
 
     /**

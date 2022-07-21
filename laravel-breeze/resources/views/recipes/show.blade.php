@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -13,6 +15,26 @@
                         <div class="container flex ">
 
                             <div class="w-full rounded">
+                                @auth
+                                <div class="farRight">
+                                    @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
+                                        <form action="{{ route('api.likes.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>   
+                                            <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>   
+                                            <button type="submit" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">J'aime</button>
+                                        </form>
+                                    @else
+                                        <form action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            @method ('delete')
+                                            @csrf
+                                            <input type="hidden" value="{{ $recipe->id }}" name="recipeID"/>   
+                                            <input type="hidden" value="{{ Auth::user()->id }}" name="userID"/>   
+                                            <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Je n'aime plus</button>
+                                        </form>
+                                    @endif
+                                </div>
+                                @endauth
                                 <div>
                                     Recette ajoutée le :
                                     <?php
@@ -87,3 +109,15 @@
     </div>
 
 </x-app-layout>
+
+
+
+<style>
+
+.farRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+</style>

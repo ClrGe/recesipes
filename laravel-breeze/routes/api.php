@@ -124,6 +124,10 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
 #endregion
 
 #endregion
+
+#region POST
+    Route::post('likes', [LikeController::class, 'store'])->name('api.likes.store');
+#endregion
 });
 
 
