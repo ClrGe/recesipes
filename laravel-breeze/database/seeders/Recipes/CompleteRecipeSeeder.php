@@ -17,7 +17,7 @@ class CompleteRecipeSeeder extends Seeder
         $this->call([CategorySeeder::class,
             IngredientSeeder::class,
             RecipeSeeder::class,
-            StepsSeeder::class,
+            StepSeeder::class,
             QuantitySeeder::class,
             MediaSeeder::class,
             EvaluationSeeder::class,

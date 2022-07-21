@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,10 +14,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shopping_list', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+
+            $table->tinyInteger('rating');
+            $table->text("comment");
+
             $table->bigInteger("recipe_id");
-            $table->bigInteger("user_id");
+            $table->bigInteger("user_id")->nullable();
+
+            $table->timestamp("date");
+
             $table->timestamps();
         });
     }
@@ -28,6 +36,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_list');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('evaluations');
+        Schema::enableForeignKeyConstraints();
     }
 };

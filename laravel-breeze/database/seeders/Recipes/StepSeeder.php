@@ -3,12 +3,12 @@
 namespace Database\Seeders\Recipes;
 
 use App\Models\Recipes\Recipe;
-use App\Models\Recipes\Steps;
+use App\Models\Recipes\Step;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class StepsSeeder extends Seeder
+class StepSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,7 +21,7 @@ class StepsSeeder extends Seeder
         DB::table("steps")->delete();
         Schema::enableForeignKeyConstraints();
 
-        Steps::factory(20)->create();
+        Step::factory(20)->create();
     }
 
 }

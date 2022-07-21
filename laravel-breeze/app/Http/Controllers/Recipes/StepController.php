@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Recipes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class StepsController extends Controller
+class StepController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -14,15 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('permissions', function (Blueprint $table) {
             $table->id();
 
-            $table->text("description");
-            $table->string("alt");
-
-            $table->string("path");
-
-            $table->bigInteger("recipe_id");
+            $table->boolean("review");
+            $table->boolean("self_editing");
+            $table->boolean("all");
 
             $table->timestamps();
         });
@@ -36,7 +33,7 @@ return new class extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('permissions');
         Schema::enableForeignKeyConstraints();
     }
 };

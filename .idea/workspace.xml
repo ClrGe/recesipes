@@ -1,136 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3588dfb-42e9-4537-b5e9-58ee9b5e4455" name="Changes" comment="Page création article (WIP)&#10;Modification des migrations, routes, controller et models, &#10;ajout des clés étrangères directement dans les models">
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/RecipeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Ingredient.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Media.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Step.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/CategoryFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/MediaFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175452_create_steps_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175737_create_ingredient_recipe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175756_create_category_recipe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_090948_create_shopping_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_18_220136_create_recipe_step.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire">
+      <change afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/StepFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Annexe.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/CDC.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/logo_cube_web_mobile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/maquette_recettes_populaires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/ConfirmablePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/ConfirmablePasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/EmailVerificationPromptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/EmailVerificationPromptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/NewPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/NewPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/PasswordResetLinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/PasswordResetLinkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/VerifyEmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Auth/VerifyEmailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrustHosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Requests/Auth/LoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Requests/Auth/LoginRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Like.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/View/Components/AppLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/View/Components/AppLayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/View/Components/GuestLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/View/Components/GuestLayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/broadcasting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/cache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/hashing.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/hashing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/queue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/sanctum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/config/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/config/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/IngredientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/IngredientFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/RecipeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/RecipeFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153315_create_categories_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153324_create_ingredients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175427_create_ingredients_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153330_create_media_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175451_create_media_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153346_create_quantities_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153356_create_shopping_lists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175440_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153414_create_likes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_093957_create_likes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_27_153433_create_recipes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175450_create_recipes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/confirm-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/confirm-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/verify-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/auth/verify-email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/application-logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/application-logo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-session-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-session-status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-validation-errors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/auth-validation-errors.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/button.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/dropdown-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/dropdown-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/input.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/input.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/label.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/label.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/nav-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/nav-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/components/responsive-nav-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/components/responsive-nav-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/layouts/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/channels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/console.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/StepsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/StepController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Steps.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Step.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Users/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Users/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/EvaluationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/EvaluationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/MediaFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/MediaFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/QuantityFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/QuantityFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/RecipeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/RecipeFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/factories/Recipes/StepsFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_09_215051_create_evaluations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_09_215051_create_evaluations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_172557_create_quantities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_172557_create_quantities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_174349_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_174349_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_174407_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_11_174407_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_15_195127_create_traces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_06_15_195127_create_traces_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175427_create_ingredients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175427_create_ingredients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175440_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175440_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175450_create_recipes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175450_create_recipes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175451_create_media_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175451_create_media_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175452_create_steps_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175452_create_steps_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_14_175737_create_ingredient_recipe_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_090948_create_shopping_list_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_093957_create_likes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_093957_create_likes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_220_121952_add_foreign_keys.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_220_121952_add_foreign_keys.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/seeders/Recipes/CompleteRecipeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/seeders/Recipes/CompleteRecipeSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/database/seeders/Recipes/StepsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/seeders/Recipes/StepSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-sail/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-sail/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-sail/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logo_cube_web_mobile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/EvaluationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/IngredientController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/MediaController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/PermissionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/QuantityController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/RecipeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/RoleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/API/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Controllers/Recipes/RecipeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Http/Middleware/Authenticate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Publication.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Recipes/Recipe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/app/Models/Users/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/bootstrap/cache/packages.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/bootstrap/cache/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_09_213419_create_recipes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_09_215051_create_evaluations_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_172413_create_ingredients_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_172557_create_quantities_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_173818_create_media_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174058_create_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174349_create_roles_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_11_174407_create_permissions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_15_195049_create_likes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/database/migrations/2022_06_23_071236_create_shopping_lists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/database/migrations/2022_07_16_090948_create_shopping_lists_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/category.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/Recipes/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/contact.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/resources/views/layouts/nav.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/52/ac/52acebe9de48b9434598fa65d2ec8d0e111e90b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/70/d5/70d5789fb8fa04f157e2f175d8e9158bc3d2b5c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/8d/75/8d755ef0f66f57ab984bced244d36df204af8d75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/8e/16/8e16f0c6844b558bacb597e9f8c754b1e73b44a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/a0/ef/a0ef23e5b98ba0e1ac688ae955c511a343e46571" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/de/1d/de1de7f4c575d2b71abd7715fa4dfc76f85496ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/3O7YRmQleSmQuwZUGzrMgucd212S8ZnpsGTQJxzL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/5G0IXfAuHHbbzJqbCm5JcnQw0tRKJRX3RJw6Bmxa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/8Ryk2TZsQOsAXaPXM9YAF97tjDT5UDSfUdGE1Rtm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/8bq061EBAbLiyRAHkMBxeF7ollFgzw0E9JYBF3qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/KSZ4l7FjuATqOk09PJkQYxb9BB626dkgWYJm7QkN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/MLRp2eqxgApnYOiUlUKVLwxMB9WxHXDvRaM1EoXA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/RKNfCaa3KjjrvLPFtgjGkSAdokIDgxqZXJCqYYt0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/VGl5r3uiEBknOKjA2esQnrCiuQtAqQxQRJ7M96Mn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/fesiEvL9bnRdxf8euqSNfl2r1QBbbGjUFBKDYrLv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/hKfRVNL9dmOAMyqyc4z5XvS1KqhGwqbzH3caSVfi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/iVP9jZ0ZVst9tk6Ft5MQsNmDsQfbXnXSPMotzUGs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/oBB7n8jZbM7wjOkeO2kbyoG73i4VbG4P5GupLTwP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/oIEju22oHWr716gpDwNgxViO9mdajlrrLemj6cJ4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/qqm1mVvauvrpgdxLZ9HxN1AO7IIB1QeevzUw2JZm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/rNbDiHcEVq0XWc3BQ2HEqhWiZz7r1KqRZYkq08vr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/u5H4z61Mm5tK3aHH8sHmTkZ6MczvhrljI2rmxJZw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/sessions/zCQEk8NurMIZKMOvbXFyPlMG5WCNSAU9ZbMIwO8O" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/094c2125e898d9bd7f30190f6c5383b783a6ec6c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/14fbc3a45c5cd3c2bebc629b4adeac827462e1a4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/2188bd0e6e7a430eb89a90b408a6c8a45c43090b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/2c90499b771ef031231b16744fff68416f7fb704.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/3a66c72f8bc4c8f6079e7364a4a90ca37a4d85a7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/5d97d8d131737900acde60ef7fb05fb6bcec3cb9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/60dfc433cd726c366f8a4bb1d3ac647c045e1953.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/6c955d6bf1bcc2ae051ca043a9914a8e89ce2b74.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/74d9ea2562c2892dfe62bd8342034ec9aab3cadf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/7acad6931f58aedf702b79c2b20f99717b44b10a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/8d357edb655045c757591209f5180be60f8e9b96.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/9fe98866bd2fc43c6d5dbd0b95d7704608bd6937.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/b3027450adca7f180e092c52b3adfe3cc11b79ac.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/bbc50fdb002d51136622615f7fea025187ff0cdd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/cd539824da389ce4871ae90caf78f2b0e623b9ce.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/framework/views/d286f788a8b9c0861bdc9e0ebd3be958e7c1b460.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-sail/storage/logs/laravel.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/laravel-sail/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="jeanKev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -138,138 +141,192 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/composer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/tijsverkoyen/css-to-inline-styles" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/fakerphp/faker" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/fruitcake/php-cors" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-php81" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/mailer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/serializable-closure" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/sanctum" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/breeze" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/sail" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/spatie/laravel-ignition" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/spatie/ignition" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/dflydev/dot-access-data" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/ramsey/collection" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/spatie/flare-client-php" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/spatie/backtrace" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/league/config" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/nette/utils" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/facade/ignition-contracts" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/voku/portable-ascii" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/nette/schema" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/laravel-breeze/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/league/config" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/spatie/backtrace" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/spatie/ignition" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/spatie/laravel-ignition" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/spatie/flare-client-php" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/composer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/cache" />
     </include_path>
   </component>
-  <component name="ProjectId" id="2CAeI7z76DSOqIAcHqA1Xt4JND1" />
+  <component name="ProjectId" id="2AnVCoWqzfV4j80qezktYKqFvu4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/recesipes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/archive recesipes",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\database\seeders\Recipes" />
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\database\factories\Recipes" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e3588dfb-42e9-4537-b5e9-58ee9b5e4455" name="Changes" comment="" />
-      <created>1658249733237</created>
+      <changelist id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="" />
+      <created>1655645214189</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1658249733237</updated>
-      <workItem from="1658249735744" duration="1678000" />
+      <updated>1655645214189</updated>
+      <workItem from="1655645217851" duration="7872000" />
+      <workItem from="1655663726964" duration="12068000" />
+      <workItem from="1655706501979" duration="2496000" />
+      <workItem from="1655714245975" duration="13360000" />
+      <workItem from="1655793137097" duration="2868000" />
+      <workItem from="1655802779258" duration="1709000" />
+      <workItem from="1655880584467" duration="5101000" />
+      <workItem from="1655966303559" duration="6320000" />
+      <workItem from="1658323430822" duration="78000" />
+      <workItem from="1658323623659" duration="639000" />
+      <workItem from="1658324279272" duration="3327000" />
+      <workItem from="1658333589643" duration="17121000" />
+      <workItem from="1658360799740" duration="4300000" />
+      <workItem from="1658385506717" duration="109000" />
+      <workItem from="1658385630524" duration="6501000" />
+      <workItem from="1658393786410" duration="524000" />
     </task>
+    <task id="LOCAL-00001" summary="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page">
+      <created>1655974335756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655974335756</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Page création fonctionnelle&#10;Modification RecipeController">
+      <created>1658390923700</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658390923700</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +344,24 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Page création article (WIP)&#10;Modification des migrations, routes, controller et models, &#10;ajout des clés étrangères directement dans les models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page création article (WIP)&#10;Modification des migrations, routes, controller et models, &#10;ajout des clés étrangères directement dans les models" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page" />
+    <MESSAGE value="Ajout page Création recette&#10;Ajout table Steps" />
+    <MESSAGE value="Page création fonctionnelle" />
+    <MESSAGE value="Page création fonctionnelle&#10;Modification RecipeController" />
+    <MESSAGE value="Page création fonctionnelle&#10;Modification RecipeController&#10;WIP comment section" />
+    <MESSAGE value="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/laravel-sail/resources/views/home.blade.php</url>
+          <line>643</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

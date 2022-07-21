@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ingredient_recipe', function (Blueprint $table) {
-            $table-> unsignedBigInteger('ingredient_id');
-            $table-> unsignedBigInteger('recipe_id');
-            $table->integer('amount');
-            $table->string('unit');
+        Schema::create('_traces', function (Blueprint $table) {
+            $table->id();
+
+            $table->text("message");
+            $table->smallInteger("code");
+
+            $table->timestamps();
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredient_recipe');
+        Schema::dropIfExists('_traces');
     }
 };

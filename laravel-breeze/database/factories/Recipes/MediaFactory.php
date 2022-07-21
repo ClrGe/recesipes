@@ -26,6 +26,7 @@ class MediaFactory extends Factory
         return [
             'alt' => $this->faker->word(),
             'path' => "Random Path",
+            'description' => $this->faker->text(),
             "recipe_id" => $this->faker->numberBetween($recipe1, $recipe2),
         ];
     }

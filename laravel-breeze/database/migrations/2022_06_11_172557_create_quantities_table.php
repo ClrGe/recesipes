@@ -14,16 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('quantities', function (Blueprint $table) {
             $table->id();
-
-            $table->text("description");
-            $table->string("alt");
-
-            $table->string("path");
-
+            $table->bigInteger("ingredient_id");
+            $table->smallInteger("quantity");
+            $table->enum("unit", ['g', "Kg", 'mL', 'cL', 'L' , 'Cuillère à café', 'Cuillère à soupe','unité', 'Tasse', 'Tranches']);
             $table->bigInteger("recipe_id");
-
             $table->timestamps();
         });
     }
@@ -36,7 +32,7 @@ return new class extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('quantities');
         Schema::enableForeignKeyConstraints();
     }
 };

@@ -17,7 +17,7 @@ class Recipe extends Model
         'guest_number',
         'category_id',
         'description',
-        'steps',
+        'image',
         'cook_duration',
         'resting_duration',
         'preparation_duration',
