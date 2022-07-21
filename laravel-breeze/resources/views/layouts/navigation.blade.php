@@ -68,8 +68,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('dashboard')">
-                            {{ __('Paramètres') }}
+                        <x-dropdown-link :href="route('users.show', [Auth::user()->id])">
+                            {{ __('Mon Compte') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('recipes.create')">
                             {{ __('Ajouter une recette') }}
