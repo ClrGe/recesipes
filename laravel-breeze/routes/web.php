@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
@@ -49,6 +50,8 @@ Route::get('/', [RecipeController::class, 'manyrandom'])->name('welcome');
  * Contact form
  **/
 Route::get('/contact', function(){ return view('contact');})->name('contact.form');
+Route::post('/contact', [ContactFormController::class, 'sendMail'])->name('contact.form');
+
 
 /**
  * Recipes
