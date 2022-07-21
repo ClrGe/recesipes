@@ -17,25 +17,18 @@ class RecipeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipes.index', ['recipes' => $recipes]);
-    }
-
-
-    public function manyrandom()
-    {
-        $recipes = Recipe::all();
-        return view('welcome', ['recipes' => $recipes]);
+        return view('recipes.index', compact('recipes'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -52,14 +45,45 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+
+        $recipe = auth()->user()->recipes()->create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $request->image,
+            'category_id' => $request->category_id,
+            'guest_number' => $request->guest_number,
+            'price_range' => $request->price_range,
+            'difficulty' => $request->difficulty,
+            'preparation_duration' => $request->preparation_duration,
+            'resting_duration' => $request->resting_duration,
+            'cook_duration' => $request->cook_duration,
+        ]);
+
+        $recipe->ingredients()->attach($request->ingredients);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+//            Image::make($image)->resize(300, 300)->save(public_path('/images/' . $imageName));
+            $image->move(public_path('images'), $imageName);
+            $path = '/images/' . $imageName;
+            $recipe->image = $path;
+            $recipe->save();
+        }
+        else {
+            $recipe->image = 'recesipes/storage/app/public/images/default.jpg';
+            $recipe->save();
+        }
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
     {
@@ -88,7 +112,9 @@ class RecipeController extends Controller
      */
     public function edit(Recipe $recipe)
     {
-        //
+        $recipeID = (Recipe::all()->last()->id)+1;
+        DB::insert("UPDATE recipes (`id`) SET ($recipeID)");
+        return view('Recipes/recipeUpdate');
     }
 
     /**
@@ -100,14 +126,45 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
-        //
+        $this->validate($request, array(
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+
+        $recipe = auth()->user()->recipes()->create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $request->image,
+            'category_id' => $request->category_id,
+            'guest_number' => $request->guest_number,
+            'price_range' => $request->price_range,
+            'difficulty' => $request->difficulty,
+            'preparation_duration' => $request->preparation_duration,
+            'resting_duration' => $request->resting_duration,
+            'cook_duration' => $request->cook_duration,
+        ]);
+
+        $recipe->ingredients()->attach($request->ingredients);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+//            Image::make($image)->resize(300, 300)->save(public_path('/images/' . $imageName));
+            $image->move(public_path('images'), $imageName);
+            $path = '/images/' . $imageName;
+            $recipe->image = $path;
+            $recipe->save();
+        }
+        else {
+            $recipe->image = 'recesipes/storage/app/public/images/default.jpg';
+            $recipe->save();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Recipe  $recipe
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy(Recipe $recipe)
     {

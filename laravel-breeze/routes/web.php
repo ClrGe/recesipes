@@ -23,6 +23,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/recipe/create', [RecipeController::class, 'create'])->middleware(['auth'])->name('create');
 
+Route::get('/update', function () {
+    return view('recipes.update');
+})->middleware(['auth'])->name('update');
+
 Route::get('/shopping', function () {
     return view('shopping');
 })->middleware(['auth'])->name('shopping');
@@ -55,7 +59,9 @@ Route::resource('categories', CategoryController::class);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('/categories/{name}', [CategoryController::class, 'view']);
 
-// BackOffice
+/**
+* BackOffice
+**/
 Route::middleware(['role:Administrator'])->group(function () {
     Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice.index');
     Route::get('/backoffice/users', [BackOfficeController::class, 'users'])->name('backoffice.users');
