@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Ajout creation article / modification article&#10;Pages stylisés">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Ingredient.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Ingredient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Quantity.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Quantity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Step.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Step.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

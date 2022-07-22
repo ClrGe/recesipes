@@ -8,6 +8,8 @@ use App\Http\Controllers\Recipes\MediaController;
 use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 
+use App\Http\Controllers\Users\UserController;
+
 use App\Http\Controllers\ShoppingListController;
 use Illuminate\Support\Facades\Route;
 
