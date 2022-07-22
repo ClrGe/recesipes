@@ -20,16 +20,6 @@ class QuantityController extends Controller
         return Response::json(Quantity::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -42,17 +32,6 @@ class QuantityController extends Controller
         return Response::json($quantity);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param Quantity $quantity
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Quantity $quantity)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

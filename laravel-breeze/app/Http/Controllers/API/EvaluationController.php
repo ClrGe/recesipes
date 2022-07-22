@@ -22,16 +22,6 @@ class EvaluationController extends Controller
         return Response::json(Evaluation::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -44,17 +34,6 @@ class EvaluationController extends Controller
         return Response::json($evaluation);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param Evaluation $evaluation
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Evaluation $evaluation)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

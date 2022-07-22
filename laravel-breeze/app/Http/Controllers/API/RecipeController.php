@@ -27,17 +27,6 @@ class RecipeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param Recipe $recipe
@@ -46,18 +35,6 @@ class RecipeController extends Controller
     public function show(Recipe $recipe)
     {
         return Response::json($recipe);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param Recipe $recipe
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Recipe $recipe)
-    {
-        //
     }
 
     /**

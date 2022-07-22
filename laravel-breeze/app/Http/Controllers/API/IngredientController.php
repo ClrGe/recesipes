@@ -20,16 +20,6 @@ class IngredientController extends Controller
         return Response::json(Ingredient::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -42,17 +32,6 @@ class IngredientController extends Controller
         return Response::json($ingredient);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Ingredient  $ingredient
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Ingredient $ingredient)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

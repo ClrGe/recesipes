@@ -9,15 +9,7 @@ use Illuminate\Support\Facades\Schema;
 
 class ShoppingListController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.

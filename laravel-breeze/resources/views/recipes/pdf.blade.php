@@ -4,8 +4,10 @@
 
 
 <p>Difficulté : {{ $recipe->difficulty }}</p>
+@if($mediaRecipe != null)
+    <img src="{{ public_path($mediaRecipe->path) }}" alt="" width="200">
+@endif
 
-<img src="{{ public_path($mediaRecipe->path) }}" alt="" width="200">
 
 
 <p>Durée{{ $recipe->cook_duration }} min</p>

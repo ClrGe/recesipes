@@ -21,16 +21,6 @@ class MediaController extends Controller
         return Response::json(Media::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -41,18 +31,6 @@ class MediaController extends Controller
     public function show(Media $media)
     {
         return Response::json($media);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipes\Media  $media
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Media $media)
-    {
-        //
     }
 
     /**
