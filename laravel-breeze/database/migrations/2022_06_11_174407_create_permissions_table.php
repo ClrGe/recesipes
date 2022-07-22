@@ -16,9 +16,11 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
+
             $table->boolean("review");
             $table->boolean("self_editing");
             $table->boolean("all");
+
             $table->timestamps();
         });
     }

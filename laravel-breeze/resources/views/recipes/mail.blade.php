@@ -22,13 +22,13 @@
                                     @csrf
 
                                         <!-- Email Address -->
-                                        <div>
+                                        <div class="w-full">
                                             <x-label for="email" :value="__('Email du destinataire')" />
 
                                             <x-input id="email" class="block mt-1 w-full" type="email" name="email"
                                                      :value="old('email')" required autofocus />
                                         </div>
-                                        <div class="flex justify-center">
+                                        <div class="flex justify-center w-full">
                                             <div class="mb-3 w-full">
                                                 <label for="FormControlTextarea"
                                                        class="form-label inline-block mb-2 text-gray-700">Message que vous souhaitez envoyer</label>
