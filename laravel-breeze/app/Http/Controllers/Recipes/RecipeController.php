@@ -199,24 +199,30 @@ class RecipeController extends Controller
     {
         $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
         $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
-        if ($mediaRecipe)
 
         $pdf = PDF::loadView('recipes.pdf', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
 
         return $pdf->download(Str::slug($recipe->name).'.pdf');
     }
 
-    public function sendMail(Request $request)
+    public function getmail(Recipe $recipe)
     {
+        $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
+        $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
+       return view('recipes.mail', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
+    }
+
+    public function sendMail(Request $request, Recipe $recipe)
+    {
+        dd($request);
         $mailData = [
             'subject'=>$request->sujet,
             'message'=>$request->message,
-            'email'=>$request->email,
         ];
 
-        Mail::to('lrecesipes@gmail.com')
+        Mail::to()
             ->send(new ContactFormMail($mailData));
 
-        return Response::redirectToRoute('contact.form')->with('status', 'Email send!');
+        return Response::redirectToRoute('recipes.show', $recipe)->with('status', 'Email send!');
     }
 }
