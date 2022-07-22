@@ -14,7 +14,6 @@ class ContactForm extends Model
      */
     protected $fillable = [
         'mail',
-        'confirm_mail',
         'subject',
         'message',
     ];

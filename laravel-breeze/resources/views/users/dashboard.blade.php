@@ -94,13 +94,13 @@
                                                             <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full">Modifier le profil</a>
                                                         </div>
                                                     </div>
-                                                </section>                                                
+                                                </section>
                                                 <!-- New Recipe -->
                                                 <section id="newRecipeDiv" class="tabItem">
                                                     <div class="container">
                                                         <label>newRecipes</label>
                                                     </div>
-                                                </section>                                                
+                                                </section>
                                                 <!-- My Recipes -->
                                                 <section id="myRecipesDiv" class="tabItem">
                                                     <div class="container">
@@ -111,16 +111,16 @@
                                                                         <label><b>Vous n'avez créé aucune recette pour l'instant !</b></label>
                                                                     </div>
                                                                 </div>
-                                                            @endif
+                                                            @else
                                                             @foreach ($myRecipes as $myRecipe)
                                                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " style="width: 200%;">
                                                                 <a href="{{ route('recipes.show', $myRecipe) }}">
                                                                     <div class="p-6 bg-white border-b border-gray-200 capitalize flexHorizontal">
-                                                                        ➡️ 
-                                                                        {{ $myRecipe->name }} 
-                                                                        <b>|</b> 
-                                                                        {{ $myRecipe->guest_number }} personne{{ $myRecipe->guest_number > 1 ? 's' : '' }} 
-                                                                        <b>|</b> 
+                                                                        ➡️
+                                                                        {{ $myRecipe->name }}
+                                                                        <b>|</b>
+                                                                        {{ $myRecipe->guest_number }} personne{{ $myRecipe->guest_number > 1 ? 's' : '' }}
+                                                                        <b>|</b>
                                                                         Aimée {{ count(App\Models\Users\Like::where("recipe_id", $myRecipe->id)->get()) }} fois
                                                                         <b>|</b>
                                                                         <form method="POST" action="{{ route('api.recipes.destroy', [$myRecipe, 'api_token' => Auth::user()->api_token]) }}">
@@ -132,9 +132,10 @@
                                                                 </a>
                                                             </div>
                                                             @endforeach
+                                                            @endif
                                                         </div>
                                                     </div>
-                                                </section>                                                
+                                                </section>
                                                 <!-- My Favorites -->
                                                 <section id="myFavDiv" class="tabItem">
                                                     <div class="container">
@@ -145,16 +146,16 @@
                                                                         <label><b>Vous n'avez aimé aucune recette pour l'instant !</b></label>
                                                                     </div>
                                                                 </div>
-                                                            @endif
+                                                            @else
                                                             @foreach ($favRecipes as $favRecipe)
                                                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="width: 200%;">
-                                                                <a href="{{ route('recipes.show', $myRecipe) }}">
+                                                                <a href="{{ route('recipes.show', $favRecipe) }}">
                                                                     <div class="p-6 bg-white border-b border-gray-200 capitalize flexHorizontal">
-                                                                        ➡️ 
-                                                                        {{ $favRecipe->name }} 
-                                                                        <b>|</b> 
-                                                                        {{ $favRecipe->guest_number }} personne{{ $favRecipe->guest_number > 1 ? 's' : '' }} 
-                                                                        <b>|</b> 
+                                                                        ➡️
+                                                                        {{ $favRecipe->name }}
+                                                                        <b>|</b>
+                                                                        {{ $favRecipe->guest_number }} personne{{ $favRecipe->guest_number > 1 ? 's' : '' }}
+                                                                        <b>|</b>
                                                                         <form method="POST" action="{{ route('api.likes.destroy', [App\Models\Users\Like::where('recipe_id', $favRecipe->id)->where('user_id', $user->id)->get()->first(), 'api_token' => Auth::user()->api_token]) }}">
                                                                             @method('delete')
                                                                             @csrf
@@ -164,9 +165,10 @@
                                                                 </a>
                                                             </div>
                                                             @endforeach
+                                                            @endif
                                                         </div>
                                                     </div>
-                                                </section>                                                
+                                                </section>
                                                 <!-- Cart -->
                                                 <section id="cartDiv" class="tabItem">
                                                     <div class="container">
@@ -209,11 +211,11 @@
                                                                             </div>
                                                                         </div>
                                                                     @endif
-                                                                @endforeach 
+                                                                @endforeach
                                                             @endforeach
                                                         </div>
                                                     </div>
-                                                </section>                                                
+                                                </section>
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +233,7 @@
                                     {
                                         let sections = Array.prototype.slice.call(document.getElementsByClassName("tabItem"));
                                         sections.forEach(function(element){
-                                            let elementName =  element.id.split('Div')[0];                                            
+                                            let elementName =  element.id.split('Div')[0];
                                             let button = document.getElementById(elementName + "Button");
                                             if(element.id.includes(tabName))
                                             {
@@ -248,7 +250,7 @@
 
                                     document.getElementById("profilButton").click();
 
-                                    
+
 
 
                                 </script>
@@ -265,7 +267,7 @@
 </x-app-layout>
 
 <style>
-    .container {  
+    .container {
     display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -275,13 +277,13 @@
     "Info Photo";
 }
 
-.Info { 
-    grid-area: Info; 
+.Info {
+    grid-area: Info;
     display: flex;
     flex-direction: column;
 }
-.Photo { 
-    grid-area: Photo; 
+.Photo {
+    grid-area: Photo;
 }
 
 fieldset{

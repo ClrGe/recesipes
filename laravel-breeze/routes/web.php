@@ -42,6 +42,17 @@ Route::resource('quantity', QuantityController::class);
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
 /**
+ * Download Recipe as PDF
+ **/
+Route::get('/recipes/{recipe}/download', [RecipeController::class, 'download'])->name('recipes.download');
+
+/**
+ * Send Recipe
+ **/
+Route::get('/recipes/{recipe}/mail', [RecipeController::class, 'getmail'])->name('recipes.mail');
+Route::post('/recipes/{recipe}/Send', [RecipeController::class, 'sendMail'])->name('recipes.send');
+
+/**
  * Categories
  **/
 Route::resource('categories', CategoryController::class);
@@ -74,11 +85,5 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])
 
 Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
-
-
-/**
- * Download PDF
- **/
-Route::get('/recipes/{recipe}/download', [RecipeController::class, 'download'])->name('recipes.download');
 
 require __DIR__.'/auth.php';

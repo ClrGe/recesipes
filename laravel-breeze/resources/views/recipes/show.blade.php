@@ -68,6 +68,12 @@
                                                </button>
                                            </a>
 
+                                            <a href="{{ route('recipes.mail', $recipe) }}">
+                                                <button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
+                                                    <span>Email</span>
+                                                </button>
+                                            </a>
+
                                         </div>
                                     @endauth
 

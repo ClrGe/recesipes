@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ContactFormMail;
+use App\Mail\RecipeSendMail;
 use App\Models\Recipes\Ingredient;
 use App\Models\Recipes\Media;
 use App\Models\Recipes\Quantity;
@@ -195,28 +196,33 @@ class RecipeController extends Controller
         return view('welcome', ['recipes' => $recipes]);
     }
 
-    public function download(Recipe $recipe, Media $media)
+    public function download(Recipe $recipe)
     {
         $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
         $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
-        if ($mediaRecipe)
 
         $pdf = PDF::loadView('recipes.pdf', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
 
         return $pdf->download(Str::slug($recipe->name).'.pdf');
     }
 
-    public function sendMail(Request $request)
+    public function getmail(Recipe $recipe)
+    {
+        $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
+        $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
+       return view('recipes.mail', compact('recipe', 'mediaRecipe', 'stepsRecipe'));
+    }
+
+    public function sendMail(Request $request, Recipe $recipe)
     {
         $mailData = [
-            'subject'=>$request->sujet,
-            'message'=>$request->message,
             'email'=>$request->email,
+            'message'=>$request->message,
         ];
 
-        Mail::to('lrecesipes@gmail.com')
-            ->send(new ContactFormMail($mailData));
+        Mail::to($mailData['email'])
+            ->send(new RecipeSendMail($mailData, $recipe));
 
-        return Response::redirectToRoute('contact.form')->with('status', 'Email send!');
+        return redirect()->route('recipes.show', $recipe)->with('status', 'Email send!');
     }
 }

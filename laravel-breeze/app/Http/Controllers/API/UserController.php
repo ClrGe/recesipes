@@ -25,16 +25,6 @@ class UserController extends Controller
         return Response::json(User::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -78,7 +68,7 @@ class UserController extends Controller
             {
                 return back()->with('status', 'Les mots de passe doivent être identiques !');
             }
-            
+
             $user->update(["first_name" => $firstName, "last_name" => $lastName, "email" => $email, 'password' => Hash::make($newPW)]);
         }
         else
