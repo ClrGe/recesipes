@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ContactFormMail;
+use App\Mail\RecipeSendMail;
 use App\Models\Recipes\Ingredient;
 use App\Models\Recipes\Media;
 use App\Models\Recipes\Quantity;
@@ -195,7 +196,7 @@ class RecipeController extends Controller
         return view('welcome', ['recipes' => $recipes]);
     }
 
-    public function download(Recipe $recipe, Media $media)
+    public function download(Recipe $recipe)
     {
         $stepsRecipe = Steps::where('recipe_id', $recipe->id)->get();
         $mediaRecipe = Media::where('recipe_id', $recipe->id)->first();
@@ -214,15 +215,14 @@ class RecipeController extends Controller
 
     public function sendMail(Request $request, Recipe $recipe)
     {
-        dd($request);
         $mailData = [
-            'subject'=>$request->sujet,
+            'email'=>$request->email,
             'message'=>$request->message,
         ];
 
-        Mail::to()
-            ->send(new ContactFormMail($mailData));
+        Mail::to($mailData['email'])
+            ->send(new RecipeSendMail($mailData, $recipe));
 
-        return Response::redirectToRoute('recipes.show', $recipe)->with('status', 'Email send!');
+        return redirect()->route('recipes.show', $recipe)->with('status', 'Email send!');
     }
 }
