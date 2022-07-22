@@ -42,22 +42,6 @@
                                             </form>
                                         </div>
                                     @endif
-                                <div class="flex content-button place-content-between">
-                                    <div>
-                                        Recette ajoutée le :
-                                        <?php
-                                        setlocale(LC_TIME, 'fr_FR.utf8','fra');
-                                        ?>
-                                        <b>{{ strftime('%d %B %Y', strtotime($recipe->created_at)) }} à {{ date('H:i', strtotime($recipe->created_at)) }}</b>
-                                        <b> par
-                                            @if($user == null)
-                                                Anonyme
-                                            @else
-                                                {{ $user->first_name }} {{ $user->last_name }}
-                                            @endif
-                                        </b>
-                                    </div>
-
                                     @auth
                                         <div class="farRight" >
                                             @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
@@ -89,25 +73,18 @@
                                                 </form>
                                             @endif
 
-                                            <a href="{{ route('recipes.download', $recipe) }}">
-                                               <button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
-                                                   <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                                            <a href="{{ route('recipes.download', $recipe) }}" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" >
+                                                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
                                                    <span>PDF</span>
-                                               </button>
                                            </a>
 
-                                            <a href="{{ route('recipes.mail', $recipe) }}">
-                                                <button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
-                                                    <span>Email</span>
-                                                </button>
+                                            <a href="{{ route('recipes.mail', $recipe) }}" class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" ><svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="3" y="5" width="18" height="14" rx="2" />  <polyline points="3 7 12 13 21 7" /></svg>
+                                                <span>Email</span>
                                             </a>
 
                                         </div>
                                     @endauth
 
-                                </div>
-                                <div class="image">
-                                    <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
                                 </div>
                                 <div class="capitalize font-semibold text-xl text-gray-800 leading-tight h-10">
                                     {{ $recipe->name }}

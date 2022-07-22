@@ -71,8 +71,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="p-6 bg-white capitalize">                            
-                                        {{ count($quantities->where("recipe_id", $recipe->id)) }} Ingredients       
+                                    <div class="p-6 bg-white capitalize">
+                                        {{ count($quantities->where("recipe_id", $recipe->id)) }} Ingredients
                                     </div>
                                 </td>
                                 <td>
@@ -82,13 +82,16 @@
                                 </td>
                                 <td>
                                     <div class="p-6 bg-white capitalize">
-                                            <form action="{{ route('api.recipes.destroy', [$recipe->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit">
-                                                    ❌ Supprimer
-                                                </button>
-                                            </form>
+                                        <a href="{{route('recipes.edit', $recipe->id)}}">
+                                            ✒ Editer
+                                        </a>
+                                        <form action="{{ route('api.recipes.destroy', [$recipe->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit">
+                                                ❌ Supprimer
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                         </tr>
