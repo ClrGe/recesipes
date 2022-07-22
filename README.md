@@ -27,10 +27,8 @@ Wireframe réalisé sur Miro (https://miro.com/app/board/uXjVOwdAQsA=/)
 
 ---
 
-### Stack / Config
+### Stack
  
-####Application web
-
     Front-end    : HTML5 + CSS (**Tailwind-css**)
     API          : PHP8.1.2 + Laravel 9
     ---
@@ -52,3 +50,10 @@ AWS - Instance EC2 T2.micro Ubuntu 22.04
     - ElasticIP pour éviter les changements d'adresse au reboot
     - Groupe de sécurité (filtrage IP des membres du groupe pour certains protocoles)
     - Ports 443 et 80 (https, http) accessible depuis partout
+
+### Outils développement
+
+    - VSCODE, PHPSTORM -> éditeur / IDE
+    - GIT -> versioning
+    - Discord -> Canal de communication et d'échanges
+
