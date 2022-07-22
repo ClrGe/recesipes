@@ -2,7 +2,7 @@
 
 _Cube web-mobile 2022 - Kevin Noah Maxime Claire_
 
-Dernière édition : 28/06/2022 - Claire
+Dernière édition : 22/07/2022 - Claire
 
 ### Presentation
 
