@@ -38,17 +38,6 @@ class UserController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        //
-    }
-
-    //Create custom request
-    public function store(StoreUserRequest $request)
-    {
-        //
-    }
-
     public function show(User $user)
     {
         $role = Role::where("id", $user->role_id)->first();
@@ -60,20 +49,6 @@ class UserController extends Controller
         $role = Role::where("id", $user->role_id)->first();
         return view('users.edit', ["user" => $user, "role" => $role]);
     }
-
-
-    //Create custom request
-    public function update(UpdateUserRequest $request, User $user)
-    {
-
-    }
-
-    public function destroy(User $user)
-    {
-        //
-    }
-
-
 
     private function myRecipes()
     {

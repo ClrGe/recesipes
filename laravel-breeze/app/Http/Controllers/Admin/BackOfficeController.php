@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Users\Permission;
 use App\Models\Users\Role;
 use App\Models\Users\User;
@@ -41,7 +42,7 @@ class BackOfficeController extends Controller
         {
             $permID = explode("permission", $perm)[1];
             $permission = Permission::where("id", $permID)->first();
-    
+
             $perms = array_shift($perms);
             $review = in_array("review", $perms);
             $selfEdit = in_array("selfEdit", $perms);
@@ -50,12 +51,12 @@ class BackOfficeController extends Controller
         else
         {
             $permission = Permission::where("id", $perms["permID"])->first();
-            
+
             $review = false;
             $selfEdit = false;
             $all = false;
         }
-        
+
         $permission->update(["review" => $review, "self_editing" => $selfEdit, "all" => $all]);
         return redirect()->route('backoffice.roles');
 
