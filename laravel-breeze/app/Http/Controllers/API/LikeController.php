@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Schema;
 
 class LikeController extends Controller
 {
-
     /**
      * Store a newly created resource in storage.
      *

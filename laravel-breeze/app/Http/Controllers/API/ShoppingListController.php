@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Schema;
 
 class ShoppingListController extends Controller
 {
-
-
     /**
      * Store a newly created resource in storage.
      *
@@ -24,29 +22,6 @@ class ShoppingListController extends Controller
         $shoppingList["recipe_id"] = $request["recipeID"];
         ShoppingList::create($shoppingList);
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ShoppingList  $shoppingList
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ShoppingList $shoppingList)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ShoppingList  $shoppingList
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ShoppingList $shoppingList)
-    {
-        //
     }
 
     /**

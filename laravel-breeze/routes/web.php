@@ -86,7 +86,4 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])
 Route::get('users/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware(['auth']);
 
-
-
-
 require __DIR__.'/auth.php';
