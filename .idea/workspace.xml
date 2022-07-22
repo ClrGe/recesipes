@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire">
+    <list default="true" id="0b52f5a3-a1e2-41c9-9c31-d9df7e83af09" name="Changes" comment="Ajout creation article / modification article&#10;Pages stylisés">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Http/Controllers/Recipes/RecipeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Evaluation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Ingredient.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Ingredient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Quantity.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Quantity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Recipe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Step.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/app/Models/Recipes/Step.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-breeze/resources/views/recipes/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +154,9 @@
       <path value="$PROJECT_DIR$/laravel-sail/vendor/doctrine/cache" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2AnVCoWqzfV4j80qezktYKqFvu4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -153,24 +165,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/archive recesipes",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/noahp/OneDrive/Documents/CESI/22-06-02 CUBES PHP/recesipes/laravel-breeze/app/Models/Recipes&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\app\Models\Recipes" />
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\app\Http\Controllers\Recipes" />
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\resources\views\recipes" />
       <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\resources\views\backoffice" />
+      <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\resources\views" />
       <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\database\seeders\Recipes" />
       <recent name="C:\Users\noahp\OneDrive\Documents\CESI\22-06-02 CUBES PHP\recesipes\laravel-breeze\database\factories\Recipes" />
     </key>
@@ -199,6 +216,15 @@
       <workItem from="1658385506717" duration="109000" />
       <workItem from="1658385630524" duration="6501000" />
       <workItem from="1658393786410" duration="524000" />
+      <workItem from="1658429460077" duration="8315000" />
+      <workItem from="1658441611444" duration="3606000" />
+      <workItem from="1658445267657" duration="9617000" />
+      <workItem from="1658456017696" duration="2467000" />
+      <workItem from="1658458521343" duration="365000" />
+      <workItem from="1658458904615" duration="1661000" />
+      <workItem from="1658460909143" duration="617000" />
+      <workItem from="1658461733217" duration="3570000" />
+      <workItem from="1658471045963" duration="111000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout page Contact, Login, Register&#10;Ajout Cartes pour recette home page">
       <created>1655974335756</created>
@@ -221,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658398382539</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="WIP Ajout Commentaire / Evaluation">
+      <created>1658401246880</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658401246880</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +279,9 @@
     <MESSAGE value="Page création fonctionnelle&#10;Modification RecipeController" />
     <MESSAGE value="Page création fonctionnelle&#10;Modification RecipeController&#10;WIP comment section" />
     <MESSAGE value="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page Création fonctionnelle&#10;Modif Recipe Controller&#10;WIP Espace Commentaire" />
+    <MESSAGE value="WIP Ajout Commentaire / Evaluation" />
+    <MESSAGE value="Ajout creation article / modification article&#10;Pages stylisés" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout creation article / modification article&#10;Pages stylisés" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

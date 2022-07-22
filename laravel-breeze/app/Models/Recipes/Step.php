@@ -2,9 +2,8 @@
 
 namespace App\Models\Recipes;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
@@ -12,9 +11,9 @@ class Step extends Model
 
     protected $fillable = [
         'id',
-
         'step',
-
         'recipe_id',
+        'created_at',
+        'updated_at',
     ];
 }

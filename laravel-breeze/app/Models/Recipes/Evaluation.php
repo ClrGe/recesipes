@@ -20,6 +20,6 @@ class Evaluation extends Model
 
     public function recipe()
     {
-        return $this->belongsTo(Recipe::class);
+        return $this->hasOne(Recipe::class);
     }
 }

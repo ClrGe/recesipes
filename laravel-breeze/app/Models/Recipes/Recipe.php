@@ -5,7 +5,9 @@ namespace App\Models\Recipes;
 use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Recipe extends Model
 {
@@ -17,7 +19,7 @@ class Recipe extends Model
         'guest_number',
         'category_id',
         'description',
-        'image',
+        'steps',
         'cook_duration',
         'resting_duration',
         'preparation_duration',
@@ -27,12 +29,12 @@ class Recipe extends Model
         'publish_time',
     ];
 
-    public function user()
+    public function user(): HasOne
     {
         return $this->hasOne(User::class);
     }
 
-    public function quantities()
+    public function quantities() : BelongsTo
     {
         return $this->belongsTo(Quantity::class);
     }
@@ -40,6 +42,16 @@ class Recipe extends Model
     public function evaluations(): BelongsToMany
     {
         return $this->belongsToMany(User::class, "evaluations");
+    }
+
+    public function ingredients(): BelongsToMany
+    {
+        return $this->belongsToMany(Ingredient::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 
 }
