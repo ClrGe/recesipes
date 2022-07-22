@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Str;
 
 class
 RegisteredUserController extends Controller
@@ -52,7 +53,6 @@ RegisteredUserController extends Controller
             'role_id' => $userRole->id,
             'api_token' => Str::random(80),
         ]);
-
 
         event(new Registered($user));
 

@@ -3,6 +3,10 @@
         Message de ReCesipes
     </h1>
     <p>
+        @if($mailData['message'] != null)
+            {{$mailData['message']}}
+        @endif
+    </p>
     <div> Nom de recette : {{ $recipe->name }}</div>
 
     <div>Description de la recette {{ $recipe->description }}</div>

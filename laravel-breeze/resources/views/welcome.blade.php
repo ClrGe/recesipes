@@ -55,13 +55,15 @@
                         @foreach ($recipes as $recipe)
                             <div class="w-full p-2 rounded lg:w-1/3 md:w-1/2">
                                 <a href="/recipes/{{ $recipe->id }}">
-                                    <div class="image">
-                                        <img src="https://media.moddb.com/images/members/5/4550/4549205/duck.jpg" alt="">
-                                    </div>                                
+                                    @if($recipe->image == null)
+                                        <img class="w-full" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+                                    @else
+                                        <img class="w-full" src="{{ $recipe->image }}" alt="">
+                                    @endif
                                         <div
                                             class="font-semibold text-xl text-gray-800 leading-tight h-10 capitalize">
                                             {{ $recipe->name }}
-                                        </div>                                
+                                        </div>
                                     <div>
                                         <b>Temps de préparation :</b>
                                         {{ $recipe->preparation_duration }}

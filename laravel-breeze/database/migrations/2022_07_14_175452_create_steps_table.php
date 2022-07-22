@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
+
             $table->text("step");
+
             $table->unsignedBigInteger('recipe_id');
+
             $table->timestamps();
         });
     }
@@ -28,6 +31,8 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('steps');
+        Schema::enableForeignKeyConstraints();
     }
 };

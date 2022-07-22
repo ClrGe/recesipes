@@ -67,13 +67,13 @@
                                     <div class="p-6 bg-white capitalize">
                                         <form id="{{'roleForm'.$user->id}}" method="POST" action="{{ route('backoffice.saverole') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <select name="role" class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <select name="role" class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" {{$roles->where("id", $user->role_id)->first()->title == "Administrator" ? "disabled" : ""}}>
                                                 @foreach($roles as $role)
                                                     <option value="{{ $role->id }}" {{ $role->id == $user->role_id ? 'selected="selected"' : '' }}>{{ $role->title }}</option>
                                                 @endforeach
-                                            </select>  
-                                            <input type="hidden" value="{{ $user->id }}" name="userID"/> 
-                                        </form>                                                                             
+                                            </select>
+                                            <input type="hidden" value="{{ $user->id }}" name="userID"/>
+                                        </form>
                                     </div>
                                 </td>
                                 <td>
@@ -81,7 +81,7 @@
                                         @if($roles->where("title", "Administrator")->first()->id != $user->role_id)
                                             <button type="submit" form="{{'roleForm'.$user->id}}">
                                                 ✔ Valider
-                                            </button>   
+                                            </button>
                                             <form action="{{ route('api.users.destroy', [$user->id, 'api_token' => Auth::user()->api_token]) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
@@ -101,10 +101,10 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <div class="p-6 bg-white capitalize">                                
+                            <div class="p-6 bg-white capitalize">
                                 <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" href="{{ route('backoffice.users') }}">
                                     Cancel
-                                </a>                                      
+                                </a>
                             </div>
                         </td>
                     </tr>

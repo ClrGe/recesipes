@@ -51,7 +51,7 @@
 </x-app-layout>
 
 <style>
-.container {  
+.container {
     display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -61,13 +61,13 @@
     "Info Photo";
 }
 
-.Info { 
-    grid-area: Info; 
+.Info {
+    grid-area: Info;
     display: flex;
     flex-direction: column;
 }
-.Photo { 
-    grid-area: Photo; 
+.Photo {
+    grid-area: Photo;
 }
 
 fieldset{
@@ -98,5 +98,5 @@ legend{
 
 input[type=text]:focus,input[type=password]:focus{
     border-bottom: 2px solid #ffa56d;
-} 
+}
 </style>
