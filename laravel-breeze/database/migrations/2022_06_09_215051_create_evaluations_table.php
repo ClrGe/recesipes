@@ -16,11 +16,15 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+
+            $table->tinyInteger('rating');
             $table->text("comment");
+
             $table->bigInteger("recipe_id");
             $table->bigInteger("user_id")->nullable();
+
             $table->timestamp("date");
-            $table->tinyInteger('rating');
+
             $table->timestamps();
         });
     }

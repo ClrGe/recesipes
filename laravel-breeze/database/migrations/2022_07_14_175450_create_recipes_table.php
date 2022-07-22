@@ -18,23 +18,24 @@ return new class extends Migration
             $table->id();
 
             $table->string("name")->nullable();
-            $table->text("description")->nullable();
-
             $table->tinyInteger("guest_number")->default(2);
+
+            $table->text("description")->nullable();
 
             $table->string("image")->nullable();
 
             $table->enum("price_range", ['Eco +', 'Moyen', 'PIB Suisse'])->nullable();
             $table->enum("difficulty", ['Facile', 'Moyen', 'Difficile'])->nullable();
 
-            $table->smallInteger("preparation_duration")->nullable();
-            $table->bigInteger("user_id")->nullable();
-            $table->smallInteger("resting_duration")->nullable();
             $table->smallInteger("cook_duration")->nullable();
+            $table->smallInteger("resting_duration")->nullable();
+
+            $table->smallInteger("preparation_duration")->nullable();
+
+            $table->bigInteger('category_id')->nullable();
+            $table->bigInteger("user_id")->nullable();
 
             $table->timestamp("publish_time");
-
-            $table->unsignedBigInteger("category_id")->nullable();
 
             $table->timestamps();
         });
@@ -50,6 +51,5 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('recipes');
         Schema::enableForeignKeyConstraints();
-
     }
 };

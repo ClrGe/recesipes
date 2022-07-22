@@ -29,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_list');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('shopping_lists');
+        Schema::enableForeignKeyConstraints();
     }
 };

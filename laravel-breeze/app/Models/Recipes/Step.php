@@ -5,7 +5,7 @@ namespace App\Models\Recipes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Steps extends Model
+class Step extends Model
 {
     use HasFactory;
 
