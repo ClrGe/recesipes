@@ -7,7 +7,7 @@ use App\Http\Controllers\Recipes\CategoryController;
 use App\Http\Controllers\Recipes\EvaluationController;
 use App\Http\Controllers\Recipes\IngredientController;
 //use App\Http\Controllers\Recipes\MediaController;
-use App\Http\Controllers\Recipes\QuantityController;
+//use App\Http\Controllers\Recipes\QuantityController;
 use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +37,7 @@ Route::resource('recipes', RecipeController::class);
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
 //Route::resource('media', MediaController::class);
-Route::resource('quantity', QuantityController::class);
+//Route::resource('quantity', QuantityController::class);
 
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
 
