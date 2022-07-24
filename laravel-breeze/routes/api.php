@@ -4,7 +4,7 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\EvaluationController;
 use App\Http\Controllers\API\IngredientController;
 use App\Http\Controllers\API\LikeController;
-use App\Http\Controllers\API\MediaController;
+//use App\Http\Controllers\API\MediaController;
 use App\Http\Controllers\API\PermissionController;
 use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
