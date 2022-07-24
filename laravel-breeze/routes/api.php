@@ -68,9 +68,9 @@ Route::middleware(['auth:api'])->group(function () {
     #endregion
 
     #region Media
-        Route::get('medias', [MediaController::class, 'index'])->name('api.medias.index');
-        Route::get('medias/{media}', [MediaController::class, 'show'])->name('api.medias.show');
-        Route::get('medias/recipe/{recipe}', [MediaController::class, 'byRecipe'])->name('api.medias.byrecipe');
+      //  Route::get('medias', [MediaController::class, 'index'])->name('api.medias.index');
+      //  Route::get('medias/{media}', [MediaController::class, 'show'])->name('api.medias.show');
+      //  Route::get('medias/recipe/{recipe}', [MediaController::class, 'byRecipe'])->name('api.medias.byrecipe');
     #endregion
 
 #endregion
