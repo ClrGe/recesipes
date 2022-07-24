@@ -6,7 +6,7 @@ use App\Http\Controllers\API\IngredientController;
 use App\Http\Controllers\API\LikeController;
 //use App\Http\Controllers\API\MediaController;
 use App\Http\Controllers\API\PermissionController;
-use App\Http\Controllers\API\QuantityController;
+//use App\Http\Controllers\API\QuantityController;
 use App\Http\Controllers\API\RecipeController;
 use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\SearchController;
@@ -57,8 +57,8 @@ Route::middleware(['auth:api'])->group(function () {
     #endregion
 
     #region Quantities
-        Route::get('quantities', [QuantityController::class, 'index'])->name('api.quantities.index');
-        Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->name('api.quantities.show');
+       // Route::get('quantities', [QuantityController::class, 'index'])->name('api.quantities.index');
+       // Route::get('quantities/{quantity}', [QuantityController::class, 'show'])->name('api.quantities.show');
     #endregion
 
     #region Evaluations
@@ -102,7 +102,7 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
 
 #region Recipes
     Route::delete('recipes/{recipe}', [RecipeController::class, 'destroy'])->name('api.recipes.destroy');
-    Route::delete('quantities/{quantity}', [QuantityController::class, 'destroy'])->name('api.quantities.destroy');
+    //Route::delete('quantities/{quantity}', [QuantityController::class, 'destroy'])->name('api.quantities.destroy');
     Route::delete('evaluations/{evaluation}', [EvaluationController::class, 'destroy'])->name('api.evaluations.destroy');
     //Route::delete('medias/{media}', [MediaController::class, 'destroy'])->name('api.medias.destroy');
     Route::delete('categories/{category}', [CategoryController::class, 'destroy'])->name("api.categories.destroy");
