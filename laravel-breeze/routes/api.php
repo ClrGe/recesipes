@@ -104,7 +104,7 @@ Route::get('search/{substring}', [SearchController::class, 'search'])->name('api
     Route::delete('recipes/{recipe}', [RecipeController::class, 'destroy'])->name('api.recipes.destroy');
     Route::delete('quantities/{quantity}', [QuantityController::class, 'destroy'])->name('api.quantities.destroy');
     Route::delete('evaluations/{evaluation}', [EvaluationController::class, 'destroy'])->name('api.evaluations.destroy');
-    Route::delete('medias/{media}', [MediaController::class, 'destroy'])->name('api.medias.destroy');
+    //Route::delete('medias/{media}', [MediaController::class, 'destroy'])->name('api.medias.destroy');
     Route::delete('categories/{category}', [CategoryController::class, 'destroy'])->name("api.categories.destroy");
     Route::delete('ingredients/{ingredient}', [IngredientController::class, 'destroy'])->name('api/ingredients.destroy');
 #endregion
