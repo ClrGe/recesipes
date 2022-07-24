@@ -30,7 +30,7 @@
                                         </b>
                                     </div>
 
-                                    @if(Auth::user()->role_id = '1' || Auth::user()->id == $recipe->user_id)
+                                    @auth
                                         <div class="flex gap-5">
                                             <a href="{{ route('recipes.edit', $recipe->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                                                 Modifier
@@ -41,8 +41,7 @@
                                                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Supprimer</button>
                                             </form>
                                         </div>
-                                    @endif
-                                    @auth
+
                                         <div class="farRight" >
                                             @if(App\Models\Users\Like::where('recipe_id', $recipe->id)->where('user_id', Auth::user()->id)->get()->first() == null)
                                                 <form action="{{ route('api.likes.store', ['api_token' => Auth::user()->api_token]) }}" method="POST">
@@ -183,7 +182,7 @@
                                                 {{ $comment->comment }}
                                             </div>
 
-                                            @if($comment->user_id == Auth::user()->id || Auth::user()->role_id == '1')
+                                            @auth
                                                 <div class="comment_delete">
                                                     <a href="{{ route('evaluation.destroy', $comment->id) }}"
                                                        onclick="event.preventDefault();
@@ -196,7 +195,7 @@
                                                         @method('DELETE')
                                                     </form>
                                                 </div>
-                                            @endif
+                                            @endauth
                                         </div>
                                     </div>
 
@@ -226,12 +225,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
+</div>
 
 </x-app-layout>
 
