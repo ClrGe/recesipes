@@ -36,7 +36,7 @@ Route::post('/contact', [ContactFormController::class, 'sendMail'])->name('conta
 Route::resource('recipes', RecipeController::class);
 Route::resource('evaluation', EvaluationController::class);
 Route::resource('ingredient', IngredientController::class);
-Route::resource('media', MediaController::class);
+//Route::resource('media', MediaController::class);
 Route::resource('quantity', QuantityController::class);
 
 Route::get('/random', [RecipeController::class, 'random'])->name('random');
